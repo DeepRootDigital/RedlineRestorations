@@ -1,0 +1,281 @@
+@content-center-color: #dae2e7;
+@gutter-color:rgba(255,255,255,.8);
+@redline-red:#d91f2d;
+@redline-blue:#243942;
+
+
+*,*:before,*:after{
+	margin:0;
+	padding:0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	background-image:url('images/body-background.png');
+}
+
+body {
+	margin:0;
+}
+
+.fixed-menu-bar{
+	width:100%;
+	height:100px;
+	background-image:url('images/top-nav-background.png');
+	position:fixed;
+	top:0;
+	left:0;
+	text-align:center;
+	z-index:100000000;
+}
+
+.fixed-menu-bar img{
+	vertical-align:middle;
+	margin-top: 20px;
+	margin-left: -780px;
+}
+
+.fixed-menu-bar ul {
+	border-top:1px solid #e3e3e3;
+	border-bottom:1px solid #e3e3e3;
+	width:64%;
+	font-family:'Tw Cen W01 Medium';
+	min-width:700px;
+	height:36px;
+	margin-left:35%;
+	margin-top:-80px;
+	padding-top:8px;
+}
+
+.fixed-menu-bar ul li {
+	display:inline-block;
+	float:left;
+	margin-right:32px;
+	color:@redline-blue;
+	text-transform:uppercase;
+	height: 34px;
+	margin-top: -8px;
+	padding-top: 8px;
+}
+
+.fixed-menu-bar ul li:hover{
+	color:@redline-red;
+	border-top:1px solid #d91f2d;
+	border-bottom:1px solid #d91f2d;
+	padding-top:7px;
+}
+
+.content-panel{
+	width:100%;
+	margin-top:100px;
+	overflow:hidden;
+	margin-left:0%;
+}
+
+.viewport-center{
+	width:1000px;
+	height:600px;
+	background-color:#dae2e7;
+	margin:0;
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.left-gutter{
+	position: absolute;
+	height: 100%;
+	top: 100px;
+	width:1px;
+	background-color:@gutter-color;
+	z-index:10000000000000000000;
+}
+
+
+
+.right-gutter{
+	position: absolute;
+	height: 100%;
+	top: 100px;
+	background-color:@gutter-color;
+	z-index:10000000000000000000;
+}
+
+
+.panel{
+	width:20%;
+	height:600px;
+	margin:0;
+	overflow:hidden;
+}
+
+.panel-textbar{
+	position:absolute;
+	width:200px;
+	height:100%;
+	right:0;
+	background:@redline-blue;
+}
+
+.left-button{
+	width:51px;
+	height:38px;
+	background-image:url('images/button-left.png');
+	position:fixed;
+	z-index:1000000;
+	top: 50%;
+	cursor:pointer;
+	left:0;
+}
+
+.left-button:hover{
+	background-image:url('images/button-left-hover.png');
+}
+
+.right-button{
+	width:51px;
+	height:38px;
+	background-image:url('images/button-right.png');
+	position:fixed;
+	z-index:1000000;
+	top: 50%;
+	cursor:pointer;
+	right:0;
+}
+
+.right-button:hover{
+	background-image:url('images/button-right-hover.png');
+}
+
+.content-panel-area{
+	width:5000px;
+	position:absolute;
+	margin-top:-15px;
+	overflow-x:visible;
+}
+
+
+	.slide-image{
+		height:100%;
+		position:absolute;
+	}
+
+
+.one-big-page{
+	display:inline-block;
+	width:20%;
+	margin-right:3px;
+}
+
+.top-button{
+	width: 27px;
+	position: absolute;
+	margin-top:9px;
+	margin-left:50px;
+}
+
+.up-arrow-hover{
+	height:53px;
+	width:126px;
+	position:absolute;
+	cursor:pointer;
+	margin-left:47%;
+}
+
+.up-arrow-hover:hover{
+	background-color:@redline-red;
+	border-bottom:1px solid #e4636c;
+}
+
+.up-arrow-hover h6{
+	position:absolute;
+	width: 100%;
+	text-align: center;
+	margin-top:30px;
+	color:#ffffff;
+	font-family: 'Tw Cen W01 Medium';
+	font-size: 13px;
+	text-transform: uppercase;
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.35);
+}
+
+.down-arrow-hover{
+	height:53px;
+	width:126px;
+	position:absolute;
+	cursor:pointer;
+	margin-left:47%;
+}
+
+.down-arrow-hover:hover{
+	background-color:@redline-red;
+	border-top:1px solid #e4636c;
+}
+
+.down-arrow-hover h6{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	margin-top: 9px;
+	color: #ffffff;
+	font-family: 'Tw Cen W01 Medium';
+	font-size: 13px;
+	text-transform: uppercase;
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.35);
+}
+
+.bottom-button {
+	width: 27px;
+	position: absolute;
+	margin-top:29px;
+	margin-left:50px;
+}
+
+
+
+
+/* General Attributes */
+
+
+
+.homepage.one{
+	background-color:#dae2e7;
+	position:absolute;
+}
+
+.homepage.two{
+	background-color:#dae2e7;
+	position:absolute;
+}
+
+.homepage.three{
+	background-color:#dae2e7;
+	position:absolute;
+}
+
+.homepage.four{
+	background-color:#dae2e7;
+	position:absolute;
+}
+
+.otherpage.one{
+	background-color:#dae2e7;
+	position:absolute;
+}
+
+.otherpage.two{
+	background-color:#dae2e7;
+	position:absolute;
+}
+
+.otherpage.three{
+	background-color:#dae2e7;
+	position:absolute;
+}
+
+.otherpage.four{
+	background-color:#dae2e7;
+	position:absolute;
+}

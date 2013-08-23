@@ -1,0 +1,193 @@
+/*
+Theme Name: Redline Restorations
+Theme URI: http://redlinerestorations.net
+Description: A theme built for Redline Restorations!
+Author: Paul McMahon
+Author URI: http://businessonmarketst.com
+Version: 1.0
+Tags: Blank
+
+License: GPL
+License URI: http://businessonmarketst.com
+
+General comments (optional).
+*/
+
+@content-center-color: #dae2e7;
+@gutter-color:rgba(255,255,255,.4);
+@divider-color:#9eacb4;
+
+/*
+::-webkit-scrollbar {
+    width: 12px;
+}
+*/
+
+
+.fixed-menu-bar{
+	width:100%;
+	height:150px;
+	background-color:white;
+	position:fixed;
+	top:0;
+	left:0;
+	border-bottom-color:@divider-color;
+	border-bottom-width:18px;
+	border-bottom-style:solid;
+	text-align:center;
+	z-index:100000000;
+}
+
+.fixed-menu-bar img{
+	vertical-align:middle;
+	height:90%;
+	margin-top:5px;
+}
+
+.content-panel{
+	width:102%;
+	margin-top:183px;
+	overflow:hidden;
+	margin-left:-1%;
+}
+
+.viewport-center{
+	width:1000px;
+	height:600px;
+	background-color:#dae2e7;
+	margin:0;
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.left-gutter{
+	position: absolute;
+	height: 100%;
+	top: 183px;
+	width:1px;
+	background-color:@gutter-color;
+	z-index:10000000000000000000;
+}
+
+
+
+.right-gutter{
+	position: absolute;
+	height: 100%;
+	top: 183px;
+	background-color:@gutter-color;
+	z-index:10000000000000000000;
+}
+
+
+.panel{
+	width:20%;
+	height:600px;
+	background-color:red;
+	margin:0;
+}
+
+.left-button{
+	width:50px;
+	position:absolute;
+	z-index:1000000;
+	margin-left: (100% - 25);
+	top: 50%;
+	cursor:pointer;
+}
+
+.right-button{
+	width:50px;
+	position:absolute;
+	z-index:1000000;
+	margin-left: -25px;
+	top: 50%;
+	cursor:pointer;
+}
+
+.content-panel-area{
+	width:5000px;
+	position:absolute;
+	margin-top:-15px;
+	overflow-x:visible;
+}
+
+
+
+.one-big-page{
+	display:inline-block;
+	width:20%;
+	margin-right:-4px;
+}
+
+.top-button{
+	width: 5%;
+	position: absolute;
+	margin-left: 47.5%;
+	margin-top: 2%;
+	cursor:pointer;
+}
+
+.bottom-button {
+	width: 5%;
+	position: absolute;
+	margin-left: 47.5%;
+	margin-top: 558px;
+	cursor:pointer;
+}
+
+
+
+
+/* General Attributes */
+
+
+
+.homepage.one{
+	background-color:#dae2e7;
+	position:absolute;
+	margin-top:0px;
+}
+
+.homepage.two{
+	background-color:#dae2e7;
+	position:absolute;
+	margin-top:600px;
+}
+
+.homepage.three{
+	background-color:#dae2e7;
+	position:absolute;
+	margin-top:1200px;
+}
+
+.homepage.four{
+	background-color:#dae2e7;
+	position:absolute;
+	margin-top:1800px;
+}
+
+.otherpage.one{
+	background-color:#dae2e7;
+	position:absolute;
+	margin-top:0px;
+}
+
+.otherpage.two{
+	background-color:#dae2e7;
+	position:absolute;
+	margin-top:600px;
+}
+
+.otherpage.three{
+	background-color:#dae2e7;
+	position:absolute;
+	margin-top:1200px;
+}
+
+.otherpage.four{
+	background-color:#dae2e7;
+	position:absolute;
+	margin-top:1800px;
+}
