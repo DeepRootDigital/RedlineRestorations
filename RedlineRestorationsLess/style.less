@@ -77,7 +77,6 @@ body {
 .viewport-center{
 	width:1000px;
 	height:600px;
-	background-color:#dae2e7;
 	margin:0;
 	position:relative;
 	margin-left:auto;
@@ -113,10 +112,49 @@ body {
 
 .panel-textbar{
 	position:absolute;
-	width:200px;
+	width:20%;
 	height:100%;
 	right:0;
 	background:@redline-blue;
+	text-align:center;
+	color:white;
+}
+
+.slide-image{
+	height:100%;
+	position:absolute;
+	width:79%;
+}
+
+.panel-textbar-horizontal {
+	position:absolute;
+	width:100%;
+	height:20%;
+	background-image:url('images/top-nav-background.png');
+	color:white;
+}
+
+.slide-image-horizontal {
+	height:100%;
+	position:absolute;
+	height:79%;
+	bottom:0;
+}
+
+.panel-textbar-wide {
+	position:absolute;
+	height:100%;
+	width:40%;
+	background-color:#243942;
+	right:0;
+	text-align:center;
+	color:white;
+}
+
+.slide-image-wide {
+	height:100%;
+	position:absolute;
+	width:59%;
 }
 
 .left-button{
@@ -152,16 +190,9 @@ body {
 .content-panel-area{
 	width:5000px;
 	position:absolute;
-	margin-top:-15px;
+	margin-top:-16px;
 	overflow-x:visible;
 }
-
-
-	.slide-image{
-		height:100%;
-		position:absolute;
-	}
-
 
 .one-big-page{
 	display:inline-block;
@@ -199,6 +230,7 @@ body {
 	font-size: 13px;
 	text-transform: uppercase;
 	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.35);
+	display:none;
 }
 
 .down-arrow-hover{
@@ -224,6 +256,7 @@ body {
 	font-size: 13px;
 	text-transform: uppercase;
 	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.35);
+	display:none;
 }
 
 .bottom-button {
@@ -233,49 +266,12 @@ body {
 	margin-left:50px;
 }
 
-
-
-
 /* General Attributes */
 
-
-
-.homepage.one{
-	background-color:#dae2e7;
+.homepage{
 	position:absolute;
 }
 
-.homepage.two{
-	background-color:#dae2e7;
-	position:absolute;
-}
-
-.homepage.three{
-	background-color:#dae2e7;
-	position:absolute;
-}
-
-.homepage.four{
-	background-color:#dae2e7;
-	position:absolute;
-}
-
-.otherpage.one{
-	background-color:#dae2e7;
-	position:absolute;
-}
-
-.otherpage.two{
-	background-color:#dae2e7;
-	position:absolute;
-}
-
-.otherpage.three{
-	background-color:#dae2e7;
-	position:absolute;
-}
-
-.otherpage.four{
-	background-color:#dae2e7;
+.otherpage{
 	position:absolute;
 }
