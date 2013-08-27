@@ -22,6 +22,12 @@ $(document).ready(function(){
 		},300);
 	});
 
+	$('.down-arrow-footer').click(function(){
+		$('.footer').animate({
+			'bottom' : '0px'
+		},300);
+	});
+
 	$('.up-arrow-hover').hover(function(){
 		$(this).find('h6').css('display','block');
 	},
@@ -30,6 +36,13 @@ $(document).ready(function(){
 	});
 
 	$('.down-arrow-hover').hover(function(){
+		$(this).find('h6').css('display','block');
+	},
+	function(){
+		$(this).find('h6').css('display','none');
+	});
+
+	$('.down-arrow-footer').hover(function(){
 		$(this).find('h6').css('display','block');
 	},
 	function(){
@@ -78,6 +91,7 @@ $(document).ready(function(){
 		$(".right-gutter").css({"height": trueheight + "px"});
 		$(".viewport-center").css({"height": vph + "px"});
 		$(".down-arrow-hover").css({"margin-top": vph - 53 + "px"});
+		$(".down-arrow-footer").css({"margin-top": vph - 53 + "px"});
 		$(".one").css('margin-top','0px');
 		$(".two").css({"margin-top": vph + "px"});
 		$(".three").css({"margin-top": vph * 2 + "px"});

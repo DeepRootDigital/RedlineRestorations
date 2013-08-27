@@ -37,6 +37,10 @@
 						<h6>The Process</h6>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
 					</div>
+					<div class="down-arrow-footer">
+						<h6>Footer</h6>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
+					</div>
 				</div>
 			</div>
 			<div class="one-big-page">
@@ -153,7 +157,37 @@
 		<div class="right-button"></div>		
 	</div>
 </div>
-<div class=""
-
+<div class="footer">
+<div class="footer-wrap">
+<div class="footer-left">
+	<div class="footer-left-top">
+		<img src="<?php echo get_template_directory_uri(); ?>/images/redline-logo-grey.png" />
+		<ul>
+			<li>about us</li>
+			<li>services</li>
+			<li>our process</li>
+			<li>restorations</li>
+			<li>blog</li>
+			<li>contact us</li>
+		</ul>
+	</div>
+	<div class="footer-left-contact">
+		<h5>Redline Restorations <span>/ 2316 Fairfield Ave / Black Rock, CT 06605</span></h5>
+	</div>
+	<div class="footer-left-follow">
+		<h5>Follow <span>us</span></h5>
+	</div>
+	<div class="footer-left-copyright">
+		<h6>Redline Restorations. Copyright &copy; 2013 All rights reserved.</h6>
+	</div>
+</div>
+<div class="footer-right">
+	<div class="footer-right-blogroll"></div>
+	<div class="footer-right-design">
+		<h6>Designed by / <a href="http://www.businessonmarketst.com">Business on Market St</a></h6>
+	</div>
+</div>
+</div>
+</div>
 </body>
 </html>
