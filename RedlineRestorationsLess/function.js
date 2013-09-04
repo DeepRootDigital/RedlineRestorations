@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 	$('.up-arrow-hover').click(function(){
 		movethismuch = $(this).parent().parent().find('.panel').height();
-		movethismuch = "+=" + movethismuch + "px";
+		movethismuch = "+=" + (movethismuch+7) + "px";
 		var arrowposition = $(this).offset();
 		if (arrowposition.top < 150){
 			$(this).parent().parent().find('.panel').animate({
@@ -16,7 +16,7 @@ $(document).ready(function(){
 
 	$('.down-arrow-hover').click(function(){
 		movethismuch = $(this).parent().parent().find('.panel').height();
-		movethismuch = "-=" + movethismuch + "px";
+		movethismuch = "-=" + (movethismuch+7) + "px";
 		$(this).parent().parent().find('.panel').animate({
 			'margin-top' : movethismuch
 		},300);
@@ -93,9 +93,9 @@ $(document).ready(function(){
 		$(".down-arrow-hover").css({"margin-top": vph - 53 + "px"});
 		$(".down-arrow-footer").css({"margin-top": vph - 53 + "px"});
 		$(".one").css('margin-top','0px');
-		$(".two").css({"margin-top": vph + "px"});
-		$(".three").css({"margin-top": vph * 2 + "px"});
-		$(".four").css({"margin-top": vph * 3 + "px"});
+		$(".two").css({"margin-top": (vph+7) + "px"});
+		$(".three").css({"margin-top": (vph+7) * 2 + "px"});
+		$(".four").css({"margin-top": (vph+7) * 3 + "px"});
 	}
 
 	function resizeGutter() {
@@ -108,6 +108,26 @@ $(document).ready(function(){
 		$(".right-gutter").css({"margin-left":position+"px"});
 		// $(".left-button").css({"margin-left":width - 25 +"px"});
 	}
+
+	$('.fixed-menu-bar ul li:last-of-type').click(function(){
+		$(document).find('.fixed-social-menu').slideDown(300);
+		$(document).find('.fixed-social-icons').animate({"margin-top":"5px"},300,function(){
+			$(document).find('.fixed-social-icons').css('z-index',10000000000);
+			$(document).find('.fixed-social-icons').animate({"margin-top":"-1px"});
+		});
+		$(this).css('display','none');
+		$('.close-button').css('display','block');
+	});
+
+	$('.close-button').click(function(){
+		$(document).find('.fixed-social-icons').animate({"margin-top":"5px"},300,function(){
+			$(document).find('.fixed-social-icons').css('z-index',100000);
+			$(document).find('.fixed-social-icons').animate({'margin-top':'-24px'});
+		});
+		$(document).find('.fixed-social-menu').slideUp(950);
+		$('.close-button').css('display','none');
+		$('.fixed-menu-bar ul li:last-of-type').css('display','block');
+	});
 
 
 });
