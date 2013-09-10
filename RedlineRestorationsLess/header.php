@@ -14,7 +14,14 @@
 <body>
 	<div class="fixed-menu-bar">
 		<img src="<?php echo get_template_directory_uri() ?>/images/redline-header-logo.png" />
-		<ul>
+		<?php 
+                $args = array(
+                    'theme_location' => 'Left Navigation Menu',
+                    'menu' => 'RR topmenu',
+
+                    );
+                    wp_nav_menu($args); ?>
+		<!-- <ul>
 			<li>About Us</li>
 			<li>Services</li>
 			<li>Our Process</li>
@@ -22,7 +29,7 @@
 			<li>Blog</li>
 			<li>Contact Us</li>
 			<li><a href="#" alt="blah">Get<span>Social</span></a></li>
-		</ul>
+		</ul> -->
 
 	</div>
 	<div class="fixed-social-menu">

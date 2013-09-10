@@ -28,7 +28,6 @@
 			</div>
 			<div class="footer-youtube">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/youtube-icon.png" class="social-icon" />
-				 <div id="player"></div>
 			</div>
 			<div class="footer-instagram">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/instagram-icon.png" class="social-icon" />
@@ -42,47 +41,82 @@
 <?php wp_footer(); ?>
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="<?php echo get_template_directory_uri() ?>/function.js"></script>
-<script>
-      // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+// Function to create the map //
+function mapinitialize() {
 
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  // Create an array of styles.
+  var styles = [
+    {
+      stylers: [
+      // This makes the map black and white //
+        { Hue:  "#5d2c32" },
+{ Saturation: 5 },
+{ Gamma:  0 },
+{ Lightness: 20 }
+      ]
+    }
+  ];
 
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '98',
-          width: '175',
-          videoId: 'M7lc1UVf-VE',
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
 
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
 
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      var done = false;
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
-        }
-      }
-      function stopVideo() {
-        player.stopVideo();
-      }
-    </script>
+  // Create a new StyledMapType object, passing it the array of styles,
+  // as well as the name to be displayed on the map type control.
+  var styledMap = new google.maps.StyledMapType(styles,
+    {name: "Styled Map"});
+
+  // Create a map object, and include the MapTypeId to add
+  // to the map type control.
+  var mapOptions = {
+    zoom: 16,
+    mapTypeControl: false,
+streetViewControl: false,
+// Put the coordinates that you want the map to center around //
+    center: new google.maps.LatLng(41.163519,-73.220787),
+    mapTypeControlOptions: {
+      mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+    }
+  };
+  var map = new google.maps.Map(document.getElementById('google-map'),
+    mapOptions);
+
+// This will create the tab that shows up when the pin is clicked on //
+var contentString = '##################';
+
+// Attachs the tab //
+var infowindow = new google.maps.InfoWindow({
+content: contentString
+});
+
+
+  //Associate the styled map with the MapTypeId and set it to display.
+  map.mapTypes.set('map_style', styledMap);
+  map.setMapTypeId('map_style');
+
+// Sets the pin location on the map and chooses the picture that will be used //
+var image = '#########';
+// This should be the coordinates where you want the pin to be put //
+  var myLatLng = new google.maps.LatLng(41.163519,-73.220787);
+  var pinmarker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      icon: image
+  });
+
+// Associates the text tab with the marker you created //
+google.maps.event.addListener(pinmarker,'click',function(){
+infowindow.open(map,pinmarker);
+});
+
+// Puts the marker on the map //
+  pinmarker.setMap(map);
+              
+}
+
+// Puts listener so that the map will not try to load unless it need to //
+google.maps.event.addDomListener(window, "load", mapinitialize);
+
+</script>
 </body>
 </html>

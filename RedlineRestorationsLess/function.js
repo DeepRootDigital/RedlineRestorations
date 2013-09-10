@@ -126,7 +126,7 @@ $(document).ready(function(){
 
 	function resizeGutter() {
 		width = $(".viewport-center").outerWidth();
-		width = $(".viewport-center").outerWidth(true) - width;
+		width = $(".fixed-menu-bar").outerWidth() - width;
 		width = (width/2)-7;
 		position = width + 1014;
 		$(".left-gutter").css({"width":width+"px"});
