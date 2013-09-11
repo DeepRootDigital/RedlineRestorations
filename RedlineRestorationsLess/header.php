@@ -8,12 +8,11 @@
 	<?php wp_head(); ?>
 	<link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/6f0a6d23-c087-4412-9761-ba16bbdef6cd.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/normalize.css" />
-	<link rel="stylesheet/less" type="text/css" href="<?php echo get_template_directory_uri() ?>/style.less" />
-	<script src="<?php echo get_template_directory_uri() ?>/less.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/style.css" />
 </head>
 <body>
 	<div class="fixed-menu-bar">
-		<img src="<?php echo get_template_directory_uri() ?>/images/redline-header-logo.png" />
+		<a href="http://localhost/wordpress/"><img src="<?php echo get_template_directory_uri() ?>/images/redline-header-logo.png" /></a>
 		<?php 
                 $args = array(
                     'theme_location' => 'Left Navigation Menu',
@@ -21,16 +20,6 @@
 
                     );
                     wp_nav_menu($args); ?>
-		<!-- <ul>
-			<li>About Us</li>
-			<li>Services</li>
-			<li>Our Process</li>
-			<li>Restorations</li>
-			<li>Blog</li>
-			<li>Contact Us</li>
-			<li><a href="#" alt="blah">Get<span>Social</span></a></li>
-		</ul> -->
-
 	</div>
 	<div class="fixed-social-menu">
 	</div>

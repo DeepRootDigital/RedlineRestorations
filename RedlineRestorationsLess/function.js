@@ -1,5 +1,19 @@
 $(document).ready(function(){
 
+	// Top Menu Functionality
+
+	$('.fixed-menu-bar ul li a').click(function(){
+		if ($(this).text() == "About Us") {
+			$('.content-panel-area').animate({'left':'0px'},300);
+		}
+		if ($(this).text() == "Our Process") {
+			$('.content-panel-area').animate({'left':'-1007px'},300);
+		}
+		if ($(this).text() == "Contact Us") {
+			$('.content-panel-area').animate({'left':'-2014px'},300);
+		}
+	});
+
 	// Slider for panel one
 	$('.panel-one-slider').last().clone().prependTo('.panel-one-slide-wrapper');
 	$(function () {
@@ -50,6 +64,12 @@ $(document).ready(function(){
 	$('.down-arrow-footer').click(function(){
 		$('.footer').animate({
 			'bottom' : '0px'
+		},300);
+	});
+
+	$('.footer-close-tab').click(function(){
+		$('.footer').animate({
+			'bottom' : '-534px'
 		},300);
 	});
 

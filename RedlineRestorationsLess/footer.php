@@ -20,6 +20,9 @@
 			</div>
 		</div>
 		<div class="footer-right">
+			<div class="footer-close-tab">
+				<h3>Close <span>Social</span></h3>
+			</div>
 			<div class="footer-pinterest">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/pinterest-icon.png" class="social-icon" />
 				<div class="pinterest-box">
@@ -95,9 +98,9 @@ content: contentString
   map.setMapTypeId('map_style');
 
 // Sets the pin location on the map and chooses the picture that will be used //
-var image = '#########';
+var image = 'http://localhost/wordpress/wp-content/themes/RedlineRestorationsLess/images/redline-map-flag.png';
 // This should be the coordinates where you want the pin to be put //
-  var myLatLng = new google.maps.LatLng(41.163519,-73.220787);
+  var myLatLng = new google.maps.LatLng(41.163340,-73.221006);
   var pinmarker = new google.maps.Marker({
       position: myLatLng,
       map: map,
