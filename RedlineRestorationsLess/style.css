@@ -89,7 +89,7 @@ h1,h2,h3,h4,h5,h6 {
 	margin-right:3px;
 }
 
-.homepage,.contactpage,.otherpage,.aboutuspage{
+.homepage,.contactpage,.otherpage,.aboutuspage,.blogpage{
 	position:absolute;
 }
 
@@ -234,6 +234,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .right-button{
 	right:0;
+	background-image:url('images/button-right.png');
 }
 
 .right-button:hover{
@@ -247,7 +248,7 @@ h1,h2,h3,h4,h5,h6 {
 	width:126px;
 	position:absolute;
 	cursor:pointer;
-	margin-left:47%;
+	margin-left:43.7%;
 	z-index:10000;
 	top:0;
 }
@@ -275,7 +276,7 @@ h1,h2,h3,h4,h5,h6 {
 	width:126px;
 	position:absolute;
 	cursor:pointer;
-	margin-left:47%;
+	margin-left:43.7%;
 	z-index:10000;
 }
 
@@ -856,6 +857,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .contactus-contact-panel textarea {
 	background-image:url('images/contactus-textarea-background.png');
+	background-size:100% 100%;
 	width:492px;
 	height:139px;
 	border:0px;
@@ -888,6 +890,293 @@ h1,h2,h3,h4,h5,h6 {
 	height: 387px;
 	width:100%;
 	position:absolute;
+}
+
+/* Blog Page */
+
+.blog-textbar-top {
+	width:100%;
+	height:150px;
+	text-align:center;
+	background: #243942;
+	color:white;
+	position:absolute;
+}
+
+.blog-textbar-top img {
+	margin-top:25px;
+	margin-bottom:24px;
+}
+
+.blog-textbar-top h4 {
+	font-size:25px;
+	text-transform:uppercase;
+	font-family: 'BauerBodoniW01-RegItali';
+	letter-spacing:2px;
+}
+
+.blog-top-panel-image {
+	width:100%;
+	height:422px;
+	position:absolute;
+	margin-top:158px;
+}
+
+.blog-panel-lines {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -40px;
+	width: 65px;
+	height: 50px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	z-index: 1000;
+}
+
+.blog-panel-lines-inner {
+	width: 65px;
+	height: 50px;
+	position: absolute;
+	border-top: 1px solid #d91f2d;
+	border-bottom: 1px solid #d91f2d;
+}
+
+.blog-panel {
+	position:absolute;
+	width:1000px;
+	height:100%;
+}
+
+.blog-panel-summary {
+	width:328px;
+	height:100%;
+	background:#243942;
+	margin-right:8px;
+	float:left;
+}
+
+.blog-panel-summary:last-of-type {
+	margin-right:0px;
+}
+
+.blog-panel-summary-textbox {
+	width:328px;
+	height:140px;
+	position:absolute;
+	top:0;
+}
+
+.blog-summary-title-outerlines{
+	width:202px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:28px;
+	border-top: 1px solid #1c2d34;
+	border-bottom: 1px solid #eb1d25;
+}
+
+.blog-summary-title-innerlines{
+	width:202px;
+	padding-top:13px;
+	padding-bottom:13px;
+	border-top: 1px solid #eb1d25;
+	border-bottom: 1px solid #1c2d34;
+}
+
+.blog-summary-title-innerlines h4 {
+	text-transform: uppercase;
+	color: white;
+	letter-spacing: 2px;
+	font-size: 20px;
+	font-family: 'BauerBodoniW01-RegItali';
+	line-height: 20px;
+	width: 260px;
+	margin-left: -27px;
+	text-align: center;
+}
+
+.blog-panel-summary img {
+	width:328px;
+	position:absolute;
+	height:440px;
+	margin-top:140px;
+}
+
+/* Blog Single */
+
+.single-blog-viewport {
+	width:1000px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:100px;
+}
+
+.single-blog-content {
+	width: 545px;
+	margin-left: 15px;
+	float:left;
+}
+
+.single-blog-content-lines {
+	width:545px;
+	position:absolute;
+	border-left: 1px dashed #243942;
+	height: 55px;
+	border-right: 1px dashed #243942;
+}
+
+.single-blog-header {
+	width: 480px;
+	margin-left: 15px;
+	border-bottom: 1px solid #d91f2d;
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+
+.single-blog-header h2 {
+	color: #243942;
+	font-family: 'BauerBodoniW01-RegItali';
+	font-size: 30px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	line-height: 29px;
+}
+
+.single-blog-header span {
+	color: #d91f2d;
+}
+
+.single-blog-info {
+	margin-top:20px;
+	margin-left:15px;
+}
+
+.single-blog-info h3 {
+	font-family: 'Tw Cen W01 Medium';
+	font-size: 14px;
+	line-height: 9px;
+	color: #243942;
+	text-transform: uppercase;
+}
+
+.single-blog-info span {
+	font-family: 'Tw Cen W01 Bold';
+}
+
+.single-blog-info em {
+	font-family:Georgia;
+	font-style:normal;
+	text-transform:none;
+}
+
+.single-blog-content p{
+	margin-top:25px;
+	font-family:Georgia;
+	font-size:16px;
+	line-height:24px;
+	margin-left:15px;
+	width:480px;
+	color: #243942;
+	letter-spacing: 1px;
+	word-spacing: 1px;
+}
+
+.single-blog-content h4 {
+	margin-left: 15px;
+margin-top: 35px;
+font-family: Georgia;
+font-size: 14px;
+color: #243942;
+}
+
+.single-blog-content h4 > span {
+	color:#d91f2d;
+}
+
+.single-blog-social {
+	width:440px;
+	margin-left:15px;
+	border-bottom:1px solid #243942;
+	padding-bottom:10px;
+}
+
+.single-blog-social h4 {
+	text-transform:uppercase;
+	margin-left:0px;
+}
+
+.single-blog-comments {
+	width: 440px;
+	float: left;
+	padding-top:40px;
+	padding-left:15px;
+}
+
+.single-blog-comments h5 {
+	font-family:'Tw Cen W01 Medium';
+	font-size:20px;
+	color:#d91f2d;
+	text-transform:uppercase;
+}
+
+.single-blog-comments h5 > span {
+	font-family:'Tw Cen W01 Bold';
+}
+
+/* Comments section */
+
+.single-blog-comments h4{
+	font-family: Georgia;
+	font-size: 16px;
+	margin-top: 9px;
+	color: #243942;
+}
+
+.single-blog-comments h4:first-of-type,.single-blog-comments h4:last-of-type {
+	margin-top: 25px;
+}
+
+.single-blog-comments input {
+	background-image:url('images/contactus-form-background.png');
+	background-size:100% 100%;
+	width:290px;
+	height:58px;
+	border:0px;
+	padding-left:20px;
+	font-family:Georgia;
+	font-size:14px;
+	margin-left:-8px;
+}
+
+.single-blog-comments input:focus {
+	outline:none;
+}
+
+.single-blog-comments textarea {
+	background-image:url('images/contactus-textarea-background.png');
+	background-size:100% 100%;
+	width:441px;
+	height:180px;
+	border:0px;
+	resize:none;
+	padding-left:20px;
+	padding-top:20px;
+	font-family:Georgia;
+	font-size:14px;
+	margin-left:-8px;
+}
+
+.single-blog-comments textarea:focus {
+	outline:none;
+}
+
+.single-blog-comments input[type=submit] {
+	background-image:url('images/contactus-submit-background.png');
+	width:109px;
+	height:39px;
+	margin-top: 15px;
+	margin-left:320px;
+	color: rgba(0,0,0,0);
 }
 
 /* Footer */

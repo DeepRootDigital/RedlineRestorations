@@ -141,6 +141,112 @@
 			</div>
 		</div>
 		<!--
+			BLOG PAGE
+		-->
+		<div class="one-big-page">
+			<div class="blogpage panel one">
+				<div class="blog-textbar-top">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/cross-flags.png" />
+					<h4>Blog</h4>
+					<div class="blog-panel-lines">
+						<div class="blog-panel-lines-inner">
+						</div>
+					</div>
+				</div>
+				<img src="<?php echo get_template_directory_uri(); ?>/images/blog-top-car.png" class="blog-top-panel-image" />
+				<div class="down-arrow-hover">
+					<h6>Blogs</h6>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
+				</div>
+			</div>
+			<div class="blogpage panel two">
+				<div class="blog-panel">
+					<div class="blog-panel-summary">
+						<div class="blog-panel-summary-textbox">
+							<div class="blog-summary-title-outerlines">
+								<div class="blog-summary-title-innerlines">
+									<h4>Title of this first blog post</h4>
+								</div>
+							</div>
+						</div>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/blog-slide-middle-left.png" class="blog-summary-image" />
+					</div>
+					<div class="blog-panel-summary">
+						<div class="blog-panel-summary-textbox">
+							<div class="blog-summary-title-outerlines">
+								<div class="blog-summary-title-innerlines">
+									<h4>Title of another blog post</h4>
+								</div>
+							</div>
+						</div>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/blog-slide-middle-middle.png" class="blog-summary-image" />
+					</div>
+					<div class="blog-panel-summary">
+						<div class="blog-panel-summary-textbox">
+							<div class="blog-summary-title-outerlines">
+								<div class="blog-summary-title-innerlines">
+									<h4>This is a three line long blog post to show title length</h4>
+								</div>
+							</div>
+						</div>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/blog-slide-middle-right.png" class="blog-summary-image" />
+					</div>
+				</div>
+
+
+				<div class="up-arrow-hover">
+					<h6>Top</h6>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
+				</div>
+				<div class="down-arrow-hover">
+					<h6>Blogs</h6>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
+				</div>
+			</div>
+			<div class="blogpage panel three">
+				<div class="blog-panel">
+					<div class="blog-panel-summary">
+						<div class="blog-panel-summary-textbox">
+							<div class="blog-summary-title-outerlines">
+								<div class="blog-summary-title-innerlines">
+									<h4>Title of this first blog post</h4>
+								</div>
+							</div>
+						</div>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/blog-slide-bottom-left.png" class="blog-summary-image" />
+					</div>
+					<div class="blog-panel-summary">
+						<div class="blog-panel-summary-textbox">
+							<div class="blog-summary-title-outerlines">
+								<div class="blog-summary-title-innerlines">
+									<h4>Blog Post with Default Image for Display</h4>
+								</div>
+							</div>
+						</div>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/blog-slide-bottom-middle.png" class="blog-summary-image" />
+					</div>
+					<div class="blog-panel-summary">
+						<div class="blog-panel-summary-textbox">
+							<div class="blog-summary-title-outerlines">
+								<div class="blog-summary-title-innerlines">
+									<h4>This is a blog post</h4>
+								</div>
+							</div>
+						</div>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/blog-slide-bottom-right.png" class="blog-summary-image" />
+					</div>
+				</div>
+				<div class="up-arrow-hover">
+					<h6>Home</h6>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
+				</div>
+				<div class="down-arrow-footer">
+					<h6>Get<span>Social</span></h6>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
+				</div>
+			</div>
+		</div>
+		<!--
 			CONTACT US PAGE
 		-->
 		<div class="one-big-page">
@@ -203,42 +309,9 @@
 				</div>
 			</div>
 		</div>
+		
 
 
-		<div class="one-big-page">
-			<div class="otherpage panel one">
-				<div class="down-arrow-hover">
-					<h6>The Process</h6>
-					<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
-				</div>
-			</div>
-			<div class="otherpage panel two">
-				<div class="up-arrow-hover">
-					<h6>Home</h6>
-					<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
-				</div>
-				<div class="down-arrow-hover">
-					<h6>The Process</h6>
-					<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
-				</div>
-			</div>
-			<div class="otherpage panel three">
-				<div class="up-arrow-hover">
-					<h6>Home</h6>
-					<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
-				</div>
-				<div class="down-arrow-hover">
-					<h6>The Process</h6>
-					<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
-				</div>
-			</div>
-			<div class="otherpage panel four">
-				<div class="up-arrow-hover">
-					<h6>Home</h6>
-					<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
-				</div>
-			</div>
-		</div>
 	</div>
 
 </div>
