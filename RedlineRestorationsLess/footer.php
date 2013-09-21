@@ -85,7 +85,8 @@ streetViewControl: false,
     mapOptions);
 
 // This will create the tab that shows up when the pin is clicked on //
-var contentString = '##################';
+var contentString = '<div id="mapcontent">'+'<div class="mapcontent-text">'+'<p><span>Red<em>line Restorations</em></span></p>'+
+'<p>2316 FAIRFIELD AVE</p>'+'<p>BLACK ROCK, CT 06605</p>'+'<p>P // 203 335 9555</p>'+'</div>'+'</div>';
 
 // Attachs the tab //
 var infowindow = new google.maps.InfoWindow({

@@ -58,6 +58,16 @@ function create_post_type() {
 		'rewrite' => array('slug' => 'mainpage'),
 		)
 	);
+	register_post_type('aboutus', array(
+		'labels' => array(
+			'name' => __('Aboutus'),
+			'singular_name' => __('Aboutus')
+			),
+		'public' => true,
+		'has_archive' => false,
+		'rewrite' => array('slug' => 'aboutus'),
+		)
+	);
 }
 add_action('init', 'create_post_type');
 

@@ -44,6 +44,38 @@ $meta_boxes[] = array(
             ),
      ),
     );
+$meta_boxes[] = array(
+    // Meta box id, UNIQUE per meta box. Optional since 4.1.5
+    'id' => 'aboutus',
+    // Meta box title - Will appear at the drag and drop handle bar. Required.
+    'title' => 'About Us',
+    // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
+    'pages' => array('aboutus'),
+    // Where the meta box appear: normal (default), advanced, side. Optional.
+    'context' => 'normal',
+    // Order of meta box: high (default), low. Optional.
+    'priority' => 'high',
+    // List of meta fields
+    'fields' => array(
+        array(
+            'name' => 'Quote',
+            'id' => 'quotation',
+            'type' => 'text',
+        ),
+        array(
+            'name'             => 'Quote Image',
+            'id'               => "quoteimage",
+            'type'             => 'plupload_image',
+            'max_file_uploads' => 1,
+        ),
+        array(
+            'name'             => 'Three Image',
+            'id'               => "threeimage",
+            'type'             => 'plupload_image',
+            'max_file_uploads' => 3,
+        ),
+     ),
+    );
 
 
 /* * ******************* META BOX REGISTERING ********************** */

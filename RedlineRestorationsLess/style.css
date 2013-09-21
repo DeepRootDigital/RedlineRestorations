@@ -37,6 +37,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .content-panel{
 	width:100%;
+	height:580px;
 	margin-top:100px;
 	overflow:hidden;
 	margin-left:0%;
@@ -44,7 +45,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .viewport-center{
 	width:1000px;
-	height:600px;
+	height:580px;
 	margin:0;
 	position:relative;
 	margin-left:auto;
@@ -53,7 +54,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .left-gutter{
 	position: absolute;
-	height: 100%;
+	height: 580px;
 	top: 100px;
 	width:1px;
 	background-color:rgba(255,255,255,.8);
@@ -62,7 +63,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .right-gutter{
 	position: absolute;
-	height: 100%;
+	height: 580px;
 	top: 100px;
 	background-color:rgba(255,255,255,.8);
 	z-index:10000000000000000000;
@@ -70,7 +71,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .panel{
 	width:20%;
-	height:600px;
+	height:580px;
 	margin:0;
 	overflow:hidden;
 }
@@ -91,6 +92,22 @@ h1,h2,h3,h4,h5,h6 {
 
 .homepage,.contactpage,.otherpage,.aboutuspage,.blogpage{
 	position:absolute;
+}
+
+.one {
+	margin-top:0px;
+}
+
+.two {
+	margin-top:587px;
+}
+
+.three {
+	margin-top:1174px;
+}
+
+.four {
+	margin-top:1761px;
 }
 
 /* Top Menu Bar */
@@ -277,7 +294,12 @@ h1,h2,h3,h4,h5,h6 {
 	position:absolute;
 	cursor:pointer;
 	margin-left:43.7%;
+	margin-top:527px;
 	z-index:10000;
+}
+
+.down-arrow-hover.slider-arrow {
+	margin-top:-53px;
 }
 
 .down-arrow-hover:hover,.down-arrow-footer:hover{
@@ -876,13 +898,23 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .contactus-contact-panel input[type=submit] {
-	background-image:url('images/contactus-submit-background.png');
-	width:109px;
-	height:39px;
+	background-image:url('images/submit_btn_static.png');
+	width:101px;
+	height:31px;
 	position:absolute;
 	margin-left: 557px;
 	margin-top: 15px;
 	color: rgba(0,0,0,0);
+}
+
+.contactus-contact-panel input[type=submit]:hover {
+	background-image:url('images/submit_btn_rollover.png');
+	height:34px;
+}
+
+.contactus-contact-panel input[type=submit]:active {
+	background-image:url('images/submit_btn_active.png');
+	height:34px;
 }
 
 #google-map {
@@ -890,6 +922,35 @@ h1,h2,h3,h4,h5,h6 {
 	height: 387px;
 	width:100%;
 	position:absolute;
+}
+
+#mapcontent-text{
+display:inline-block;
+}
+
+#mapcontent p{
+font-family: 'Tw Cen W01 Medium';
+font-size: 12px;
+text-transform:uppercase;
+color: #243942;
+}
+
+#mapcontent span{
+	color:#d91f2d;
+	font-size:14px;
+	font-family: 'BauerBodoniW01-RegItali';
+}
+
+#mapcontent span em {
+	font-style:normal;
+color: #243942;
+}
+
+#mapcontent img{
+margin-top:10px;
+display:inline-block;
+width:247px;
+border:1px solid #ababab;
 }
 
 /* Blog Page */
@@ -963,7 +1024,10 @@ h1,h2,h3,h4,h5,h6 {
 	width:328px;
 	height:140px;
 	position:absolute;
+	z-index:100;
 	top:0;
+	background:#243942;
+	cursor:pointer;
 }
 
 .blog-summary-title-outerlines{
@@ -1000,6 +1064,45 @@ h1,h2,h3,h4,h5,h6 {
 	position:absolute;
 	height:440px;
 	margin-top:140px;
+}
+
+.blog-summary-preview {
+	width:100%;
+	background-image:url('images/blog-summary-preview.png');
+	background-repeat: no-repeat;
+	position:absolute;
+	z-index:5;
+	height:145px;
+	margin-top:2px;
+	background-position: -3px 0px;
+}
+
+.blog-summary-preview p {
+	font-family: Georgia;
+font-size: 16px;
+line-height: 20px;
+width: 270px;
+margin-left: 29px;
+margin-top: 21px;
+color: #d91f2d;
+}
+
+.blog-summary-preview a {
+	font-family: 'Tw Cen W01 Medium';
+text-transform: uppercase;
+text-decoration: none;
+font-size: 16px;
+line-height: 14px;
+color: #243942;
+position:absolute;
+margin-left: 128px;
+bottom: 0;
+margin-bottom: 22px;
+letter-spacing:1px;
+}
+
+.blog-summary-preview a span {
+	font-family: 'Tw Cen W01 Bold';
 }
 
 /* Blog Single */
@@ -1171,12 +1274,22 @@ color: #243942;
 }
 
 .single-blog-comments input[type=submit] {
-	background-image:url('images/contactus-submit-background.png');
-	width:109px;
-	height:39px;
+	background-image:url('images/submit_btn_static.png');
+	width:101px;
+	height:31px;
 	margin-top: 15px;
 	margin-left:320px;
 	color: rgba(0,0,0,0);
+}
+
+.single-blog-comments input[type=submit]:hover {
+	background-image:url('images/submit_btn_rollover.png');
+	height:34px;
+}
+
+.single-blog-comments input[type=submit]:active {
+	background-image:url('images/submit_btn_active.png');
+	height:34px;
 }
 
 /* Footer */
@@ -1190,6 +1303,13 @@ color: #243942;
 	background-image:url('images/footer-background.png');
 	z-index: 10000000000000000000;
 	color:#243942;
+}
+
+.footer.single-blog-footer {
+	position:relative;
+	bottom:0px;
+	margin-top:100px;
+	float:left;
 }
 
 .footer-wrap{

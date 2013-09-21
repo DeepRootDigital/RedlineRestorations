@@ -9,10 +9,56 @@ $(document).ready(function(){
 		if ($(this).text() == "Our Process") {
 			$('.content-panel-area').animate({'left':'-1007px'},300);
 		}
-		if ($(this).text() == "Contact Us") {
+		if ($(this).text() == "Blog") {
 			$('.content-panel-area').animate({'left':'-2014px'},300);
 		}
+		if ($(this).text() == "Contact Us") {
+			$('.content-panel-area').animate({'left':'-3021px'},300);
+		}
 	});
+
+	// Code for adding scrolling
+
+    //adding the event listerner for Mozilla
+    if(window.addEventListener) {
+    	document.addEventListener('DOMMouseScroll', moveObject, false);
+    }
+
+    //for IE/OPERA etc
+    document.onmousewheel = moveObject;
+
+    function moveObject(event) {
+    	var delta = 0;
+
+    	if (!event) event = window.event;
+
+    	// normalize the delta
+    	if (event.wheelDelta) {
+
+        	// IE and Opera
+        	delta = -event.wheelDelta / 40;
+
+    	} 
+    	else if (event.detail) {
+
+        	// W3C
+        	delta = event.detail / 4;
+    	}
+
+    	var currPos=document.getElementById('scroll').offsetTop;
+
+    	//calculating the next position of the object
+    	currPos=parseInt(currPos)-(delta*10);
+
+    	//moving the position of the object
+    	if (currPos > -1){
+    		currPos = 0;
+    		document.getElementById('scroll').style.marginTop = currPos+"px";
+    	}
+    	else {
+    		document.getElementById('scroll').style.marginTop = currPos+"px";
+    	}
+	}
 
 	// Slider for panel one
 	$('.panel-one-slider').last().clone().prependTo('.panel-one-slide-wrapper');
@@ -38,28 +84,48 @@ $(document).ready(function(){
 	});
 	
 
+	// Blog Hovers
+
+	$('.blog-panel-summary').hover(
+		function(){
+			$(this).find('.blog-summary-preview').animate({'margin-top':'139px'},400);
+		},
+		function(){
+			$(this).find('.blog-summary-preview').animate({'margin-top':'2px'},400);
+		});
 
 	//Control top and bottom arrow buttons
 
 	$('.up-arrow-hover').click(function(){
 		movethismuch = $(this).parent().parent().find('.panel').height();
-		movethismuch = "+=" + (movethismuch+7) + "px";
+		movethismuch = movethismuch + 6;
 		var arrowposition = $(this).offset();
-		if (arrowposition.top < 150){
-			$(this).parent().parent().find('.panel').animate({
-				'margin-top' : movethismuch
-			},300);
+		if ($(this).parent().hasClass('two')){
+			$(this).parent().parent().animate({'margin-top':'0px'},400);
 		}
-		
+		if ($(this).parent().hasClass('three')){
+			$(this).parent().parent().animate({'margin-top':'-'+movethismuch+'px'},400);
+		}
+		if ($(this).parent().hasClass('four')){
+			$(this).parent().parent().animate({'margin-top':'-'+movethismuch*2+'px'},400);
+		}
 	});
 
 	$('.down-arrow-hover').click(function(){
 		movethismuch = $(this).parent().parent().find('.panel').height();
-		movethismuch = "-=" + (movethismuch+7) + "px";
-		$(this).parent().parent().find('.panel').animate({
-			'margin-top' : movethismuch
-		},300);
+		movethismuch = movethismuch + 6;
+		if ($(this).parent().hasClass('one')){
+			$(this).parent().parent().animate({'margin-top':'-'+movethismuch+'px'},400);
+		}
+		if ($(this).parent().hasClass('two')){
+			$(this).parent().parent().animate({'margin-top':'-'+movethismuch*2+'px'},400);
+		}
+		if ($(this).parent().hasClass('three')){
+			$(this).parent().parent().animate({'margin-top':'-'+movethismuch*3+'px'},400);
+		}
 	});
+
+	// Control footer
 
 	$('.down-arrow-footer').click(function(){
 		$('.footer').animate({
@@ -72,6 +138,8 @@ $(document).ready(function(){
 			'bottom' : '-534px'
 		},300);
 	});
+
+	// Control the backgrounds and hover contents of up/down navigation
 
 	$('.up-arrow-hover').hover(function(){
 		$(this).find('h6').css('display','block');
@@ -99,52 +167,54 @@ $(document).ready(function(){
 	$('.left-button').click(function(){
 		$('.content-panel-area').animate({
 			'left' : '+=1007px'
-		},300);
+		},300,function(){
+			$(document).find("#scroll").removeAttr('id');
+			if ($(document).find('.content-panel-area').css('left') == "0px") {
+				$(document).find('.aboutus-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-1007px") {
+				$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-2014px") {
+				$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-3021px") {
+				$(document).find('.contactus-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+		});
 	});
 
 	$('.right-button').click(function(){
 		$('.content-panel-area').animate({
 			'left' : '-=1007px'
-		},300);
+		},300,function(){
+			$(document).find("#scroll").removeAttr('id');
+			if ($(document).find('.content-panel-area').css('left') == "0px") {
+				$(document).find('.aboutus-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-1007px") {
+				$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-2014px") {
+				$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-3021px") {
+				$(document).find('.contactus-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+		});
 	});
 
 	//Script for resizing windows
-	resizeDiv();
+
 	resizeGutter();
 
 	window.onresize = function(event) {
-		resizeDiv();
 		resizeGutter();
 	}
 
-	function resizeDiv() {
-		vph = $(window).height();
-		vph = vph - 100;
-		var trueheight = vph;
-		if (trueheight < 580) {
-			trueheight=580;
-		}
-		if (vph > 580) {
-			vph = 580;
-		}
-		else {
-			vph = 580;
-		}
-		$(".content-panel").css({"height": trueheight + "px"});
-		$(".panel").css({"height": vph + "px"});
-		$(".left-gutter").css({"height": trueheight + "px"});
-		$(".right-gutter").css({"height": trueheight + "px"});
-		$(".viewport-center").css({"height": vph + "px"});
-		$(".down-arrow-hover").css({"margin-top": vph - 53 + "px"});
-		$(".down-arrow-hover.slider-arrow").css({"margin-top":"-53px"});
-		$(".down-arrow-footer").css({"margin-top": vph - 53 + "px"});
-		$(".one").css('margin-top','0px');
-		$(".two").css({"margin-top": (vph+7) + "px"});
-		$(".three").css({"margin-top": (vph+7) * 2 + "px"});
-		$(".four").css({"margin-top": (vph+7) * 3 + "px"});
-	}
-
 	function resizeGutter() {
+		height = $(window).height();
+		height = height - 100;
 		width = $(".viewport-center").outerWidth();
 		width = $(".fixed-menu-bar").outerWidth() - width;
 		width = (width/2)-7;
@@ -152,8 +222,13 @@ $(document).ready(function(){
 		$(".left-gutter").css({"width":width+"px"});
 		$(".right-gutter").css({"width":width+"px"});
 		$(".right-gutter").css({"margin-left":position+"px"});
-		// $(".left-button").css({"margin-left":width - 25 +"px"});
+		$('.one-big-page-panel').css('margin-top','0px');
+		$(".left-gutter").css('height',height+'px');
+		$('.right-gutter').css('height',height+'px');
+		$('.content-panel').css('height',height+'px');
 	}
+
+	// Top social menu icons control
 
 	$('.fixed-menu-bar ul li:last-of-type').click(function(){
 		$(document).find('.fixed-social-menu').slideDown(300);
