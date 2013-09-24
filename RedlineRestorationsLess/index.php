@@ -24,21 +24,76 @@
 					</div>
 				</div>
 				<div class="aboutuspage panel two">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/aboutus-panel2.png" class="aboutus-paneltwo" />
 					<div class="aboutus-panel-wide">
-						<h2>&ldquo;<br /><span>A good</span><br />Quote</h2>
-						<h4>can go in this area right here. This area has a good amount of  white space for the typography to really stand out and look clean.</h4>
+						<h2><span>Meet the</span> Team</h2>
 					</div>
-					<div class="up-arrow-hover">
-						<h6>About Us</h6>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
+					<div class="aboutus-panel-people">
+						<ul>
+							<li><div class="aboutus-panel-individual">
+								<img src="<?php echo get_template_directory_uri(); ?>/images/temp/alvaroflores.png" />
+								<h4><span>Alvaro</span> Flores</h4>
+							</div></li>
+							<li><div class="aboutus-panel-individual">
+								<img src="<?php echo get_template_directory_uri(); ?>/images/temp/seanfarias.png" />
+								<h4><span>Sean</span> Farias</h4>
+							</div></li>
+							<li><div class="aboutus-panel-individual">
+								<img src="<?php echo get_template_directory_uri(); ?>/images/temp/paulmcmahon.png" />
+								<h4><span>Paul</span> McMahon</h4>
+							</div></li>
+							<li><div class="aboutus-panel-individual">
+								<img src="<?php echo get_template_directory_uri(); ?>/images/temp/dandeller.png" />
+								<h4><span>Dan</span> Deller</h4>
+							</div></li>
+							<li><div class="aboutus-panel-individual">
+								<img src="<?php echo get_template_directory_uri(); ?>/images/temp/johndoe.png" />
+								<h4><span>John</span> Doe</h4>
+							</div></li>
+							<li><div class="aboutus-panel-individual">
+								<img src="<?php echo get_template_directory_uri(); ?>/images/temp/aldojacobo.png" />
+								<h4><span>Aldo</span> Jacobo</h4>
+							</div></li>
+							<li><div class="aboutus-panel-individual">
+								<img src="<?php echo get_template_directory_uri(); ?>/images/temp/fulanodetal.png" />
+								<h4><span>Fulano</span> Detal</h4>
+							</div></li>
+							<li><div class="aboutus-panel-individual">
+								<img src="<?php echo get_template_directory_uri(); ?>/images/temp/nickkoskowski.png" />
+								<h4><span>Nick</span> Koskowski</h4>
+							</div></li>
+							<li><div class="aboutus-panel-individual">
+								<img src="<?php echo get_template_directory_uri(); ?>/images/temp/dudehat.png" />
+								<h4><span>Dude</span> Hat</h4>
+							</div></li>
+							<li><div class="aboutus-panel-individual">
+								<img src="<?php echo get_template_directory_uri(); ?>/images/temp/mattdamon.png" />
+								<h4><span>Matt</span> Damon</h4>
+							</div></li>
+						</ul>
 					</div>
-					<div class="down-arrow-hover">
-						<h6>More</h6>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
+					<div class="aboutus-individual-frame">
+							<div class="aboutus-individual-frame-text">
+								<div class="aboutus-individual-frame-text-first">
+									<h3><span>Sean</span> Farias</h3>
+									<img src="<?php echo get_template_directory_uri(); ?>/images/close-button.png" />
+									<p>Close</p>
+								</div>
+								<div class="aboutus-individual-frame-text-second">
+									<h4><span>Age :</span> 28</h4>
+								</div>
+								<div class="aboutus-individual-frame-text-third">
+									<h4><span>Hometown :</span> connecticut</h4>
+								</div>
+								<div class="aboutus-individual-frame-text-fourth">
+									<h4><span>Position / Exp. :</span> Painter / 5 yrs</h4>
+								</div>
+								<div class="aboutus-individual-frame-text-fifth">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+									<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+								</div>
+							</div>
+							<img src="<?php echo get_template_directory_uri(); ?>/images/temp/seanfarias-full.png" />
 					</div>
-				</div>
-				<div class="aboutuspage panel three">
 					<div class="up-arrow-hover">
 						<h6>Up</h6>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
@@ -47,9 +102,6 @@
 						<h6>Get<span>Social</span></h6>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
 					</div>
-					<img src="<?php echo get_template_directory_uri(); ?>/images/aboutus-panel3-1.png" class="aboutus-panelthree" />
-					<img src="<?php echo get_template_directory_uri(); ?>/images/aboutus-panel3-2.png" class="aboutus-panelthree" />
-					<img src="<?php echo get_template_directory_uri(); ?>/images/aboutus-panel3-3.png" class="aboutus-panelthree" />
 				</div>
 			</div>
 		</div>
@@ -309,6 +361,15 @@
 								<h6><span>2316 Fairfield Ave</span></h6>
 								<h6>Black rock, ct 06605</h6>
 							</div>
+						</div>
+						<div class="contactus-socialicons">
+							<ul>
+								<li><div class="contactus-facebook"></div></li>
+								<li><div class="contactus-twitter"></div></li>
+								<li><div class="contactus-pinterest"></div></li>
+								<li><div class="contactus-youtube"></div></li>
+								<li><div class="contactus-instagram"></div></li>
+							</ul>
 						</div>
 					</div>
 					<img src="<?php echo get_template_directory_uri(); ?>/images/contactus-car.png" class="contactus-slide-image" />

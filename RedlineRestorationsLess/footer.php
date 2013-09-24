@@ -54,10 +54,7 @@ function mapinitialize() {
     {
       stylers: [
       // This makes the map black and white //
-        { Hue:  "#5d2c32" },
-{ Saturation: 5 },
-{ Gamma:  0 },
-{ Lightness: 20 }
+        { Hue:  "#00e5ff" }
       ]
     }
   ];
@@ -85,12 +82,13 @@ streetViewControl: false,
     mapOptions);
 
 // This will create the tab that shows up when the pin is clicked on //
-var contentString = '<div id="mapcontent">'+'<div class="mapcontent-text">'+'<p><span>Red<em>line Restorations</em></span></p>'+
-'<p>2316 FAIRFIELD AVE</p>'+'<p>BLACK ROCK, CT 06605</p>'+'<p>P // 203 335 9555</p>'+'</div>'+'</div>';
+var contentString = '<div id="mapcontent">'+'<img src="http://localhost/wordpress/wp-content/themes/RedlineRestorationsLess/images/redline-map-image.png" />'+'<div class="mapcontent-text">'+'<p><span>Red<em>line Restorations</em></span></p>'+
+'<p>2316 FAIRFIELD AVE</p>'+'<p>BLACK ROCK, CT 06605</p>'+'<p>P: 203 335 9555</p>'+'</div>'+'</div>';
 
 // Attachs the tab //
 var infowindow = new google.maps.InfoWindow({
-content: contentString
+content: contentString,
+maxWidth: 315
 });
 
 

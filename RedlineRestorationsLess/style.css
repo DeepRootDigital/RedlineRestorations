@@ -202,6 +202,68 @@ h1,h2,h3,h4,h5,h6 {
 	float:left;
 	display:inline-block;
 	margin-top: -9px;
+	width:32px;
+	height:33px;
+}
+
+.social-icons.facebook {
+	background-image:url('images/social-icon-fb.png');
+}
+
+.social-icons.facebook:hover {
+	background-image:url('images/social-icon-fb-hover.png');
+}
+
+.social-icons.facebook:active {
+	background-image:url('images/social-icon-fb-active.png');
+}
+
+.social-icons.twitter {
+	background-image:url('images/social-icon-twitter.png');
+}
+
+.social-icons.twitter:hover {
+	background-image:url('images/social-icon-twitter-hover.png');
+}
+
+.social-icons.twitter:active {
+	background-image:url('images/social-icon-twitter-active.png');
+}
+
+.social-icons.pinterest {
+	background-image:url('images/social-icon-pin.png');
+}
+
+.social-icons.pinterest:hover {
+	background-image:url('images/social-icon-pin-hover.png');
+}
+
+.social-icons.pinterest:active {
+	background-image:url('images/social-icon-pin-active.png');
+}
+
+.social-icons.video {
+	background-image:url('images/social-icon-video.png');
+}
+
+.social-icons.video:hover {
+	background-image:url('images/social-icon-video-hover.png');
+}
+
+.social-icons.video:active {
+	background-image:url('images/social-icon-video-active.png');
+}
+
+.social-icons.instagram {
+	background-image:url('images/social-icon-instagram.png');
+}
+
+.social-icons.instagram:hover {
+	background-image:url('images/social-icon-instagram-hover.png');
+}
+
+.social-icons.instagram:active {
+	background-image:url('images/social-icon-instagram-active.png');
 }
 
 .social-separator{
@@ -380,25 +442,24 @@ h1,h2,h3,h4,h5,h6 {
 .aboutus-panel-wide{
 	position: absolute;
 	width: 100%;
-	bottom: 0;
-	height: 206px;
+	height: 60px;
 }
 
 .aboutus-panel-wide h2 {
 	color: #243942;
-	margin-left: 180px;
-	width: 160px;
+	margin-left: 50px;
+	width: 350px;
 	display: inline-block;
-	border-right: 1px dashed #243942;
+	border-left: 1px dashed #243942;
 	font-size: 30px;
 	font-family: 'BauerBodoniW01-RegItali';
 	text-transform: uppercase;
-	line-height: 0px;
+	line-height: 29px;
 	letter-spacing: 4px;
-	text-align: right;
-	padding-right: 19px;
-	padding-top: 32px;
-	height: 118px;
+	text-align: left;
+	padding-top: 15px;
+	padding-left:10px;
+	height: 60px;
 }
 
 .aboutus-panel-wide span {
@@ -412,6 +473,85 @@ h1,h2,h3,h4,h5,h6 {
 	width: 525px;
 	margin-left: 16px;
 	font-family: Georgia;
+}
+
+.aboutus-panel-people {
+	width:100%;
+	height:520px;
+	margin-top:60px;
+	padding-top:10px;
+}
+
+.aboutus-panel-people li {
+	width:200px;
+	float:left;
+	list-style:none;
+	background-image:url('images/aboutus-people-panel.png');
+	background-repeat:no-repeat;
+	background-position:19px 40px;
+	font-family: 'Tw Cen W01 Medium';
+	cursor:pointer;
+	min-height:235px;
+}
+
+.aboutus-panel-people li:hover {
+	font-family: 'BauerBodoniW01-RegItali';
+	font-size:14px;
+}
+
+.aboutus-panel-people li img {
+	margin-top:57px;
+	margin-left:35px;
+}
+
+.aboutus-panel-people li h4 {
+	margin-top: 27px;
+text-align: center;
+color:#243942;
+text-transform:uppercase;
+font-size:15px;
+}
+
+.aboutus-panel-people li span {
+	color:#d91f2d;
+}
+
+.aboutus-individual-frame {
+	width:785px;
+	height:479px;
+	position:absolute;
+	top: 0;
+	margin-top: 100px;
+	margin-left:-785px;
+}
+
+.aboutus-individual-frame-text {
+	width:328px;
+	height:100%;
+	margin-right:7px;
+	float:left;
+	border: 1px solid #d9d9d9;
+}
+
+.aboutus-individual-frame-text-first,.aboutus-individual-frame-text-second,.aboutus-individual-frame-text-third,.aboutus-individual-frame-text-fourth {
+	height:23px;
+	width:100%;
+	border-bottom:1px solid #d9d9d9;
+}
+
+.aboutus-individual-frame-text-first {
+	height:31px;
+}
+
+.aboutus-individual-frame-text-fifth {
+	width:100%;
+	height:335px;
+}
+
+.aboutus-individual-frame img {
+	height:100%;
+	width:445px;
+	float:left;
 }
 
 .panel-textbar-left img {
@@ -461,6 +601,69 @@ h1,h2,h3,h4,h5,h6 {
 	font-family: Georgia;
 	line-height: 23px;
 	letter-spacing: 1px;
+}
+
+.aboutus-individual-frame-text-first h3 {
+	width: 200px;
+float: left;
+margin-left: 18px;
+margin-top: 4px;
+font-family: 'BauerBodoniW01-RegItali';
+font-size: 18px;
+text-transform: uppercase;
+color:#243942;
+}
+
+.aboutus-individual-frame-text-first span {
+	color:#d91f2d;
+}
+
+.aboutus-individual-frame-text-first img {
+	float: right;
+width: 12px;
+height: 12px;
+margin-top: 9px;
+margin-right: 10px;
+cursor:pointer;
+}
+
+.aboutus-individual-frame-text-first p {
+	width: 51px;
+float: right;
+margin-right: 14px;
+color:#243942;
+border-right: 1px dashed #243942;
+height: 22px;
+margin-top: 4px;
+text-transform: uppercase;
+font-size: 13px;
+font-family: 'Tw Cen W01 Medium';
+padding-top: 4px;
+cursor:pointer;
+}
+
+.aboutus-individual-frame-text-second h4,.aboutus-individual-frame-text-third h4,.aboutus-individual-frame-text-fourth h4 {
+	margin-left:19px;
+	margin-top:8px;
+	font-family: 'Tw Cen W01 Medium';
+	font-size: 13px;
+	text-transform: uppercase;
+	color:#243942;
+}
+
+.aboutus-individual-frame-text-second span,.aboutus-individual-frame-text-third span,.aboutus-individual-frame-text-fourth span {
+	font-family: 'Tw Cen W01 Bold';
+}
+
+.aboutus-individual-frame-text-fifth p {
+	color: #58595b;
+width: 290px;
+margin-left: 20px;
+margin-top: 18px;
+font-family: Georgia;
+font-size: 16px;
+line-height: 23px;
+margin-bottom: 11px;
 }
 
 /* Homepage Panel 1 */
@@ -738,7 +941,7 @@ h1,h2,h3,h4,h5,h6 {
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:-43px;
-	margin-bottom:50px;
+	margin-bottom:26px;
 }
 
 .contact-panel-lines-inner {
@@ -758,7 +961,7 @@ h1,h2,h3,h4,h5,h6 {
 	font-size: 16px;
 	line-height: 23px;
 	letter-spacing: 1px;
-	margin-bottom: 60px;
+	margin-bottom: 40px;
 }
 
 .contact-info {
@@ -766,6 +969,7 @@ h1,h2,h3,h4,h5,h6 {
 	text-align: left;
 	margin-left: 25px;
 	border-bottom:1px dotted #878787;
+	margin-bottom:68px;
 }
 
 .contact-info h6 {
@@ -829,6 +1033,62 @@ h1,h2,h3,h4,h5,h6 {
 
 .contact-info span {
 	font-family: 'Tw Cen W01 Bold';
+}
+
+.contactus-socialicons {
+	width:100%;
+	height:40px;
+	background-color:white;
+}
+
+.contactus-socialicons li {
+	float:left;
+	list-style:none;
+}
+
+.contactus-facebook {
+	background-image:url('images/contactus-facebook.png');
+	width:9px;
+	height:18px;
+	float:left;
+	margin-left:37px;
+	margin-top:13px;
+}
+
+.contactus-twitter {
+	background-image:url('images/contactus-twitter.png');
+	width:18px;
+	height:15px;
+	float:left;
+	margin-left:47px;
+	margin-top:14px;
+}
+
+.contactus-pinterest {
+	background-image:url('images/contactus-pinterest.png');
+	width:14px;
+	height:19px;
+	float:left;
+	margin-left:44px;
+	margin-top:11px;
+}
+
+.contactus-youtube {
+	background-image:url('images/contactus-youtube.png');
+	width:21px;
+	height:16px;
+	float:left;
+	margin-left:43px;
+	margin-top:12px;
+}
+
+.contactus-instagram {
+	background-image:url('images/contactus-instagram.png');
+	width:16px;
+	height:15px;
+	float:left;
+	margin-left:42px;
+	margin-top:13px;
 }
 
 .contactus-slide-image {
@@ -930,7 +1190,7 @@ display:inline-block;
 
 #mapcontent p{
 font-family: 'Tw Cen W01 Medium';
-font-size: 12px;
+font-size: 13px;
 text-transform:uppercase;
 color: #243942;
 }
