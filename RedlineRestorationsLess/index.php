@@ -5,6 +5,15 @@
 		<!--
 			ABOUT US PAGE
 		-->
+		<?php 
+			$args=array(
+				'post_type' => 'aboutus'
+			);
+
+			$blogPosts = new WP_Query($args);
+
+			while ($blogPosts->have_posts()) : $blogPosts->the_post();
+		?>
 		<div class="one-big-page aboutus-page">
 			<div class="one-big-page-panel">
 				<div class="aboutuspage panel one">
@@ -15,7 +24,7 @@
 							<div class="aboutus-panel-slider-lines-inner">
 							</div>
 						</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<?php the_content(); ?>
 					</div>
 					<img src="<?php echo get_template_directory_uri(); ?>/images/aboutus-car.png" class="aboutus-slide-image" />
 					<div class="down-arrow-hover">
@@ -29,46 +38,21 @@
 					</div>
 					<div class="aboutus-panel-people">
 						<ul>
+						<?php endwhile; ?>
+							<?php 
+								$args=array(
+									'post_type' => 'theteam'
+								);
+
+								$blogPosts = new WP_Query($args);
+
+								while ($blogPosts->have_posts()) : $blogPosts->the_post();
+							?>
 							<li><div class="aboutus-panel-individual">
-								<img src="<?php echo get_template_directory_uri(); ?>/images/temp/alvaroflores.png" />
-								<h4><span>Alvaro</span> Flores</h4>
+								<?php the_post_thumbnail(); ?>
+								<h4><span><?php echo get_post_meta(get_the_ID(), 'firstname', true) ?></span> <?php echo get_post_meta(get_the_ID(), 'lastname', true) ?></h4>
 							</div></li>
-							<li><div class="aboutus-panel-individual">
-								<img src="<?php echo get_template_directory_uri(); ?>/images/temp/seanfarias.png" />
-								<h4><span>Sean</span> Farias</h4>
-							</div></li>
-							<li><div class="aboutus-panel-individual">
-								<img src="<?php echo get_template_directory_uri(); ?>/images/temp/paulmcmahon.png" />
-								<h4><span>Paul</span> McMahon</h4>
-							</div></li>
-							<li><div class="aboutus-panel-individual">
-								<img src="<?php echo get_template_directory_uri(); ?>/images/temp/dandeller.png" />
-								<h4><span>Dan</span> Deller</h4>
-							</div></li>
-							<li><div class="aboutus-panel-individual">
-								<img src="<?php echo get_template_directory_uri(); ?>/images/temp/johndoe.png" />
-								<h4><span>John</span> Doe</h4>
-							</div></li>
-							<li><div class="aboutus-panel-individual">
-								<img src="<?php echo get_template_directory_uri(); ?>/images/temp/aldojacobo.png" />
-								<h4><span>Aldo</span> Jacobo</h4>
-							</div></li>
-							<li><div class="aboutus-panel-individual">
-								<img src="<?php echo get_template_directory_uri(); ?>/images/temp/fulanodetal.png" />
-								<h4><span>Fulano</span> Detal</h4>
-							</div></li>
-							<li><div class="aboutus-panel-individual">
-								<img src="<?php echo get_template_directory_uri(); ?>/images/temp/nickkoskowski.png" />
-								<h4><span>Nick</span> Koskowski</h4>
-							</div></li>
-							<li><div class="aboutus-panel-individual">
-								<img src="<?php echo get_template_directory_uri(); ?>/images/temp/dudehat.png" />
-								<h4><span>Dude</span> Hat</h4>
-							</div></li>
-							<li><div class="aboutus-panel-individual">
-								<img src="<?php echo get_template_directory_uri(); ?>/images/temp/mattdamon.png" />
-								<h4><span>Matt</span> Damon</h4>
-							</div></li>
+							<?php endwhile; ?>
 						</ul>
 					</div>
 					<div class="aboutus-individual-frame">
@@ -93,6 +77,8 @@
 								</div>
 							</div>
 							<img src="<?php echo get_template_directory_uri(); ?>/images/temp/seanfarias-full.png" />
+							<div class="aboutus-individual-frame-overlay">
+							</div>
 					</div>
 					<div class="up-arrow-hover">
 						<h6>Up</h6>
@@ -221,7 +207,7 @@
 						<div class="blog-panel-summary">
 							<div class="blog-summary-preview">
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...</p>
-								<a href="http://localhost/wordpress/?p=168" target="_blank">Read <span>More</span></a>
+								<a href="http://localhost/wordpress/?p=343" target="_blank">Read <span>More</span></a>
 							</div>
 							<div class="blog-panel-summary-textbox">
 								<div class="blog-summary-title-outerlines">
@@ -235,7 +221,7 @@
 						<div class="blog-panel-summary">
 							<div class="blog-summary-preview">
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...</p>
-								<a href="http://localhost/wordpress/?p=168" target="_blank">Read <span>More</span></a>
+								<a href="http://localhost/wordpress/?p=343" target="_blank">Read <span>More</span></a>
 							</div>
 							<div class="blog-panel-summary-textbox">
 								<div class="blog-summary-title-outerlines">
@@ -250,7 +236,7 @@
 						<div class="blog-panel-summary">
 							<div class="blog-summary-preview">
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...</p>
-								<a href="http://localhost/wordpress/?p=168" target="_blank">Read <span>More</span></a>
+								<a href="http://localhost/wordpress/?p=343" target="_blank">Read <span>More</span></a>
 							</div>
 							<div class="blog-panel-summary-textbox">
 								<div class="blog-summary-title-outerlines">
@@ -279,7 +265,7 @@
 						<div class="blog-panel-summary">
 							<div class="blog-summary-preview">
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...</p>
-								<a href="http://localhost/wordpress/?p=168" target="_blank">Read <span>More</span></a>
+								<a href="http://localhost/wordpress/?p=343" target="_blank">Read <span>More</span></a>
 							</div>
 							<div class="blog-panel-summary-textbox">
 								<div class="blog-summary-title-outerlines">
@@ -293,7 +279,7 @@
 						<div class="blog-panel-summary">
 							<div class="blog-summary-preview">
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...</p>
-								<a href="http://localhost/wordpress/?p=168" target="_blank">Read <span>More</span></a>
+								<a href="http://localhost/wordpress/?p=343" target="_blank">Read <span>More</span></a>
 							</div>
 							<div class="blog-panel-summary-textbox">
 								<div class="blog-summary-title-outerlines">
@@ -307,7 +293,7 @@
 						<div class="blog-panel-summary">
 							<div class="blog-summary-preview">
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...</p>
-								<a href="http://localhost/wordpress/?p=168" target="_blank">Read <span>More</span></a>
+								<a href="http://localhost/wordpress/?p=343" target="_blank">Read <span>More</span></a>
 							</div>
 							<div class="blog-panel-summary-textbox">
 								<div class="blog-summary-title-outerlines">
@@ -333,6 +319,15 @@
 		<!--
 			CONTACT US PAGE
 		-->
+		<?php 
+			$args=array(
+				'post_type' => 'contactus'
+			);
+
+			$blogPosts = new WP_Query($args);
+
+			while ($blogPosts->have_posts()) : $blogPosts->the_post();
+		?>
 		<div class="one-big-page contactus-page">
 			<div class="one-big-page-panel">
 				<div class="contactpage panel one">
@@ -343,32 +338,32 @@
 							<div class="contact-panel-lines-inner">
 							</div>
 						</div>
-						<p>We would love to hear from you, so please leave us a message and we will be in touch.</p>
+						<?php the_content(); ?>
 						<div class="contact-info">
 							<div class="contact-hours">
 								<h5>M - S</h5>
-								<h6>9AM - 5PM</h6>
+								<h6><?php echo get_post_meta(get_the_ID(), 'monsathr', true) ?></h6>
 								<h5>S u n</h5>
-								<h6>By appt</h6>
+								<h6><?php echo get_post_meta(get_the_ID(), 'sunhr', true) ?></h6>
 							</div>
 							<div class="contact-phone">
 								<h5>P</h5>
-								<h6><span>203</span> 335 9555</h6>
+								<h6><?php echo get_post_meta(get_the_ID(), 'phonenumber', true) ?></h6>
 								<h5>F</h5>
-								<h6><span>203</span> 335 9550</h6>
+								<h6><?php echo get_post_meta(get_the_ID(), 'faxnumber', true) ?></h6>
 							</div>
 							<div class="contact-address">
-								<h6><span>2316 Fairfield Ave</span></h6>
-								<h6>Black rock, ct 06605</h6>
+								<h6><span><?php echo get_post_meta(get_the_ID(), 'streetaddy', true) ?></span></h6>
+								<h6><?php echo get_post_meta(get_the_ID(), 'restofaddy', true) ?></h6>
 							</div>
 						</div>
 						<div class="contactus-socialicons">
 							<ul>
-								<li><div class="contactus-facebook"></div></li>
-								<li><div class="contactus-twitter"></div></li>
-								<li><div class="contactus-pinterest"></div></li>
-								<li><div class="contactus-youtube"></div></li>
-								<li><div class="contactus-instagram"></div></li>
+								<li><a href="#"><div class="contactus-facebook"></div></a></li>
+								<li><a href="#"><div class="contactus-twitter"></div></a></li>
+								<li><a href="#"><div class="contactus-pinterest"></div></a></li>
+								<li><a href="#"><div class="contactus-youtube"></div></a></li>
+								<li><a href="#"><div class="contactus-instagram"></div></a></li>
 							</ul>
 						</div>
 					</div>
@@ -404,7 +399,7 @@
 				</div>
 			</div>
 		</div>
-		
+		<?php endwhile; ?>
 
 
 	</div>

@@ -46,6 +46,108 @@ $meta_boxes[] = array(
     );
 $meta_boxes[] = array(
     // Meta box id, UNIQUE per meta box. Optional since 4.1.5
+    'id' => 'theteam',
+    // Meta box title - Will appear at the drag and drop handle bar. Required.
+    'title' => 'TheTeam',
+    // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
+    'pages' => array('theteam'),
+    // Where the meta box appear: normal (default), advanced, side. Optional.
+    'context' => 'normal',
+    // Order of meta box: high (default), low. Optional.
+    'priority' => 'high',
+    // List of meta fields
+    'fields' => array(
+     array(
+            'name' => 'First Name',
+            'id' => 'firstname',
+            'type' => 'text',
+        ),
+     array(
+            'name' => 'Last Name',
+            'id' => 'lastname',
+            'type' => 'text',
+        ),
+     array(
+            'name' => 'Age',
+            'id' => 'age',
+            'type' => 'text',
+        ),
+     array(
+            'name' => 'Hometown',
+            'id' => 'hometown',
+            'type' => 'text',
+        ),
+     array(
+            'name' => 'Position',
+            'id' => 'position',
+            'type' => 'text',
+        ),
+     array(
+            'name' => 'Years of Experience',
+            'id' => 'experience',
+            'type' => 'text',
+        ),
+     array(
+            'name'             => 'Large Featured Image',
+            'id'               => "largeimage",
+            'type'             => 'plupload_image',
+            'max_file_uploads' => 1,
+            ),
+     ),
+    );
+$meta_boxes[] = array(
+    // Meta box id, UNIQUE per meta box. Optional since 4.1.5
+    'id' => 'contactus',
+    // Meta box title - Will appear at the drag and drop handle bar. Required.
+    'title' => 'Contactus',
+    // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
+    'pages' => array('contactus'),
+    // Where the meta box appear: normal (default), advanced, side. Optional.
+    'context' => 'normal',
+    // Order of meta box: high (default), low. Optional.
+    'priority' => 'high',
+    // List of meta fields
+    'fields' => array(
+     array(
+            'name' => 'Monday thru Saturday Hours',
+            'id' => 'monsathr',
+            'type' => 'text',
+        ),
+     array(
+            'name' => 'Sunday Hours',
+            'id' => 'sunhr',
+            'type' => 'text',
+        ),
+     array(
+            'name' => 'Phone Number',
+            'id' => 'phonenumber',
+            'type' => 'text',
+        ),
+     array(
+            'name' => 'Fax Number',
+            'id' => 'faxnumber',
+            'type' => 'text',
+        ),
+     array(
+            'name' => 'Street Address',
+            'id' => 'streetaddy',
+            'type' => 'text',
+        ),
+     array(
+            'name' => 'City, ST zipcode',
+            'id' => 'restofaddy',
+            'type' => 'text',
+        ),
+     array(
+            'name'             => 'Large Featured Image',
+            'id'               => "contactlargeimage",
+            'type'             => 'plupload_image',
+            'max_file_uploads' => 1,
+            ),
+     ),
+    );
+$meta_boxes[] = array(
+    // Meta box id, UNIQUE per meta box. Optional since 4.1.5
     'id' => 'aboutus',
     // Meta box title - Will appear at the drag and drop handle bar. Required.
     'title' => 'About Us',

@@ -68,6 +68,27 @@ function create_post_type() {
 		'rewrite' => array('slug' => 'aboutus'),
 		)
 	);
+	register_post_type('contactus', array(
+		'labels' => array(
+			'name' => __('Contactus'),
+			'singular_name' => __('Contactus')
+			),
+		'public' => true,
+		'has_archive' => false,
+		'rewrite' => array('slug' => 'contactus'),
+		)
+	);
+	register_post_type('theteam', array(
+		'labels' => array(
+			'name' => __('TheTeam'),
+			'singular_name' => __('TheTeam')
+			),
+		'public' => true,
+		'has_archive' => false,
+		'rewrite' => array('slug' => 'theteam'),
+		'supports' => array('title','editor','thumbnail')
+		)
+	);
 }
 add_action('init', 'create_post_type');
 

@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (empty($_POST["name"])) {
 		// This happens if the section is left empty //
 		// Currently redirects and stops the code //
-		header('Location: http://localhost/wordpress/');
+		header('Location: http://www.google.com');
 		exit;
 	}
 	else {
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 
 	if (empty($_POST["email"])) {
-		header('Location: http://localhost/wordpress/');
+		header('Location: http://www.google.com');
 		exit;
 	}
 	else {
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 
 	if (empty($_POST["message"])) {
-		header('Location: http://localhost/wordpress/');
+		header('Location: http://www.google.com');
 		exit;
 	}
 	else {
@@ -38,10 +38,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $formcontent="From: ".$name."\r\nE-mail: ".$email."\r\nMessage: \r\n".$message;
 
 // Set who the e-mail will be sent from and other headers //
-$headers = 'From: Webmaster <webmaster@redlineresto.com>';
+$headers = "From: Webmaster <webmaster@redlineresto.com> \r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
 // Mail to the email address given in the first slot //
-mail('colpanius@gmail.com','Redline Restorations Contact Form',$formcontent,$headers) or die("Error!");
+mail('colpanius@gmail.com','Redline Restorations Contact Form',$formcontent,$headers);
 
 // Redirect user to page after the form is complete //
 header('Location: http://localhost/wordpress/');

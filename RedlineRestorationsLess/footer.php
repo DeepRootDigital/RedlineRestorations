@@ -41,6 +41,10 @@
 		</div>
 	</div>
 </div>
+<?php 
+$directory = get_template_directory_uri();
+
+?>
 <?php wp_footer(); ?>
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="<?php echo get_template_directory_uri() ?>/function.js"></script>
@@ -118,7 +122,6 @@ infowindow.open(map,pinmarker);
 
 // Puts listener so that the map will not try to load unless it need to //
 google.maps.event.addDomListener(window, "load", mapinitialize);
-
 </script>
 </body>
 </html>

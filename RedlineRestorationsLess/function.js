@@ -273,12 +273,17 @@ $(document).ready(function(){
 
 	$('.aboutus-individual-frame-text-first img').click(function(){
 		$('.aboutus-panel-people').animate({'margin-left':'0px'},400);
-		$('.aboutus-individual-frame').animate({'margin-left':'-785px'},400);
+		$('.aboutus-individual-frame').animate({'margin-left':'-1000px'},400);
 	});
 
 	$('.aboutus-individual-frame-text-first p').click(function(){
 		$('.aboutus-panel-people').animate({'margin-left':'0px'},400);
-		$('.aboutus-individual-frame').animate({'margin-left':'-785px'},400);
+		$('.aboutus-individual-frame').animate({'margin-left':'-1000px'},400);
+	});
+
+	$('.aboutus-individual-frame-overlay').click(function(){
+		$('.aboutus-panel-people').animate({'margin-left':'0px'},400);
+		$('.aboutus-individual-frame').animate({'margin-left':'-1000px'},400);
 	});
 
 
