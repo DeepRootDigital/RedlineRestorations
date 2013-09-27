@@ -10,63 +10,133 @@ $(document).ready(function(){
 				$(document).find('.aboutus-page').find('.one-big-page-panel').attr('id','scroll');
 			}
 			if ($(document).find('.content-panel-area').css('left') == "-1007px") {
-				$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
+				$(document).find('.service-page').find('.one-big-page-panel').attr('id','scroll');
 			}
 			if ($(document).find('.content-panel-area').css('left') == "-2014px") {
-				$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
+				$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
 			}
 			if ($(document).find('.content-panel-area').css('left') == "-3021px") {
+				$(document).find('.restorations-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-4028px") {
+				$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-5035px") {
 				$(document).find('.contactus-page').find('.one-big-page-panel').attr('id','scroll');
 			}
 		});
 		}
-		if ($(this).text() == "Our Process") {
+		if ($(this).text() == "Services") {
 			$('.content-panel-area').animate({'left':'-1007px'},300,function(){
 			$(document).find("#scroll").removeAttr('id');
 			if ($(document).find('.content-panel-area').css('left') == "0px") {
 				$(document).find('.aboutus-page').find('.one-big-page-panel').attr('id','scroll');
 			}
 			if ($(document).find('.content-panel-area').css('left') == "-1007px") {
-				$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
+				$(document).find('.service-page').find('.one-big-page-panel').attr('id','scroll');
 			}
 			if ($(document).find('.content-panel-area').css('left') == "-2014px") {
-				$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
+				$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
 			}
 			if ($(document).find('.content-panel-area').css('left') == "-3021px") {
+				$(document).find('.restorations-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-4028px") {
+				$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-5035px") {
 				$(document).find('.contactus-page').find('.one-big-page-panel').attr('id','scroll');
 			}
 		});
 		}
-		if ($(this).text() == "Blog") {
+		if ($(this).text() == "Our Process") {
 			$('.content-panel-area').animate({'left':'-2014px'},300,function(){
 			$(document).find("#scroll").removeAttr('id');
 			if ($(document).find('.content-panel-area').css('left') == "0px") {
 				$(document).find('.aboutus-page').find('.one-big-page-panel').attr('id','scroll');
 			}
 			if ($(document).find('.content-panel-area').css('left') == "-1007px") {
-				$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
+				$(document).find('.service-page').find('.one-big-page-panel').attr('id','scroll');
 			}
 			if ($(document).find('.content-panel-area').css('left') == "-2014px") {
-				$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
+				$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
 			}
 			if ($(document).find('.content-panel-area').css('left') == "-3021px") {
+				$(document).find('.restorations-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-4028px") {
+				$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-5035px") {
 				$(document).find('.contactus-page').find('.one-big-page-panel').attr('id','scroll');
 			}
 		});
 		}
-		if ($(this).text() == "Contact Us") {
+		if ($(this).text() == "Restorations") {
 			$('.content-panel-area').animate({'left':'-3021px'},300,function(){
 			$(document).find("#scroll").removeAttr('id');
 			if ($(document).find('.content-panel-area').css('left') == "0px") {
 				$(document).find('.aboutus-page').find('.one-big-page-panel').attr('id','scroll');
 			}
 			if ($(document).find('.content-panel-area').css('left') == "-1007px") {
-				$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
+				$(document).find('.service-page').find('.one-big-page-panel').attr('id','scroll');
 			}
 			if ($(document).find('.content-panel-area').css('left') == "-2014px") {
-				$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
+				$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
 			}
 			if ($(document).find('.content-panel-area').css('left') == "-3021px") {
+				$(document).find('.restorations-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-4028px") {
+				$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-5035px") {
+				$(document).find('.contactus-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+		});
+		}
+		if ($(this).text() == "Blog") {
+			$('.content-panel-area').animate({'left':'-4028px'},300,function(){
+			$(document).find("#scroll").removeAttr('id');
+			if ($(document).find('.content-panel-area').css('left') == "0px") {
+				$(document).find('.aboutus-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-1007px") {
+				$(document).find('.service-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-2014px") {
+				$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-3021px") {
+				$(document).find('.restorations-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-4028px") {
+				$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-5035px") {
+				$(document).find('.contactus-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+		});
+		}
+		if ($(this).text() == "Contact Us") {
+			$('.content-panel-area').animate({'left':'-5035px'},300,function(){
+			$(document).find("#scroll").removeAttr('id');
+			if ($(document).find('.content-panel-area').css('left') == "0px") {
+				$(document).find('.aboutus-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-1007px") {
+				$(document).find('.service-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-2014px") {
+				$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-3021px") {
+				$(document).find('.restorations-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-4028px") {
+				$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
+			}
+			if ($(document).find('.content-panel-area').css('left') == "-5035px") {
 				$(document).find('.contactus-page').find('.one-big-page-panel').attr('id','scroll');
 			}
 		});
@@ -267,8 +337,9 @@ $(document).ready(function(){
 	// About Us team page
 
 	$('.aboutus-panel-people li').click(function(){
+		var movethisone = "." + $(this).attr('id');
 		$('.aboutus-panel-people').animate({'margin-left':'785px'},400);
-		$('.aboutus-individual-frame').animate({'margin-left':'0px'},400);
+		$(movethisone).animate({'margin-left':'0px'},400);
 	});
 
 	$('.aboutus-individual-frame-text-first img').click(function(){

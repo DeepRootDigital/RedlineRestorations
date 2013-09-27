@@ -6,13 +6,13 @@
 			ABOUT US PAGE
 		-->
 		<?php 
-			$args=array(
-				'post_type' => 'aboutus'
+		$args=array(
+			'post_type' => 'aboutus'
 			);
 
-			$blogPosts = new WP_Query($args);
+		$blogPosts = new WP_Query($args);
 
-			while ($blogPosts->have_posts()) : $blogPosts->the_post();
+		while ($blogPosts->have_posts()) : $blogPosts->the_post();
 		?>
 		<div class="one-big-page aboutus-page">
 			<div class="one-big-page-panel">
@@ -39,58 +39,157 @@
 					<div class="aboutus-panel-people">
 						<ul>
 						<?php endwhile; ?>
-							<?php 
-								$args=array(
-									'post_type' => 'theteam'
-								);
+						<?php 
+						$args=array(
+							'post_type' => 'theteam'
+							);
 
-								$blogPosts = new WP_Query($args);
+						$blogPosts = new WP_Query($args);
 
-								while ($blogPosts->have_posts()) : $blogPosts->the_post();
-							?>
-							<li><div class="aboutus-panel-individual">
-								<?php the_post_thumbnail(); ?>
-								<h4><span><?php echo get_post_meta(get_the_ID(), 'firstname', true) ?></span> <?php echo get_post_meta(get_the_ID(), 'lastname', true) ?></h4>
-							</div></li>
-							<?php endwhile; ?>
-						</ul>
+						while ($blogPosts->have_posts()) : $blogPosts->the_post();
+						?>
+						<li id="<?php echo get_post_meta(get_the_ID(), 'uniqueid', true) ?>"><div class="aboutus-panel-individual">
+							<?php the_post_thumbnail(); ?>
+							<h4><span><?php echo get_post_meta(get_the_ID(), 'firstname', true) ?></span> <?php echo get_post_meta(get_the_ID(), 'lastname', true) ?></h4>
+						</div></li>
+					<?php endwhile; ?>
+				</ul>
+			</div>
+			<?php 
+			$args=array(
+				'post_type' => 'theteam'
+				);
+
+			$blogPosts = new WP_Query($args);
+
+			while ($blogPosts->have_posts()) : $blogPosts->the_post();
+			?>
+			<div class="aboutus-individual-frame <?php echo get_post_meta(get_the_ID(), 'uniqueid', true) ?>">
+				<div class="aboutus-individual-frame-text">
+					<div class="aboutus-individual-frame-text-first">
+						<h3><span><?php echo get_post_meta(get_the_ID(), 'firstname', true) ?></span> <?php echo get_post_meta(get_the_ID(), 'lastname', true) ?></h3>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/close-button.png" />
+						<p>Close</p>
 					</div>
-					<div class="aboutus-individual-frame">
-							<div class="aboutus-individual-frame-text">
-								<div class="aboutus-individual-frame-text-first">
-									<h3><span>Sean</span> Farias</h3>
-									<img src="<?php echo get_template_directory_uri(); ?>/images/close-button.png" />
-									<p>Close</p>
-								</div>
-								<div class="aboutus-individual-frame-text-second">
-									<h4><span>Age :</span> 28</h4>
-								</div>
-								<div class="aboutus-individual-frame-text-third">
-									<h4><span>Hometown :</span> connecticut</h4>
-								</div>
-								<div class="aboutus-individual-frame-text-fourth">
-									<h4><span>Position / Exp. :</span> Painter / 5 yrs</h4>
-								</div>
-								<div class="aboutus-individual-frame-text-fifth">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-									<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/images/temp/seanfarias-full.png" />
-							<div class="aboutus-individual-frame-overlay">
-							</div>
+					<div class="aboutus-individual-frame-text-second">
+						<h4><span>Age :</span> <?php echo get_post_meta(get_the_ID(), 'age', true) ?></h4>
 					</div>
-					<div class="up-arrow-hover">
-						<h6>Up</h6>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
+					<div class="aboutus-individual-frame-text-third">
+						<h4><span>Hometown :</span> <?php echo get_post_meta(get_the_ID(), 'hometown', true) ?></h4>
 					</div>
-					<div class="down-arrow-footer">
-						<h6>Get<span>Social</span></h6>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
+					<div class="aboutus-individual-frame-text-fourth">
+						<h4><span>Position / Exp. :</span> <?php echo get_post_meta(get_the_ID(), 'position', true) ?> / <?php echo get_post_meta(get_the_ID(), 'experience', true) ?> yrs</h4>
+					</div>
+					<div class="aboutus-individual-frame-text-fifth">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 					</div>
 				</div>
+				<img src="<?php echo get_template_directory_uri(); ?>/images/temp/seanfarias-full.png" />
+				<div class="aboutus-individual-frame-overlay">
+				</div>
 			</div>
+		<?php endwhile; ?>
+		<div class="up-arrow-hover">
+			<h6>Up</h6>
+			<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
 		</div>
+		<div class="down-arrow-footer">
+			<h6>Get<span>Social</span></h6>
+			<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
+		</div>
+	</div>
+</div>
+</div>
+		<!--
+			HOME PAGE
+		-->
+		<div class="one-big-page service-page">
+			<div class="one-big-page-panel" id="scroll">
+				<div class="homepage panel one">
+					<div class="panel-one-slide-wrapper">
+						<?php 
+						$args=array(
+							'post_type' => 'mainpageslider'
+							);
+
+						$blogPosts = new WP_Query($args);
+
+						while ($blogPosts->have_posts()) : $blogPosts->the_post();
+						?>
+						<div class="panel-one-slider first">
+							<h4><?php echo get_post_meta(get_the_ID(), 'caryear', true) ?></h4>
+							<h5><?php echo get_post_meta(get_the_ID(), 'carmaker', true) ?><br />
+								<?php echo get_post_meta(get_the_ID(), 'carmodel', true) ?>
+							</h5>
+							<div class="panel-slider-lines">
+								<div class="panel-slider-lines-inner">
+								</div>
+							</div>
+							<?php autoc_get_img('sliderfeaturedimage'); ?>						
+						</div>
+					<?php endwhile; ?>
+				</div>
+				<div class="panel-textbar">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/cross-flags.png" />
+				</div>
+				<div class="down-arrow-hover slider-arrow">
+					<h6>The Process</h6>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
+				</div>
+			</div>
+			<?php 
+			$args=array(
+				'post_type' => 'mainpage'
+				);
+
+			$blogPosts = new WP_Query($args);
+
+			while ($blogPosts->have_posts()) : $blogPosts->the_post();
+			?>
+			<div class="homepage panel two">
+				<?php autoc_get_img('processimage'); ?>
+				<div class="panel-textbar-horizontal">
+					<h2><span>The<br /></span>Process</h2>
+					<h4><?php echo get_post_meta(get_the_ID(), 'processtext', true) ?></h4>
+				</div>
+				<div class="up-arrow-hover">
+					<h6>Home</h6>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
+				</div>
+				<div class="down-arrow-hover">
+					<h6>Who we are</h6>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
+				</div>
+			</div>
+			<div class="homepage panel three">
+				<?php autoc_get_img('whoweareimage'); ?>
+				<div class="panel-textbar-wide">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/cross-flags.png" />
+					<h4>Who we are</h4>
+					<div class="bot-panel-slider-lines">
+						<div class="bot-panel-slider-lines-inner">
+						</div>
+					</div>
+					<p><?php echo get_post_meta(get_the_ID(), 'whowearetext', true) ?></p>
+					<h6>Learn <span>more</span></h6>
+					<div class="bot-panel-slider-lines-small">
+						<div class="bot-panel-slider-lines-inner-small">
+						</div>
+					</div>
+				</div>
+				<div class="up-arrow-hover">
+					<h6>The Process</h6>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
+				</div>
+				<div class="down-arrow-footer">
+					<h6>Get<span>Social</span></h6>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
+				</div>
+			</div>
+		<?php endwhile; ?>
+	</div>
+</div>
 		<!--
 			HOME PAGE
 		-->
@@ -98,84 +197,215 @@
 			<div class="one-big-page-panel" id="scroll">
 				<div class="homepage panel one">
 					<div class="panel-one-slide-wrapper">
+						<?php 
+						$args=array(
+							'post_type' => 'mainpageslider'
+							);
+
+						$blogPosts = new WP_Query($args);
+
+						while ($blogPosts->have_posts()) : $blogPosts->the_post();
+						?>
 						<div class="panel-one-slider first">
-							<h4>1964</h4>
-							<h5>Aston Martin<br />
-								DB5
+							<h4><?php echo get_post_meta(get_the_ID(), 'caryear', true) ?></h4>
+							<h5><?php echo get_post_meta(get_the_ID(), 'carmaker', true) ?><br />
+								<?php echo get_post_meta(get_the_ID(), 'carmodel', true) ?>
 							</h5>
 							<div class="panel-slider-lines">
 								<div class="panel-slider-lines-inner">
 								</div>
 							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/images/slide1-car.png" class="slide-image" />						
+							<?php autoc_get_img('sliderfeaturedimage'); ?>						
 						</div>
-						<div class="panel-one-slider second">
-							<h4>1964</h4>
-							<h5>Aston Martin<br />
-								DB5
-							</h5>
-							<div class="panel-slider-lines">
-								<div class="panel-slider-lines-inner">
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/images/slide1-car.png" class="slide-image" />
-						</div>
-						<div class="panel-one-slider third">
-							<h4>1964</h4>
-							<h5>Aston Martin<br />
-								DB5
-							</h5>
-							<div class="panel-slider-lines">
-								<div class="panel-slider-lines-inner">
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/images/slide1-car.png" class="slide-image" />						
+					<?php endwhile; ?>
+				</div>
+				<div class="panel-textbar">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/cross-flags.png" />
+				</div>
+				<div class="down-arrow-hover slider-arrow">
+					<h6>The Process</h6>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
+				</div>
+			</div>
+			<?php 
+			$args=array(
+				'post_type' => 'mainpage'
+				);
+
+			$blogPosts = new WP_Query($args);
+
+			while ($blogPosts->have_posts()) : $blogPosts->the_post();
+			?>
+			<div class="homepage panel two">
+				<?php autoc_get_img('processimage'); ?>
+				<div class="panel-textbar-horizontal">
+					<h2><span>The<br /></span>Process</h2>
+					<h4><?php echo get_post_meta(get_the_ID(), 'processtext', true) ?></h4>
+				</div>
+				<div class="up-arrow-hover">
+					<h6>Home</h6>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
+				</div>
+				<div class="down-arrow-hover">
+					<h6>Who we are</h6>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
+				</div>
+			</div>
+			<div class="homepage panel three">
+				<?php autoc_get_img('whoweareimage'); ?>
+				<div class="panel-textbar-wide">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/cross-flags.png" />
+					<h4>Who we are</h4>
+					<div class="bot-panel-slider-lines">
+						<div class="bot-panel-slider-lines-inner">
 						</div>
 					</div>
-					<div class="panel-textbar">
-						<img src="<?php echo get_template_directory_uri(); ?>/images/cross-flags.png" />
-					</div>
-					<div class="down-arrow-hover slider-arrow">
-						<h6>The Process</h6>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
+					<p><?php echo get_post_meta(get_the_ID(), 'whowearetext', true) ?></p>
+					<h6>Learn <span>more</span></h6>
+					<div class="bot-panel-slider-lines-small">
+						<div class="bot-panel-slider-lines-inner-small">
+						</div>
 					</div>
 				</div>
-				<div class="homepage panel two">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/panel2-car.png" class="slide-image-horizontal" />
-					<div class="panel-textbar-horizontal">
-						<h2><span>The<br /></span>Process</h2>
-						<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
-					</div>
-					<div class="up-arrow-hover">
-						<h6>Home</h6>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
-					</div>
-					<div class="down-arrow-hover">
-						<h6>Who we are</h6>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
-					</div>
+				<div class="up-arrow-hover">
+					<h6>The Process</h6>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
 				</div>
-				<div class="homepage panel three">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/panel3-car.png" class="slide-image-wide" />
-					<div class="panel-textbar-wide">
+				<div class="down-arrow-footer">
+					<h6>Get<span>Social</span></h6>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
+				</div>
+			</div>
+		<?php endwhile; ?>
+	</div>
+</div>
+		<!--
+			Restorations Page
+		-->
+		<div class="one-big-page restorations-page">
+			<div class="one-big-page-panel" id="scroll">
+				<div class="restorations panel one">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/restorationstopimage.png" />
+					<div class="restorations-panel-textbar">
 						<img src="<?php echo get_template_directory_uri(); ?>/images/cross-flags.png" />
-						<h4>Who we are</h4>
-						<div class="bot-panel-slider-lines">
-							<div class="bot-panel-slider-lines-inner">
+						<div class="restorations-outer-lines">
+							<div class="restorations-inner-lines">
+								<h2>Restorations</h2>
 							</div>
 						</div>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-						<h6>Learn <span>more</span></h6>
-						<div class="bot-panel-slider-lines-small">
-							<div class="bot-panel-slider-lines-inner-small">
+					</div>
+					<div class="down-arrow-hover">
+						<h6>Latest Restoration</h6>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
+					</div>
+				</div>
+				<div class="restorations panel two">
+					<div class="restorations-panel-wide">
+						<h2><span>Latest</span> Restorations</h2>
+					</div>
+					<div class="restorations-individual-frame">
+						<div class="restorations-individual-frame-text">
+							<div class="restorations-individual-frame-text-first">
+								<h3><span>1967</span> Ferrari 275</h3>
+								<h3>GTB/4*S N.A.R.T Spider</h3>
+							</div>
+							<div class="restorations-individual-frame-text-second">
+								<h4><span>Duration :</span> 9 months</h4>
+							</div>
+							<div class="restorations-individual-frame-text-third">
+								<h4><span>Extras :</span> Lowered suspension</h4>
+							</div>
+							<div class="restorations-individual-frame-text-fourth">
+								<h4><span>Service :</span> </h4>
+							</div>
+							<div class="restorations-individual-frame-text-fifth">
+								<h4><span>Service :</span> </h4>
+							</div>
+							<div class="restorations-individual-frame-text-sixth">
+								<h4><span>Service :</span> </h4>
+							</div>
+							<div class="restorations-individual-frame-text-seventh">
+								<h4><span>Service :</span> </h4>
+							</div>
+							<div class="restorations-individual-frame-text-eighth">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 							</div>
 						</div>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/restorationsslider1.png" />
 					</div>
 					<div class="up-arrow-hover">
-						<h6>The Process</h6>
+						<h6>Restorations</h6>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
 					</div>
-					<div class="down-arrow-footer">
+					<div class="down-arrow-hover restorationshover">
+						<h6>Other Restorations</h6>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
+					</div>
+				</div>
+				<div class="restorations panel three">
+					<div class="restorations-panel-wide">
+						<h2><span>Other</span> Restorations</h2>
+					</div>
+					<div class="restorations-other-panel-nav">
+					</div>
+					<div class="restorations-other-panel">
+						<ul>
+							<li>
+								<img src="<?php echo get_template_directory_uri(); ?>/images/restorations_ferrari.png" />
+								<h4><span>Ferrari</span></h4>
+							</li>
+							<li>
+								<img src="<?php echo get_template_directory_uri(); ?>/images/restorations_astonmartin.png" />
+								<h4><span>Aston</span> Martin</h4>
+							</li>
+							<li>
+								<img src="<?php echo get_template_directory_uri(); ?>/images/restorations_benz.png" />
+								<h4><span>Mercedez</span> Benz</h4>
+							</li>
+							<li>
+								<img src="<?php echo get_template_directory_uri(); ?>/images/restorations_bmw.png" />
+								<h4><span>BMW</span></h4>
+							</li>
+							<li>
+								<img src="<?php echo get_template_directory_uri(); ?>/images/restorations_porsche.png" />
+								<h4><span>Porsche</span></h4>
+							</li>
+							<li>
+								<img src="<?php echo get_template_directory_uri(); ?>/images/restorations_maserati.png" />
+								<h4><span>Maserati</span></h4>
+							</li>
+							<li>
+								<img src="<?php echo get_template_directory_uri(); ?>/images/restorations_benz2.png" />
+								<h4><span>Mercedez</span> Benz</h4>
+							</li>
+							<li>
+								<img src="<?php echo get_template_directory_uri(); ?>/images/restorations_astonmartin2.png" />
+								<h4><span>Aston</span> Martin</h4>
+							</li>
+							<li>
+								<img src="<?php echo get_template_directory_uri(); ?>/images/restorations_ferrari2.png" />
+								<h4><span>Ferrari</span></h4>
+							</li>
+							<li>
+								<img src="<?php echo get_template_directory_uri(); ?>/images/restorations_bmw2.png" />
+								<h4><span>BMW</span></h4>
+							</li>
+							<li>
+								<img src="<?php echo get_template_directory_uri(); ?>/images/restorations_porsche2.png" />
+								<h4><span>Porsche</span></h4>
+							</li>
+							<li>
+								<img src="<?php echo get_template_directory_uri(); ?>/images/restorations_maserati2.png" />
+								<h4><span>Maserati</span></h4>
+							</li>
+						</ul>
+					</div>
+					<div class="up-arrow-hover">
+						<h6>Up</h6>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
+					</div>
+					<div class="down-arrow-footer restorationshover">
 						<h6>Get<span>Social</span></h6>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
 					</div>
@@ -202,55 +432,73 @@
 						<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
 					</div>
 				</div>
+				<?php $counter = 0;
+				$wp_query->query('showposts=6&order=DESC' . '&paged=' . $paged);
+				while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+				<?php $counter += 1; ?>
+
+				<?php if ($counter === 1){ ?>	
 				<div class="blogpage panel two">
 					<div class="blog-panel">
 						<div class="blog-panel-summary">
 							<div class="blog-summary-preview">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...</p>
-								<a href="http://localhost/wordpress/?p=343" target="_blank">Read <span>More</span></a>
+								<p>
+									<?php
+									$excerpt = substr(get_the_excerpt(),0,79);
+									echo $excerpt."..."; ?>
+								</p>
+								<a href="<?php the_permalink(); ?>" target="_blank">Read <span>More</span></a>
 							</div>
 							<div class="blog-panel-summary-textbox">
 								<div class="blog-summary-title-outerlines">
 									<div class="blog-summary-title-innerlines">
-										<h4>Title of this first blog post</h4>
+										<h4><?php the_title(); ?></h4>
 									</div>
 								</div>
 							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/images/blog-slide-middle-left.png" class="blog-summary-image" />
+							<?php the_post_thumbnail(); ?>
 						</div>
+						<?php } ?>
+						<?php if ($counter === 2){ ?>
 						<div class="blog-panel-summary">
 							<div class="blog-summary-preview">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...</p>
-								<a href="http://localhost/wordpress/?p=343" target="_blank">Read <span>More</span></a>
+								<p>
+									<?php
+									$excerpt = substr(get_the_excerpt(),0,79);
+									echo $excerpt."..."; ?>
+								</p>
+								<a href="<?php the_permalink(); ?>" target="_blank">Read <span>More</span></a>
 							</div>
 							<div class="blog-panel-summary-textbox">
 								<div class="blog-summary-title-outerlines">
 									<div class="blog-summary-title-innerlines">
-										<h4>Title of another blog post</h4>
+										<h4><?php the_title(); ?></h4>
 									</div>
 								</div>
 							</div>
-
-							<img src="<?php echo get_template_directory_uri(); ?>/images/blog-slide-middle-middle.png" class="blog-summary-image" />
+							<?php the_post_thumbnail(); ?>
 						</div>
+						<?php } ?>
+						<?php if ($counter === 3) { ?>
 						<div class="blog-panel-summary">
 							<div class="blog-summary-preview">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...</p>
-								<a href="http://localhost/wordpress/?p=343" target="_blank">Read <span>More</span></a>
+								<p>
+									<?php
+									$excerpt = substr(get_the_excerpt(),0,79);
+									echo $excerpt."..."; ?>
+								</p>
+								<a href="<?php the_permalink(); ?>" target="_blank">Read <span>More</span></a>
 							</div>
 							<div class="blog-panel-summary-textbox">
 								<div class="blog-summary-title-outerlines">
 									<div class="blog-summary-title-innerlines">
-										<h4>This is a three line long blog post to show title length</h4>
+										<h4><?php the_title(); ?></h4>
 									</div>
 								</div>
 							</div>
-
-							<img src="<?php echo get_template_directory_uri(); ?>/images/blog-slide-middle-right.png" class="blog-summary-image" />
+							<?php the_post_thumbnail(); ?>
 						</div>
 					</div>
-
-
 					<div class="up-arrow-hover">
 						<h6>Top</h6>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
@@ -260,49 +508,67 @@
 						<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
 					</div>
 				</div>
+				<?php } ?>
+				<?php if ($counter === 4) { ?>
 				<div class="blogpage panel three">
 					<div class="blog-panel">
 						<div class="blog-panel-summary">
 							<div class="blog-summary-preview">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...</p>
-								<a href="http://localhost/wordpress/?p=343" target="_blank">Read <span>More</span></a>
+								<p>
+									<?php
+									$excerpt = substr(get_the_excerpt(),0,79);
+									echo $excerpt."..."; ?>
+								</p>
+								<a href="<?php the_permalink(); ?>" target="_blank">Read <span>More</span></a>
 							</div>
 							<div class="blog-panel-summary-textbox">
 								<div class="blog-summary-title-outerlines">
 									<div class="blog-summary-title-innerlines">
-										<h4>Title of this first blog post</h4>
+										<h4><?php the_title(); ?></h4>
 									</div>
 								</div>
 							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/images/blog-slide-bottom-left.png" class="blog-summary-image" />
+							<?php the_post_thumbnail(); ?>
 						</div>
+						<?php } ?>
+						<?php if ($counter === 5) { ?>
 						<div class="blog-panel-summary">
 							<div class="blog-summary-preview">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...</p>
-								<a href="http://localhost/wordpress/?p=343" target="_blank">Read <span>More</span></a>
+								<p>
+									<?php
+									$excerpt = substr(get_the_excerpt(),0,79);
+									echo $excerpt."..."; ?>
+								</p>
+								<a href="<?php the_permalink(); ?>" target="_blank">Read <span>More</span></a>
 							</div>
 							<div class="blog-panel-summary-textbox">
 								<div class="blog-summary-title-outerlines">
 									<div class="blog-summary-title-innerlines">
-										<h4>Blog Post with Default Image for Display</h4>
+										<h4><?php the_title(); ?></h4>
 									</div>
 								</div>
 							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/images/blog-slide-bottom-middle.png" class="blog-summary-image" />
+							<?php the_post_thumbnail(); ?>
 						</div>
+						<?php } ?>
+						<?php if ($counter === 6) { ?>
 						<div class="blog-panel-summary">
 							<div class="blog-summary-preview">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...</p>
-								<a href="http://localhost/wordpress/?p=343" target="_blank">Read <span>More</span></a>
+								<p>
+									<?php
+									$excerpt = substr(get_the_excerpt(),0,79);
+									echo $excerpt."..."; ?>
+								</p>
+								<a href="<?php the_permalink(); ?>" target="_blank">Read <span>More</span></a>
 							</div>
 							<div class="blog-panel-summary-textbox">
 								<div class="blog-summary-title-outerlines">
 									<div class="blog-summary-title-innerlines">
-										<h4>This is a blog post</h4>
+										<h4><?php the_title(); ?></h4>
 									</div>
 								</div>
 							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/images/blog-slide-bottom-right.png" class="blog-summary-image" />
+							<?php the_post_thumbnail(); ?>
 						</div>
 					</div>
 					<div class="up-arrow-hover">
@@ -314,19 +580,21 @@
 						<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
 					</div>
 				</div>
-			</div>
+				<?php } ?>
+			<?php endwhile; ?>
 		</div>
+	</div>
 		<!--
 			CONTACT US PAGE
 		-->
 		<?php 
-			$args=array(
-				'post_type' => 'contactus'
+		$args=array(
+			'post_type' => 'contactus'
 			);
 
-			$blogPosts = new WP_Query($args);
+		$blogPosts = new WP_Query($args);
 
-			while ($blogPosts->have_posts()) : $blogPosts->the_post();
+		while ($blogPosts->have_posts()) : $blogPosts->the_post();
 		?>
 		<div class="one-big-page contactus-page">
 			<div class="one-big-page-panel">
@@ -399,10 +667,10 @@
 				</div>
 			</div>
 		</div>
-		<?php endwhile; ?>
+	<?php endwhile; ?>
 
 
-	</div>
+</div>
 
 </div>
 <div class="left-gutter">

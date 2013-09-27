@@ -36,9 +36,65 @@ $meta_boxes[] = array(
     'priority' => 'high',
     // List of meta fields
     'fields' => array(
+        array(
+            'name' => 'Process Text',
+            'id' => 'processtext',
+            'type' => 'text',
+        ),
      array(
             'name'             => 'Process Image',
             'id'               => "processimage",
+            'type'             => 'plupload_image',
+            'max_file_uploads' => 1,
+            ),
+     array(
+            'name' => 'Who We Are Text',
+            'desc' => '',
+            'id'   => "whowearetext",
+            'type' => 'wysiwyg',
+            'std' => "",
+            'cols' => '20',
+            'rows' => '3',
+        ),
+     array(
+            'name'             => 'Who We Are Image',
+            'id'               => "whoweareimage",
+            'type'             => 'plupload_image',
+            'max_file_uploads' => 1,
+            ),
+     ),
+    );
+$meta_boxes[] = array(
+    // Meta box id, UNIQUE per meta box. Optional since 4.1.5
+    'id' => 'mainpageslider',
+    // Meta box title - Will appear at the drag and drop handle bar. Required.
+    'title' => 'Mainpage Slider',
+    // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
+    'pages' => array('mainpageslider'),
+    // Where the meta box appear: normal (default), advanced, side. Optional.
+    'context' => 'normal',
+    // Order of meta box: high (default), low. Optional.
+    'priority' => 'high',
+    // List of meta fields
+    'fields' => array(
+    array(
+            'name' => 'Year of Car',
+            'id' => 'caryear',
+            'type' => 'text',
+        ),
+    array(
+            'name' => 'Maker',
+            'id' => 'carmaker',
+            'type' => 'text',
+        ),
+    array(
+            'name' => 'Model',
+            'id' => 'carmodel',
+            'type' => 'text',
+        ),
+     array(
+            'name'             => 'Slider Featured Image',
+            'id'               => "sliderfeaturedimage",
             'type'             => 'plupload_image',
             'max_file_uploads' => 1,
             ),
@@ -57,6 +113,11 @@ $meta_boxes[] = array(
     'priority' => 'high',
     // List of meta fields
     'fields' => array(
+     array(
+            'name' => 'Unique Identifier (letters only)',
+            'id' => 'uniqueid',
+            'type' => 'text',
+        ),
      array(
             'name' => 'First Name',
             'id' => 'firstname',

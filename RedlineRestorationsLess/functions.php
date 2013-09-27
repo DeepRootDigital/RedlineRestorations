@@ -56,6 +56,17 @@ function create_post_type() {
 		'public' => true,
 		'has_archive' => false,
 		'rewrite' => array('slug' => 'mainpage'),
+		'supports' => array('title')
+		)
+	);
+	register_post_type('mainpageslider', array(
+		'labels' => array(
+			'name' => __('Mainpage Slider'),
+			'singular_name' => __('Mainpage Slider')
+			),
+		'public' => true,
+		'has_archive' => false,
+		'rewrite' => array('slug' => 'mainpageslider'),
 		)
 	);
 	register_post_type('aboutus', array(

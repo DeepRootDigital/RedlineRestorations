@@ -33,6 +33,21 @@ h1,h2,h3,h4,h5,h6 {
 	font-weight:normal;
 }
 
+h2 {
+	font-family: 'BauerBodoniW01-RegItali';
+	font-size:30px;
+	text-transform:uppercase;
+	color: #243942;
+}
+
+h3 {
+	font-family: 'Tw Cen W01 Medium';
+}
+
+h6 {
+	font-family: 'Tw Cen W01 Medium';
+}
+
 /* General Set Up */
 
 .content-panel{
@@ -70,14 +85,14 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .panel{
-	width:20%;
+	width:1000px;
 	height:580px;
 	margin:0;
 	overflow:hidden;
 }
 
 .content-panel-area{
-	width:5000px;
+	width:10000px;
 	position:absolute;
 	margin-top:-16px;
 	overflow-x:visible;
@@ -86,11 +101,11 @@ h1,h2,h3,h4,h5,h6 {
 
 .one-big-page{
 	display:inline-block;
-	width:20%;
+	width:1000px;
 	margin-right:3px;
 }
 
-.homepage,.contactpage,.otherpage,.aboutuspage,.blogpage{
+.homepage,.contactpage,.otherpage,.aboutuspage,.blogpage,.restorations{
 	position:absolute;
 }
 
@@ -112,7 +127,7 @@ h1,h2,h3,h4,h5,h6 {
 
 /* Top Menu Bar */
 
-.fixed-menu-bar{
+.fixed-menu-bar {
 	width:100%;
 	height:100px;
 	background-image:url('images/top-nav-background.png');
@@ -123,7 +138,7 @@ h1,h2,h3,h4,h5,h6 {
 	z-index:100000000;
 }
 
-.fixed-menu-bar img{
+.fixed-menu-bar img {
 	vertical-align:middle;
 	margin-top: 20px;
 	margin-left: -780px;
@@ -157,11 +172,11 @@ h1,h2,h3,h4,h5,h6 {
 	text-decoration:none;
 }
 
-.fixed-menu-bar ul li span{
+.fixed-menu-bar ul li span {
 	color:#d91f2d;
 }
 
-.fixed-menu-bar ul li:hover{
+.fixed-menu-bar ul li:hover {
 	border-top:1px solid #d91f2d;
 	border-bottom:1px solid #d91f2d;
 	padding-top:7px;
@@ -195,7 +210,7 @@ h1,h2,h3,h4,h5,h6 {
 
 /* Social Icons */
 
-.fixed-social-menu{
+.fixed-social-menu {
 	position:fixed;
 	background-image:url('images/social-menu-bg.png');
 	background-repeat:no-repeat;
@@ -208,7 +223,7 @@ h1,h2,h3,h4,h5,h6 {
 	display:none;
 }
 
-.fixed-social-icons{
+.fixed-social-icons {
 	position:fixed;
 	z-index:100000;
 	width:380px;
@@ -219,7 +234,7 @@ h1,h2,h3,h4,h5,h6 {
 	display:block;
 }
 
-.social-icons{
+.social-icons {
 	float:left;
 	display:inline-block;
 	margin-top: -9px;
@@ -364,7 +379,6 @@ h1,h2,h3,h4,h5,h6 {
 	text-align: center;
 	margin-top:30px;
 	color:#ffffff;
-	font-family: 'Tw Cen W01 Medium';
 	font-size: 13px;
 	text-transform: uppercase;
 	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.35);
@@ -396,7 +410,6 @@ h1,h2,h3,h4,h5,h6 {
 	text-align: center;
 	margin-top: 9px;
 	color: #ffffff;
-	font-family: 'Tw Cen W01 Medium';
 	font-size: 13px;
 	text-transform: uppercase;
 	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.35);
@@ -410,6 +423,10 @@ h1,h2,h3,h4,h5,h6 {
 .down-arrow-footer span{
 	color:#ffffff;
 	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.35);
+}
+
+.aboutus-page .down-arrow-footer {
+	margin-top:-53px;
 }
 
 .top-button,.bottom-button {
@@ -467,14 +484,10 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .aboutus-panel-wide h2 {
-	color: #243942;
 	margin-left: 50px;
 	width: 350px;
 	display: inline-block;
 	border-left: 1px dashed #243942;
-	font-size: 30px;
-	font-family: 'BauerBodoniW01-RegItali';
-	text-transform: uppercase;
 	line-height: 29px;
 	letter-spacing: 4px;
 	text-align: left;
@@ -730,10 +743,10 @@ margin-bottom: 11px;
 	margin:0;
 }
 
-.slide-image{
+.panel-one-slider img {
 	height:100%;
 	position:absolute;
-	width:79%;
+	width:783px;
 }
 
 .panel-one-slider h4 {
@@ -786,7 +799,7 @@ margin-bottom: 11px;
 
 /* Homepage Panel 2 */
 
-.slide-image-horizontal {
+.homepage.panel.two > img {
 	height:100%;
 	position:absolute;
 	height:375px;
@@ -802,14 +815,10 @@ margin-bottom: 11px;
 }
 
 .panel-textbar-horizontal h2 {
-	color: #243942;
 	margin-left: 100px;
 	width: 180px;
 	display: inline-block;
 	border-right: 1px dashed #243942;
-	font-size: 30px;
-	font-family: 'BauerBodoniW01-RegItali';
-	text-transform: uppercase;
 	line-height: 0px;
 	letter-spacing: 4px;
 	text-align: right;
@@ -845,7 +854,7 @@ margin-bottom: 11px;
 	color:white;
 }
 
-.slide-image-wide {
+.homepage.panel.three > img {
 	height:100%;
 	position:absolute;
 	width:59%;
@@ -874,7 +883,6 @@ margin-bottom: 11px;
 	font-size: 16px;
 	color:#d91f2d;
 	z-index:1000;
-	font-family:'Tw Cen W01 Medium';
 	text-transform:uppercase;
 }
 
@@ -1021,7 +1029,6 @@ margin-bottom: 11px;
 
 .contact-hours h6, .contact-phone h6, .contact-address h6 {
 	display: inline-block;
-	font-family: 'Tw Cen W01 Medium';
 	font-size: 16px;
 	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.9);
 	text-transform:uppercase;
@@ -1242,6 +1249,207 @@ width:247px;
 border:1px solid #ababab;
 }
 
+/* Restorations Page */
+
+.restorations-individual-frame {
+	width:1000px;
+	height:479px;
+	position:absolute;
+	top: 0;
+	margin-top: 100px;
+}
+
+.restorations-individual-frame-text {
+	width:334px;
+	height:100%;
+	margin-right:7px;
+	float:left;
+	border: 1px solid #d9d9d9;
+}
+
+.restorations-individual-frame-text-first,.restorations-individual-frame-text-second,.restorations-individual-frame-text-third,.restorations-individual-frame-text-fourth,.restorations-individual-frame-text-fifth,.restorations-individual-frame-text-sixth,.restorations-individual-frame-text-seventh {
+	height:23px;
+	width:100%;
+	border-bottom:1px solid #d9d9d9;
+}
+
+.restorations-individual-frame-text-eighth {
+	padding-left:30px;
+	padding-top:22px;
+}
+
+.restorations-individual-frame-text-eighth p {
+	color: #58595b;
+width: 290px;
+font-family: Georgia;
+font-size: 16px;
+line-height: 23px;
+margin-bottom: 11px;
+}
+
+.restorations-individual-frame-text-first h3 {
+	width: 265px;
+float: left;
+margin-left: 30px;
+margin-top: 0px;
+font-family: 'BauerBodoniW01-RegItali';
+font-size: 18px;
+text-transform: uppercase;
+color: #243942;
+}
+
+.restorations-individual-frame-text-first h3:first-of-type {
+	margin-top:11px;
+}
+
+.restorations-individual-frame-text-first span {
+	color:#d91f2d;
+}
+
+.restorations-individual-frame-text-second h4,.restorations-individual-frame-text-third h4,.restorations-individual-frame-text-fourth h4,.restorations-individual-frame-text-fifth h4,.restorations-individual-frame-text-sixth h4,.restorations-individual-frame-text-seventh h4 {
+	margin-left: 30px;
+margin-top: 8px;
+font-family: 'Tw Cen W01 Medium';
+font-size: 13px;
+text-transform: uppercase;
+color: #243942;
+}
+
+.restorations-individual-frame-text-second span,.restorations-individual-frame-text-third span,.restorations-individual-frame-text-fourth span,.restorations-individual-frame-text-fifth span,.restorations-individual-frame-text-sixth span,.restorations-individual-frame-text-seventh span {
+	font-family: 'Tw Cen W01 Bold';
+}
+
+.restorations-individual-frame-text-first {
+	height:64px;
+}
+
+.restorations-individual-frame img {
+	height:100%;
+	width:659px;
+	float:left;
+}
+
+.restorations.panel.one > img {
+	height: 100%;
+position: absolute;
+width: 696px;
+}
+
+.restorations-panel-wide h2 {
+	margin-left: 30px;
+width: 450px;
+display: inline-block;
+border-left: 1px dashed #243942;
+line-height: 29px;
+letter-spacing: 4px;
+text-align: left;
+padding-top: 15px;
+padding-left: 10px;
+height: 60px;
+}
+
+.restorations-panel-wide span {
+	color: #d91f2d;
+line-height: 65px;
+}
+
+.down-arrow-hover.restorationshover,.down-arrow-footer.restorationshover {
+	margin-top:465px;
+}
+
+.restorations-panel-textbar{
+	position:absolute;
+	width:297px;
+	height:100%;
+	right:0;
+	top:0;
+	background:#243942;
+	text-align:center;
+	color:white;
+}
+
+.restorations-panel-textbar img {
+	margin-top:70px;
+	margin-bottom:25px;
+}
+
+.restorations-outer-lines {
+	border-top: 1px solid #1f3037;
+	border-bottom: 1px solid #eb1d25;
+	width: 140px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.restorations-inner-lines {
+	border-top: 1px solid #eb1d25;
+border-bottom: 1px solid #1f3037;
+width: 140px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.restorations-inner-lines h2 {
+	color: white;
+width: 140px;
+font-size: 25px;
+margin-left: -41px;
+letter-spacing: 3px;
+padding-top: 4px;
+padding-bottom: 4px;
+}
+
+.restorations.panel.one p {
+	margin-left: 30px;
+margin-top: 36px;
+margin-right: 30px;
+text-align: left;
+font-family: Georgia;
+font-size: 16px;
+line-height: 23px;
+letter-spacing: 1px;
+}
+
+.restorations-other-panel-nav {
+	height:40px;
+	width:100%;
+	float:left;
+}
+
+.restorations-other-panel {
+	float:left;
+	width:1020px;
+	height:477px;
+	margin-left:-7px;
+}
+
+.restorations-other-panel li {
+	width:163px;
+	height:245px;
+	float:left;
+	list-style:none;
+	margin-left:7px;
+	font-family: 'Tw Cen W01 Medium';
+	font-size: 15px;
+	cursor:pointer;
+}
+
+.restorations-other-panel li h4 {
+	margin-top: 16px;
+text-align: center;
+color: #243942;
+text-transform: uppercase;
+}
+
+.restorations-other-panel li:hover {
+	font-family: 'BauerBodoniW01-RegItali';
+	font-size:14px;
+}
+
+.restorations-other-panel li span {
+	color:#d91f2d;
+}
+
 /* Blog Page */
 
 .blog-textbar-top {
@@ -1348,7 +1556,7 @@ border:1px solid #ababab;
 	text-align: center;
 }
 
-.blog-panel-summary img {
+.blog-panel-summary > img {
 	width:328px;
 	position:absolute;
 	height:440px;
@@ -1426,10 +1634,6 @@ letter-spacing:1px;
 }
 
 .single-blog-header h2 {
-	color: #243942;
-	font-family: 'BauerBodoniW01-RegItali';
-	font-size: 30px;
-	text-transform: uppercase;
 	letter-spacing: 3px;
 	line-height: 29px;
 }
@@ -1444,7 +1648,6 @@ letter-spacing:1px;
 }
 
 .single-blog-info h3 {
-	font-family: 'Tw Cen W01 Medium';
 	font-size: 14px;
 	line-height: 9px;
 	color: #243942;
@@ -1634,7 +1837,6 @@ color: #243942;
 
 .footer-social-tab h3 {
 	color:white;
-	font-family: 'Tw Cen W01 Medium';
 	font-size:20px;
 	text-transform:uppercase;
 }
@@ -1655,7 +1857,6 @@ color: #243942;
 
 .footer-close-tab h3 {
 	color:white;
-	font-family: 'Tw Cen W01 Medium';
 	font-size:20px;
 	text-align:right;
 	text-transform:uppercase;
@@ -1748,7 +1949,6 @@ color: #243942;
 	margin-left:30px;
 	margin-top:12px;
 	font-size:13px;
-	font-family: 'Tw Cen W01 Medium';
 }
 
 .footer-right-bottom h6 {
@@ -1756,5 +1956,4 @@ color: #243942;
 	margin-left:38px;
 	margin-top:12px;
 	font-size:13px;
-	font-family: 'Tw Cen W01 Medium';
 }
