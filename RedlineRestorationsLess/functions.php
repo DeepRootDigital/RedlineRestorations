@@ -100,6 +100,17 @@ function create_post_type() {
 		'supports' => array('title','editor','thumbnail')
 		)
 	);
+	register_post_type('restorations', array(
+		'labels' => array(
+			'name' => __('Restorations'),
+			'singular_name' => __('Restoration')
+			),
+		'public' => true,
+		'has_archive' => false,
+		'rewrite' => array('slug' => 'restorations'),
+		'supports' => array('title','editor','thumbnail')
+		)
+	);
 }
 add_action('init', 'create_post_type');
 

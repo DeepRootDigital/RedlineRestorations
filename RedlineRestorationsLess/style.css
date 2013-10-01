@@ -1257,6 +1257,7 @@ border:1px solid #ababab;
 	position:absolute;
 	top: 0;
 	margin-top: 100px;
+	display:none;
 }
 
 .restorations-individual-frame-text {
@@ -1265,6 +1266,46 @@ border:1px solid #ababab;
 	margin-right:7px;
 	float:left;
 	border: 1px solid #d9d9d9;
+}
+
+.restorations-individual-frame-images {
+	width:659px;
+	height:100%;
+	overflow:hidden;
+	position:absolute;
+	margin-left:341px;
+}
+
+.restorations-individual-frame-images img {
+	position:absolute;
+}
+
+.restorations-slider-left,.restorations-slider-right {
+	position:absolute;
+	z-index:100000000000000;
+	height:28px;
+	width:16px;
+	margin-left:20px;
+	top:47%;
+	cursor:pointer;
+}
+
+.restorations-slider-left {
+	background-image:url('images/restorations-left-arrow.png');
+}
+
+.restorations-slider-right {
+	background-image:url('images/restorations-right-arrow.png');
+	right:0;
+	margin-right:20px;
+}
+
+.restorations-slider-left:hover {
+	background-image:url('images/restorations-left-arrow-hover.png');
+}
+
+.restorations-slider-right:hover {
+	background-image:url('images/restorations-right-arrow-hover.png');
 }
 
 .restorations-individual-frame-text-first,.restorations-individual-frame-text-second,.restorations-individual-frame-text-third,.restorations-individual-frame-text-fourth,.restorations-individual-frame-text-fifth,.restorations-individual-frame-text-sixth,.restorations-individual-frame-text-seventh {
@@ -1321,12 +1362,6 @@ color: #243942;
 
 .restorations-individual-frame-text-first {
 	height:64px;
-}
-
-.restorations-individual-frame img {
-	height:100%;
-	width:659px;
-	float:left;
 }
 
 .restorations.panel.one > img {
@@ -1439,6 +1474,8 @@ letter-spacing: 1px;
 text-align: center;
 color: #243942;
 text-transform: uppercase;
+float:left;
+width:100%;
 }
 
 .restorations-other-panel li:hover {
@@ -1448,6 +1485,35 @@ text-transform: uppercase;
 
 .restorations-other-panel li span {
 	color:#d91f2d;
+}
+
+.restorations-other-panel li img {
+	float:left;
+}
+
+.restorations-grid-overlay {
+	background-image:url('images/restorations-grid-overlay.png');
+	position:absolute;
+	height:163px;
+	width:163px;
+	display:none;
+	text-align:center;
+}
+
+.restorations-grid-overlay h3 {
+	font-family: 'BauerBodoniW01-RegItali';
+	font-size:24px;
+	color:white;
+	text-shadow: 0px -1px 0px rgba(132, 132, 132, 0.8);
+	margin-top:30px;
+	margin-bottom:9px;
+}
+
+.restorations-grid-overlay h4,.restorations-grid-overlay h5 {
+	font-family: 'Tw Cen W01 Medium';
+	color:white!important;
+	text-shadow: 0px -1px 0px rgba(132, 132, 132, 0.8);
+	font-size:16px;
 }
 
 /* Blog Page */

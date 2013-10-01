@@ -404,7 +404,43 @@ $(document).ready(function(){
 		$('.fixed-menu-bar ul li:last-of-type').css('display','block');
 	});
 
+	// Restorations Page
 
+	function individualshow() {
+		$(document).find('.restorations-individual-frame').first().css('display','block');
+	}
+	individualshow();
+
+	$('.restorations-slider-right').click(function(){
+		$(this).addClass('active-restoration');
+		$(this).parent().find('img').last().animate({'margin-left':'-696px'},500,function(){
+			$(this).parent().find('img').last().prependTo('.restorations-individual-frame-images');
+			$('.active-restoration').parent().find('img').css('margin-left','0px');
+			$('.active-restoration').removeClass('active-restoration');
+		});	
+	});
+
+	$('.restorations-slider-left').click(function(){
+		$(this).addClass('active-restoration');
+		$(this).parent().find('img').last().animate({'margin-left':'696px'},500,function(){
+			$(this).parent().find('img').last().prependTo('.restorations-individual-frame-images');
+			$('.active-restoration').parent().find('img').css('margin-left','0px');
+			$('.active-restoration').removeClass('active-restoration');
+		});
+	});
+
+	$('.restorations-other-panel li').hover(function(){
+		$(this).find('.restorations-grid-overlay').css('display','block');
+	},function(){
+		$(this).find('.restorations-grid-overlay').css('display','none');
+	});
+
+	$('.restorations-other-panel li').click(function(){
+		var movethisone = "." + $(this).attr('id');
+		$('.restorations-individual-frame').css('display','none');
+		$('.restorations-page').find('.one-big-page-panel').animate({'margin-top':'-586px'},400);
+		$(movethisone).css('display','block');
+	});
 
 
 // Pinterest stuff

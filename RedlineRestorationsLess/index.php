@@ -41,7 +41,8 @@
 						<?php endwhile; ?>
 						<?php 
 						$args=array(
-							'post_type' => 'theteam'
+							'post_type' => 'theteam',
+							'showposts' => '10'
 							);
 
 						$blogPosts = new WP_Query($args);
@@ -57,7 +58,8 @@
 			</div>
 			<?php 
 			$args=array(
-				'post_type' => 'theteam'
+				'post_type' => 'theteam',
+				'showposts' => '10'
 				);
 
 			$blogPosts = new WP_Query($args);
@@ -304,36 +306,53 @@
 					<div class="restorations-panel-wide">
 						<h2><span>Latest</span> Restorations</h2>
 					</div>
-					<div class="restorations-individual-frame">
+					<!-- Restorations Individual Pages -->
+					<?php 
+						$args=array(
+						'post_type' => 'restorations'
+						);
+
+						$blogPosts = new WP_Query($args);
+
+						while ($blogPosts->have_posts()) : $blogPosts->the_post();
+					?>
+					<div class="restorations-individual-frame <?php echo get_post_meta(get_the_ID(), 'uniqueid', true) ?>">
 						<div class="restorations-individual-frame-text">
 							<div class="restorations-individual-frame-text-first">
-								<h3><span>1967</span> Ferrari 275</h3>
-								<h3>GTB/4*S N.A.R.T Spider</h3>
+								<h3><span><?php echo get_post_meta(get_the_ID(), 'modelyear', true) ?></span> <?php echo get_post_meta(get_the_ID(), 'cartype', true) ?></h3>
+								<h3><?php echo get_post_meta(get_the_ID(), 'carmodel', true) ?></h3>
 							</div>
 							<div class="restorations-individual-frame-text-second">
-								<h4><span>Duration :</span> 9 months</h4>
+								<h4><span>Duration :</span> <?php echo get_post_meta(get_the_ID(), 'durationtime', true) ?> months</h4>
 							</div>
 							<div class="restorations-individual-frame-text-third">
-								<h4><span>Extras :</span> Lowered suspension</h4>
+								<h4><span>Extras :</span> <?php echo get_post_meta(get_the_ID(), 'extras', true) ?></h4>
 							</div>
 							<div class="restorations-individual-frame-text-fourth">
-								<h4><span>Service :</span> </h4>
+								<h4><span>Service :</span> <?php echo get_post_meta(get_the_ID(), 'serviceone', true) ?></h4>
 							</div>
 							<div class="restorations-individual-frame-text-fifth">
-								<h4><span>Service :</span> </h4>
+								<h4><span>Service :</span> <?php echo get_post_meta(get_the_ID(), 'servicetwo', true) ?></h4>
 							</div>
 							<div class="restorations-individual-frame-text-sixth">
-								<h4><span>Service :</span> </h4>
+								<h4><span>Service :</span> <?php echo get_post_meta(get_the_ID(), 'servicethree', true) ?></h4>
 							</div>
 							<div class="restorations-individual-frame-text-seventh">
-								<h4><span>Service :</span> </h4>
+								<h4><span>Service :</span> <?php echo get_post_meta(get_the_ID(), 'servicefour', true) ?></h4>
 							</div>
 							<div class="restorations-individual-frame-text-eighth">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+								<?php the_content(); ?>
 							</div>
 						</div>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/restorationsslider1.png" />
+						<div class="restorations-individual-frame-images">
+							<?php autoc_get_img('largeimage'); ?>
+							<div class="restorations-slider-left">
+							</div>
+							<div class="restorations-slider-right">
+							</div>
+						</div>
 					</div>
+					<?php endwhile; ?>
 					<div class="up-arrow-hover">
 						<h6>Restorations</h6>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
@@ -351,11 +370,26 @@
 					</div>
 					<div class="restorations-other-panel">
 						<ul>
-							<li>
-								<img src="<?php echo get_template_directory_uri(); ?>/images/restorations_ferrari.png" />
-								<h4><span>Ferrari</span></h4>
+							<?php 
+								$args=array(
+								'post_type' => 'restorations'
+								);
+
+								$blogPosts = new WP_Query($args);
+
+								while ($blogPosts->have_posts()) : $blogPosts->the_post();
+							?>
+							<li id="<?php echo get_post_meta(get_the_ID(), 'uniqueid', true) ?>">
+								<?php echo get_the_post_thumbnail(); ?>
+								<h4><span><?php echo get_post_meta(get_the_ID(), 'cartype', true) ?></span></h4>
+								<div class="restorations-grid-overlay">
+									<h3><?php echo get_post_meta(get_the_ID(), 'modelyear', true) ?></h3>
+									<h4><?php echo get_post_meta(get_the_ID(), 'cartype', true) ?></h4>
+									<h5><?php echo get_post_meta(get_the_ID(), 'carmodel', true) ?></h5>
+								</div>
 							</li>
-							<li>
+							<?php endwhile; ?>
+							<!-- <li>
 								<img src="<?php echo get_template_directory_uri(); ?>/images/restorations_astonmartin.png" />
 								<h4><span>Aston</span> Martin</h4>
 							</li>
@@ -398,7 +432,7 @@
 							<li>
 								<img src="<?php echo get_template_directory_uri(); ?>/images/restorations_maserati2.png" />
 								<h4><span>Maserati</span></h4>
-							</li>
+							</li> -->
 						</ul>
 					</div>
 					<div class="up-arrow-hover">

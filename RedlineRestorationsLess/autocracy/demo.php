@@ -158,6 +158,77 @@ $meta_boxes[] = array(
     );
 $meta_boxes[] = array(
     // Meta box id, UNIQUE per meta box. Optional since 4.1.5
+    'id' => 'restorations',
+    // Meta box title - Will appear at the drag and drop handle bar. Required.
+    'title' => 'Restorations',
+    // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
+    'pages' => array('restorations'),
+    // Where the meta box appear: normal (default), advanced, side. Optional.
+    'context' => 'normal',
+    // Order of meta box: high (default), low. Optional.
+    'priority' => 'high',
+    // List of meta fields
+    'fields' => array(
+     array(
+            'name' => 'Unique Identifier (letters only)',
+            'id' => 'uniqueid',
+            'type' => 'text',
+        ),
+     array(
+            'name' => 'Model Year',
+            'id' => 'modelyear',
+            'type' => 'text',
+        ),
+     array(
+            'name' => 'Car Type',
+            'id' => 'cartype',
+            'type' => 'text',
+        ),
+     array(
+            'name' => 'Car Model',
+            'id' => 'carmodel',
+            'type' => 'text',
+        ),
+     array(
+            'name' => 'Duration in Months',
+            'id' => 'durationtime',
+            'type' => 'text',
+        ),
+     array(
+            'name' => 'Extras',
+            'id' => 'extras',
+            'type' => 'text',
+        ),
+     array(
+            'name' => 'Service One',
+            'id' => 'serviceone',
+            'type' => 'text',
+        ),
+     array(
+            'name' => 'Service Two',
+            'id' => 'servicetwo',
+            'type' => 'text',
+        ),
+     array(
+            'name' => 'Service Three',
+            'id' => 'servicethree',
+            'type' => 'text',
+        ),
+     array(
+            'name' => 'Service Four',
+            'id' => 'servicefour',
+            'type' => 'text',
+        ),
+     array(
+            'name'             => 'Large Featured Image',
+            'id'               => "largeimage",
+            'type'             => 'plupload_image',
+            'max_file_uploads' => 4,
+            ),
+     ),
+    );
+$meta_boxes[] = array(
+    // Meta box id, UNIQUE per meta box. Optional since 4.1.5
     'id' => 'contactus',
     // Meta box title - Will appear at the drag and drop handle bar. Required.
     'title' => 'Contactus',
