@@ -1509,11 +1509,32 @@ width:100%;
 	margin-bottom:9px;
 }
 
-.restorations-grid-overlay h4,.restorations-grid-overlay h5 {
+.restorations-grid-overlay h4 {
 	font-family: 'Tw Cen W01 Medium';
 	color:white!important;
 	text-shadow: 0px -1px 0px rgba(132, 132, 132, 0.8);
 	font-size:16px;
+	text-transform:uppercase;
+	margin-top:0px!important;
+	float:none!important;
+	width: 163px!important;
+	margin-left: -46px;
+}
+
+.restorations-lines {
+	width:71px;
+	border-top:1px solid #eb1d25;
+	border-bottom:1px solid #bcbcbc;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.restorations-lines-inner {
+	width:71px;
+	border-top:1px solid #bcbcbc;
+	border-bottom:1px solid #eb1d25;
+	padding-top:5px;
+	padding-bottom:5px;
 }
 
 /* Blog Page */

@@ -308,13 +308,13 @@
 					</div>
 					<!-- Restorations Individual Pages -->
 					<?php 
-						$args=array(
+					$args=array(
 						'post_type' => 'restorations'
 						);
 
-						$blogPosts = new WP_Query($args);
+					$blogPosts = new WP_Query($args);
 
-						while ($blogPosts->have_posts()) : $blogPosts->the_post();
+					while ($blogPosts->have_posts()) : $blogPosts->the_post();
 					?>
 					<div class="restorations-individual-frame <?php echo get_post_meta(get_the_ID(), 'uniqueid', true) ?>">
 						<div class="restorations-individual-frame-text">
@@ -344,7 +344,7 @@
 								<?php the_content(); ?>
 							</div>
 						</div>
-						<div class="restorations-individual-frame-images">
+						<div class="restorations-individual-frame-images <?php echo get_post_meta(get_the_ID(), 'uniqueid', true) ?>">
 							<?php autoc_get_img('largeimage'); ?>
 							<div class="restorations-slider-left">
 							</div>
@@ -352,43 +352,48 @@
 							</div>
 						</div>
 					</div>
-					<?php endwhile; ?>
-					<div class="up-arrow-hover">
-						<h6>Restorations</h6>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
-					</div>
-					<div class="down-arrow-hover restorationshover">
-						<h6>Other Restorations</h6>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
-					</div>
+				<?php endwhile; ?>
+				<div class="up-arrow-hover">
+					<h6>Restorations</h6>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
 				</div>
-				<div class="restorations panel three">
-					<div class="restorations-panel-wide">
-						<h2><span>Other</span> Restorations</h2>
-					</div>
-					<div class="restorations-other-panel-nav">
-					</div>
-					<div class="restorations-other-panel">
-						<ul>
-							<?php 
-								$args=array(
-								'post_type' => 'restorations'
-								);
+				<div class="down-arrow-hover restorationshover">
+					<h6>Other Restorations</h6>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
+				</div>
+			</div>
+			<div class="restorations panel three">
+				<div class="restorations-panel-wide">
+					<h2><span>Other</span> Restorations</h2>
+				</div>
+				<div class="restorations-other-panel-nav">
+				</div>
+				<div class="restorations-other-panel">
+					<ul>
+						<?php 
+						$args=array(
+							'post_type' => 'restorations'
+							);
 
-								$blogPosts = new WP_Query($args);
+						$blogPosts = new WP_Query($args);
 
-								while ($blogPosts->have_posts()) : $blogPosts->the_post();
-							?>
-							<li id="<?php echo get_post_meta(get_the_ID(), 'uniqueid', true) ?>">
-								<?php echo get_the_post_thumbnail(); ?>
-								<h4><span><?php echo get_post_meta(get_the_ID(), 'cartype', true) ?></span></h4>
-								<div class="restorations-grid-overlay">
-									<h3><?php echo get_post_meta(get_the_ID(), 'modelyear', true) ?></h3>
-									<h4><?php echo get_post_meta(get_the_ID(), 'cartype', true) ?></h4>
-									<h5><?php echo get_post_meta(get_the_ID(), 'carmodel', true) ?></h5>
+						while ($blogPosts->have_posts()) : $blogPosts->the_post();
+						?>
+						<li id="<?php echo get_post_meta(get_the_ID(), 'uniqueid', true) ?>">
+							<?php echo get_the_post_thumbnail(); ?>
+							<h4><span><?php echo get_post_meta(get_the_ID(), 'cartype', true) ?></span></h4>
+							<div class="restorations-grid-overlay">
+								<h3><?php echo get_post_meta(get_the_ID(), 'modelyear', true) ?></h3>
+								<div class="restorations-lines">
+									<div class="restorations-lines-inner">
+										<h4><?php echo get_post_meta(get_the_ID(), 'cartype', true) ?><br />
+											<?php echo get_post_meta(get_the_ID(), 'carmodel', true) ?>
+										</h4>
+									</div>
 								</div>
-							</li>
-							<?php endwhile; ?>
+							</div>
+						</li>
+					<?php endwhile; ?>
 							<!-- <li>
 								<img src="<?php echo get_template_directory_uri(); ?>/images/restorations_astonmartin.png" />
 								<h4><span>Aston</span> Martin</h4>

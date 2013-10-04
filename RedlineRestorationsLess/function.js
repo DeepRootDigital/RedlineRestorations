@@ -412,18 +412,20 @@ $(document).ready(function(){
 	individualshow();
 
 	$('.restorations-slider-right').click(function(){
+		var myclass= $(this).parent().parent().attr('class').split(' ').slice(-1);
 		$(this).addClass('active-restoration');
 		$(this).parent().find('img').last().animate({'margin-left':'-696px'},500,function(){
-			$(this).parent().find('img').last().prependTo('.restorations-individual-frame-images');
+			$(this).parent().find('img').last().prependTo('.'+myclass+' .restorations-individual-frame-images');
 			$('.active-restoration').parent().find('img').css('margin-left','0px');
 			$('.active-restoration').removeClass('active-restoration');
 		});	
 	});
 
 	$('.restorations-slider-left').click(function(){
+		var myclass= $(this).parent().parent().attr('class').split(' ').slice(-1);
 		$(this).addClass('active-restoration');
 		$(this).parent().find('img').last().animate({'margin-left':'696px'},500,function(){
-			$(this).parent().find('img').last().prependTo('.restorations-individual-frame-images');
+			$(this).parent().find('img').last().prependTo('.'+myclass+' .restorations-individual-frame-images');
 			$('.active-restoration').parent().find('img').css('margin-left','0px');
 			$('.active-restoration').removeClass('active-restoration');
 		});
