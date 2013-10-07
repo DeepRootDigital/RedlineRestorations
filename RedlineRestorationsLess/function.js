@@ -1,147 +1,80 @@
 $(document).ready(function(){
-
 	// Top Menu Functionality
 
 	$('.fixed-menu-bar ul li a').click(function(){
 		if ($(this).text() == "About Us") {
-			$('.content-panel-area').animate({'left':'0px'},300,function(){
-			$(document).find("#scroll").removeAttr('id');
-			if ($(document).find('.content-panel-area').css('left') == "0px") {
-				$(document).find('.aboutus-page').find('.one-big-page-panel').attr('id','scroll');
+			if ($(document).find('.single-blog-viewport').length > 0) {
+				settingcookies('aboutusload');
 			}
-			if ($(document).find('.content-panel-area').css('left') == "-1007px") {
-				$(document).find('.service-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-2014px") {
-				$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-3021px") {
-				$(document).find('.restorations-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-4028px") {
-				$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-5035px") {
-				$(document).find('.contactus-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-		});
+			else
+			{
+				$('.content-panel-area').animate({'left':'0px'},300,function(){
+					properlysetid();	
+				});
+  			}
 		}
 		if ($(this).text() == "Services") {
-			$('.content-panel-area').animate({'left':'-1007px'},300,function(){
-			$(document).find("#scroll").removeAttr('id');
-			if ($(document).find('.content-panel-area').css('left') == "0px") {
-				$(document).find('.aboutus-page').find('.one-big-page-panel').attr('id','scroll');
+			if ($(document).find('.single-blog-viewport').length > 0) {
+				settingcookies('servicesload');
 			}
-			if ($(document).find('.content-panel-area').css('left') == "-1007px") {
-				$(document).find('.service-page').find('.one-big-page-panel').attr('id','scroll');
+			else
+			{
+				$('.content-panel-area').animate({'left':'-1007px'},300,function(){
+					properlysetid();
+				});
 			}
-			if ($(document).find('.content-panel-area').css('left') == "-2014px") {
-				$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-3021px") {
-				$(document).find('.restorations-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-4028px") {
-				$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-5035px") {
-				$(document).find('.contactus-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-		});
 		}
 		if ($(this).text() == "Our Process") {
-			$('.content-panel-area').animate({'left':'-2014px'},300,function(){
-			$(document).find("#scroll").removeAttr('id');
-			if ($(document).find('.content-panel-area').css('left') == "0px") {
-				$(document).find('.aboutus-page').find('.one-big-page-panel').attr('id','scroll');
+			if ($(document).find('.single-blog-viewport').length > 0) {
+				settingcookies('processload');
 			}
-			if ($(document).find('.content-panel-area').css('left') == "-1007px") {
-				$(document).find('.service-page').find('.one-big-page-panel').attr('id','scroll');
+			else
+			{
+				$('.content-panel-area').animate({'left':'-2014px'},300,function(){
+					properlysetid();
+				});
 			}
-			if ($(document).find('.content-panel-area').css('left') == "-2014px") {
-				$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-3021px") {
-				$(document).find('.restorations-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-4028px") {
-				$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-5035px") {
-				$(document).find('.contactus-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-		});
 		}
 		if ($(this).text() == "Restorations") {
-			$('.content-panel-area').animate({'left':'-3021px'},300,function(){
-			$(document).find("#scroll").removeAttr('id');
-			if ($(document).find('.content-panel-area').css('left') == "0px") {
-				$(document).find('.aboutus-page').find('.one-big-page-panel').attr('id','scroll');
+			if ($(document).find('.single-blog-viewport').length > 0) {
+				settingcookies('restorationsload');
 			}
-			if ($(document).find('.content-panel-area').css('left') == "-1007px") {
-				$(document).find('.service-page').find('.one-big-page-panel').attr('id','scroll');
+			else
+			{
+				$('.content-panel-area').animate({'left':'-3021px'},300,function(){
+					properlysetid();
+				});
 			}
-			if ($(document).find('.content-panel-area').css('left') == "-2014px") {
-				$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-3021px") {
-				$(document).find('.restorations-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-4028px") {
-				$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-5035px") {
-				$(document).find('.contactus-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-		});
 		}
 		if ($(this).text() == "Blog") {
-			$('.content-panel-area').animate({'left':'-4028px'},300,function(){
-			$(document).find("#scroll").removeAttr('id');
-			if ($(document).find('.content-panel-area').css('left') == "0px") {
-				$(document).find('.aboutus-page').find('.one-big-page-panel').attr('id','scroll');
+			if ($(document).find('.single-blog-viewport').length > 0) {
+				settingcookies('blogload');
 			}
-			if ($(document).find('.content-panel-area').css('left') == "-1007px") {
-				$(document).find('.service-page').find('.one-big-page-panel').attr('id','scroll');
+			else
+			{
+				$('.content-panel-area').animate({'left':'-4028px'},300,function(){
+					properlysetid();
+				});
 			}
-			if ($(document).find('.content-panel-area').css('left') == "-2014px") {
-				$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-3021px") {
-				$(document).find('.restorations-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-4028px") {
-				$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-5035px") {
-				$(document).find('.contactus-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-		});
 		}
 		if ($(this).text() == "Contact Us") {
-			$('.content-panel-area').animate({'left':'-5035px'},300,function(){
-			$(document).find("#scroll").removeAttr('id');
-			if ($(document).find('.content-panel-area').css('left') == "0px") {
-				$(document).find('.aboutus-page').find('.one-big-page-panel').attr('id','scroll');
+			if ($(document).find('.single-blog-viewport').length > 0) {
+				settingcookies('contactusload');
 			}
-			if ($(document).find('.content-panel-area').css('left') == "-1007px") {
-				$(document).find('.service-page').find('.one-big-page-panel').attr('id','scroll');
+			else
+			{
+				$('.content-panel-area').animate({'left':'-5035px'},300,function(){
+					properlysetid();
+				});
 			}
-			if ($(document).find('.content-panel-area').css('left') == "-2014px") {
-				$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-3021px") {
-				$(document).find('.restorations-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-4028px") {
-				$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-5035px") {
-				$(document).find('.contactus-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-		});
 		}
 	});
+
+	function settingcookies(cookievalue) {
+			setCookie("testcookie",cookievalue,365);
+			var testcookie = getCookie("testcookie");
+			window.location.href = "http://localhost/wordpress/";
+	}
 
 	// Code for adding scrolling
 
@@ -164,14 +97,14 @@ $(document).ready(function(){
         	// IE and Opera
         	delta = -event.wheelDelta / 40;
 
-    	} 
-    	else if (event.detail) {
+        } 
+        else if (event.detail) {
 
         	// W3C
         	delta = event.detail / 4;
-    	}
+        }
 
-    	var currPos=document.getElementById('scroll').offsetTop;
+        var currPos=document.getElementById('scroll').offsetTop;
 
     	//calculating the next position of the object
     	currPos=parseInt(currPos)-(delta*10);
@@ -184,7 +117,7 @@ $(document).ready(function(){
     	else {
     		document.getElementById('scroll').style.marginTop = currPos+"px";
     	}
-	}
+    }
 
 	// Slider for panel one
 	$('.panel-one-slider').last().clone().prependTo('.panel-one-slide-wrapper');
@@ -206,9 +139,8 @@ $(document).ready(function(){
 					});
 				});
 			},6000  
-			);
+		);
 	});
-	
 
 	// Blog Hovers
 
@@ -218,7 +150,8 @@ $(document).ready(function(){
 		},
 		function(){
 			$(this).find('.blog-summary-preview').animate({'margin-top':'2px'},400);
-		});
+		}
+	);
 
 	//Control top and bottom arrow buttons
 
@@ -295,43 +228,23 @@ $(document).ready(function(){
 		}
 		else {
 			$('.content-panel-area').animate({
-			'left' : '+=1007px'
+				'left' : '+=1007px'
 			},300,function(){
-			$(document).find("#scroll").removeAttr('id');
-			if ($(document).find('.content-panel-area').css('left') == "0px") {
-				$(document).find('.aboutus-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-1007px") {
-				$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-2014px") {
-				$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-3021px") {
-				$(document).find('.contactus-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-		});
+				properlysetid();
+			});
 		}
 	});
 
 	$('.right-button').click(function(){
-		$('.content-panel-area').animate({
-			'left' : '-=1007px'
-		},300,function(){
-			$(document).find("#scroll").removeAttr('id');
-			if ($(document).find('.content-panel-area').css('left') == "0px") {
-				$(document).find('.aboutus-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-1007px") {
-				$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-2014px") {
-				$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-			if ($(document).find('.content-panel-area').css('left') == "-3021px") {
-				$(document).find('.contactus-page').find('.one-big-page-panel').attr('id','scroll');
-			}
-		});
+		if($('.content-panel-area').css('left') =="-5035px"){
+		}
+		else {
+			$('.content-panel-area').animate({
+				'left' : '-=1007px'
+			},300,function(){
+				properlysetid();
+			});
+		}
 	});
 
 	// About Us team page
@@ -361,6 +274,7 @@ $(document).ready(function(){
 	//Script for resizing windows
 
 	resizeGutter();
+	addclasstodiv();
 
 	window.onresize = function(event) {
 		resizeGutter();
@@ -380,6 +294,68 @@ $(document).ready(function(){
 		$(".left-gutter").css('height',height+'px');
 		$('.right-gutter').css('height',height+'px');
 		$('.content-panel').css('height',height+'px');
+		if ($('.viewport-center').outerWidth() < 1000 ) {
+			$('.one-big-page').css('width',$('.viewport-center').outerWidth() + "px");
+		};
+	}
+
+	// MISC
+
+	function properlysetid() {
+		$(document).find("#scroll").removeAttr('id');
+		if ($(document).find('.content-panel-area').css('left') == "0px") {
+			$(document).find('.aboutus-page').find('.one-big-page-panel').attr('id','scroll');
+		}
+		if ($(document).find('.content-panel-area').css('left') == "-1007px") {
+			$(document).find('.service-page').find('.one-big-page-panel').attr('id','scroll');
+		}
+		if ($(document).find('.content-panel-area').css('left') == "-2014px") {
+			$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
+		}
+		if ($(document).find('.content-panel-area').css('left') == "-3021px") {
+			$(document).find('.restorations-page').find('.one-big-page-panel').attr('id','scroll');
+		}
+		if ($(document).find('.content-panel-area').css('left') == "-4028px") {
+			$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
+		}
+		if ($(document).find('.content-panel-area').css('left') == "-5035px") {
+			$(document).find('.contactus-page').find('.one-big-page-panel').attr('id','scroll');
+		}
+	}
+
+
+	function addclasstodiv() {
+		var pageclass = getCookie("testcookie"); 
+		$(document).find('.content-panel-area').addClass(pageclass);
+		setCookie("testcookie","meh",-1);
+		properlysetid();
+	}
+
+	function setCookie(c_name,value,exdays) {
+		var exdate=new Date();
+		exdate.setDate(exdate.getDate() + exdays);
+		var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+		document.cookie=c_name + "=" + c_value;
+	}
+
+	function getCookie(c_name) {
+		var c_value = document.cookie;
+		var c_start = c_value.indexOf(" " + c_name + "=");
+		if (c_start == -1) {
+  			c_start = c_value.indexOf(c_name + "=");
+  		}
+		if (c_start == -1) {
+  			c_value = null;
+  		}
+		else {
+  			c_start = c_value.indexOf("=", c_start) + 1;
+  			var c_end = c_value.indexOf(";", c_start);
+  			if (c_end == -1) {
+				c_end = c_value.length;
+			}
+			c_value = unescape(c_value.substring(c_start,c_end));
+		}
+		return c_value;
 	}
 
 	// Top social menu icons control
@@ -409,6 +385,7 @@ $(document).ready(function(){
 	function individualshow() {
 		$(document).find('.restorations-individual-frame').first().css('display','block');
 	}
+
 	individualshow();
 
 	$('.restorations-slider-right').click(function(){

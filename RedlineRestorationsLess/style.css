@@ -96,7 +96,31 @@ h6 {
 	position:absolute;
 	margin-top:-16px;
 	overflow-x:visible;
+	left:0px;
+}
+
+.content-panel-area.aboutusload {
+	left:0px;
+}
+
+.content-panel-area.servicesload {
 	left:-1007px;
+}
+
+.content-panel-area.processload {
+	left:-2014px;
+}
+
+.content-panel-area.restorationsload {
+	left:-3021px;
+}
+
+.content-panel-area.blogload {
+	left:-4028px;
+}
+
+.content-panel-area.contactusload {
+	left:-5035px;
 }
 
 .one-big-page{
@@ -205,6 +229,14 @@ h6 {
 	.fixed-menu-bar ul li {
 		font-size:15px;
 		margin-right:10px;
+	}
+
+	.one-big-page {
+		width:100%;
+	}
+
+	.panel {
+		width:100%;
 	}
 }
 
