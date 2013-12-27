@@ -13,25 +13,50 @@
 		</div>
 		<?php the_content(); ?>
 		<div class="single-blog-tags">
-			<h4>TAGS: Restored / <span>Vintage</span> / Exotic / High-End / Redline</h4>
+			<?php the_tags('Tags: ',' / '); ?>
 		</div>
 		<div class="single-blog-social">
 			<h4>Share this article!</h4>
 		</div>
+	        <?php 
+$comments_args = array(
+     'title_reply'=>'Leave a <span>Comment</span>',
+     'comment_notes_after' => '',
+     'fields' => apply_filters( 'comment_form_default_fields', array(
+
+    'author' =>
+      '<p class="comment-form-author">' .
+      '<label for="author">' . __( 'Name', 'domainreference' ) . '</label> ' .
+      ( $req ? '<span class="required">*</span>' : '' ) .
+      '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+      '" size="30"' . $aria_req . ' /></p>',
+
+    'email' =>
+      '<p class="comment-form-email"><label for="email">' . __( 'Email', 'domainreference' ) . '</label> ' .
+      ( $req ? '<span class="required">*</span>' : '' ) .
+      '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+      '" size="30"' . $aria_req . ' /></p>',
+    )
+  ),
+);
+
+
+
+comment_form($comments_args); ?>
+<div class="comments-discussion-section">
+<?php comments_template(); ?>
+</div>
 	</div>
-	<div class="single-blog-comments">
-		<h5>Leave a <span>comment</span></h5>
-		<form method="POST" action="mailformprocess.php">
-			<!-- Use HTML5 validation through required as first layer -->
-			<h4>Name</h4>
-			<input name="name" placeholder="name*" type="text" required><br />
-			<h4>Email</h4>
-			<input name="email" placeholder="email*" type="email" required>
-			<h4>Comment</h4>
-			<textarea placeholder="message*" name="message" required></textarea>
-			<input type="submit">
-		</form>
-	</div>
+<?php endwhile; endif;  ?>
+<div class="single-blog-sidebar">
+<h3>Other <span>Blog Posts</span></h3>
+<?php query_posts('posts_per_page=3&order=DESC'); ?>
+<?php while (have_posts()) : the_post(); ?>
+<div class="single-sidebar-single">
+     <p><?php echo get_the_title(); ?></p>
+</div>
+<?php endwhile; ?>
+</div>
 </div>
 <div class="footer single-blog-footer">
 	<div class="footer-wrap">
@@ -77,4 +102,3 @@
 <script src="<?php echo get_template_directory_uri() ?>/function.js"></script>
 </body>
 </html>
-<?php endwhile; endif;  ?>

@@ -14,6 +14,12 @@
 			<div class="footer-blog">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/blog-icon.png" class="social-icon" />
 				<h4><span>Latest</span> Blog Feed</h4>
+<?php $counter = 0;
+				$wp_query->query('showposts=1&order=DESC' . '&paged=' . $paged);
+				while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+<h5><?php the_title(); ?></h5>
+<p><?php echo substr(get_the_content(),0,80); ?></p>
+<?php endwhile; ?>
 			</div>
 			<div class="footer-left-bottom">
 				<h6>Redline Restorations. Copyright &copy; 2013 All rights reserved.</h6>
@@ -21,7 +27,7 @@
 		</div>
 		<div class="footer-right">
 			<div class="footer-close-tab">
-				<h3>Close <span>Social</span></h3>
+				<h3>Close</h3>
 			</div>
 			<div class="footer-pinterest">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/pinterest-icon.png" class="social-icon" />
@@ -31,6 +37,7 @@
 			</div>
 			<div class="footer-youtube">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/youtube-icon.png" class="social-icon" />
+                                <iframe id="ytplayer" type="text/html" width="250" height="140.625" src="https://www.youtube.com/embed/?listType=user_uploads&list=redlineresto" frameborder="0" allowfullscreen></iframe>
 			</div>
 			<div class="footer-instagram">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/instagram-icon.png" class="social-icon" />
@@ -55,13 +62,42 @@ function mapinitialize() {
 
   // Create an array of styles.
   var styles = [
-    {
-      stylers: [
-      // This makes the map black and white //
-        { Hue:  "#00e5ff" }
-      ]
-    }
-  ];
+  {
+    "featureType": "landscape",
+    "stylers": [
+      { "color": "#d4e2df" }
+    ]
+  },{
+    "featureType": "road.local",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "color": "#ffffff" }
+    ]
+  },{
+    "elementType": "labels.text.fill",
+    "stylers": [
+      { "color": "#1e403a" }
+    ]
+  },{
+    "featureType": "poi.park",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "color": "#9ebbb5" }
+    ]
+  },{
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+      { "color": "#618983" }
+    ]
+  },{
+    "featureType": "road",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      { "color": "#b0c9c5" }
+    ]
+  }
+];
 
 
 
@@ -86,13 +122,13 @@ streetViewControl: false,
     mapOptions);
 
 // This will create the tab that shows up when the pin is clicked on //
-var contentString = '<div id="mapcontent">'+'<img src="http://localhost/wordpress/wp-content/themes/RedlineRestorationsLess/images/redline-map-image.png" />'+'<div class="mapcontent-text">'+'<p><span>Red<em>line Restorations</em></span></p>'+
+var contentString = '<div id="mapcontent">'+'<img src="http://clients.businessonmarketst.com/redline/wp-content/themes/RedlineRestorationsLess/images/redline-map-image.png" />'+'<div class="mapcontent-text">'+'<p><span>Red<em>line Restorations</em></span></p>'+
 '<p>2316 FAIRFIELD AVE</p>'+'<p>BLACK ROCK, CT 06605</p>'+'<p>P: 203 335 9555</p>'+'</div>'+'</div>';
 
 // Attachs the tab //
 var infowindow = new google.maps.InfoWindow({
 content: contentString,
-maxWidth: 315
+maxWidth: 320
 });
 
 
@@ -101,7 +137,7 @@ maxWidth: 315
   map.setMapTypeId('map_style');
 
 // Sets the pin location on the map and chooses the picture that will be used //
-var image = 'http://localhost/wordpress/wp-content/themes/RedlineRestorationsLess/images/redline-map-flag.png';
+var image = 'http://clients.businessonmarketst.com/redline/wp-content/themes/RedlineRestorationsLess/images/redline-map-flag.png';
 // This should be the coordinates where you want the pin to be put //
   var myLatLng = new google.maps.LatLng(41.163340,-73.221006);
   var pinmarker = new google.maps.Marker({

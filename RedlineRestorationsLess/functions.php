@@ -111,6 +111,18 @@ function create_post_type() {
 		'supports' => array('title','editor','thumbnail')
 		)
 	);
+        register_post_type('awards', array(
+		'labels' => array(
+			'name' => __('Awards'),
+			'singular_name' => __('Award')
+			),
+		'public' => true,
+                'taxonomies' => array('category'),
+		'has_archive' => false,
+		'rewrite' => array('slug' => 'awards'),
+		'supports' => array('title','tags')
+		)
+	);
 }
 add_action('init', 'create_post_type');
 

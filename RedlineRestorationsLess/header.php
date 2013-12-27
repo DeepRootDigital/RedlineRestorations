@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div class="fixed-menu-bar">
-		<a href="http://localhost/wordpress/"><img src="<?php echo get_template_directory_uri() ?>/images/redline-header-logo.png" /></a>
+		<a href="http://clients.businessonmarketst.com/redline/"><img src="<?php echo get_template_directory_uri() ?>/images/redline-header-logo.png" /></a>
 		<?php 
                 $args = array(
                     'theme_location' => 'Left Navigation Menu',
@@ -24,19 +24,15 @@
 	<div class="fixed-social-menu">
 	</div>
 	<div class="fixed-social-icons">
+<?php $mainoptions = get_option('main_theme_options'); ?>
 	    <a href="#" alt="blah" class="close-button"><span>Close</span>Social</a>
-	    <div class="social-icons facebook"></div>
-		<!--<img name="facebook" src="<?php echo get_template_directory_uri(); ?>/images/social-icon-fb.png" onMouseOver="facebook.src='<?php echo get_template_directory_uri(); ?>/images/social-icon-fb-hover.png'" onMouseOut="facebook.src='<?php echo get_template_directory_uri(); ?>/images/social-icon-fb.png'" onClick="facebook.src='<?php echo get_template_directory_uri(); ?>/images/social-icon-fb-active.png'" class="social-icons" />-->
+	    <a href="<?php echo $mainoptions['facebookurl']; ?>"><div class="social-icons facebook"></div></a>
 		<div class="social-separator"></div>
-		<div class="social-icons twitter"></div>
-		<!--<img name="twitter" src="<?php echo get_template_directory_uri(); ?>/images/social-icon-twitter.png" onMouseOver="twitter.src='<?php echo get_template_directory_uri(); ?>/images/social-icon-twitter-hover.png'" onMouseOut="twitter.src='<?php echo get_template_directory_uri(); ?>/images/social-icon-twitter.png'" class="social-icons" /> -->
+		<a href="<?php echo $mainoptions['twitterurl']; ?>"><div class="social-icons twitter"></div></a>
 		<div class="social-separator"></div>
-		<div class="social-icons pinterest"></div>
-		<!--<img name="pinterest" src="<?php echo get_template_directory_uri(); ?>/images/social-icon-pin.png" onMouseOver="pinterest.src='<?php echo get_template_directory_uri(); ?>/images/social-icon-pin-hover.png'" onMouseOut="pinterest.src='<?php echo get_template_directory_uri(); ?>/images/social-icon-pin.png'" class="social-icons" /> -->
+		<a href="<?php echo $mainoptions['pinteresturl']; ?>"><div class="social-icons pinterest"></div></a>
 		<div class="social-separator"></div>
-		<div class="social-icons video"></div>
-		<!--<img name="video" src="<?php echo get_template_directory_uri(); ?>/images/social-icon-video.png" onMouseOver="video.src='<?php echo get_template_directory_uri(); ?>/images/social-icon-video-hover.png'" onMouseOut="video.src='<?php echo get_template_directory_uri(); ?>/images/social-icon-video.png'" class="social-icons" /> -->
+		<a href="<?php echo $mainoptions['youtubeurl']; ?>"><div class="social-icons video"></div></a>
 		<div class="social-separator"></div>
 		<div class="social-icons instagram"></div>
-		<!--<img name="instagram" src="<?php echo get_template_directory_uri(); ?>/images/social-icon-instagram.png" onMouseOver="instagram.src='<?php echo get_template_directory_uri(); ?>/images/social-icon-instagram-hover.png'" onMouseOut="instagram.src='<?php echo get_template_directory_uri(); ?>/images/social-icon-instagram.png'" class="social-icons" /> -->
 	</div>

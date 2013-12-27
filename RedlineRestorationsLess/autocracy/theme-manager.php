@@ -52,17 +52,17 @@ function main_theme_options_do_page() {
                         <input type="text" size="36" name="main_theme_options[gglplusurl]" value="<?php esc_attr_e($mainoptions['gglplusurl']); ?>" />
                     </td>
                 </tr>
-                <th><h3>Footer Options</h3></th>
+                <th><h3>Section Options</h3></th>
                 <tr valign="top">
                     <td>
-                        Copyright Text
-                        <textarea id="main_theme_options[copyrighttxt]" class="large-text" style="height:130px; width:375px;" name="main_theme_options[copyrighttxt]"><?php echo esc_textarea($mainoptions['copyrighttxt']); ?></textarea>
+                        About Us Text
+                        <textarea id="main_theme_options[aboutustxt]" class="large-text" style="height:130px; width:375px;" name="main_theme_options[aboutustxt]"><?php echo esc_textarea($mainoptions['aboutustxt']); ?></textarea>
                     </td>
                 </tr>
                 <tr valign="top">
                     <td>
-                        Address Info
-                        <textarea id="main_theme_options[addresstext]" class="large-text" style="height:130px; width:375px;" name="main_theme_options[addresstext]"><?php echo esc_textarea($mainoptions['addresstext']); ?></textarea>
+                        Who We Are Text
+                        <textarea id="main_theme_options[whowearetext]" class="large-text" style="height:130px; width:375px;" name="main_theme_options[whowearetext]"><?php echo esc_textarea($mainoptions['whowearetext']); ?></textarea>
                     </td>
                 </tr>
                 <th><h3>Contact Options</h3></th>

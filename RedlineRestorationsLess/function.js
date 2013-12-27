@@ -1,10 +1,13 @@
 $(document).ready(function(){
+
 	// Top Menu Functionality
 
 	$('.fixed-menu-bar ul li a').click(function(){
-		if ($(this).text() == "About Us") {
+		if ($(this).text() == "Home") {
 			if ($(document).find('.single-blog-viewport').length > 0) {
-				settingcookies('aboutusload');
+				setCookie("testcookie","aboutusload",365);
+				var testcookie = getCookie("testcookie");
+				window.location.href = "http://localhost/wordpress/";
 			}
 			else
 			{
@@ -13,9 +16,11 @@ $(document).ready(function(){
 				});
   			}
 		}
-		if ($(this).text() == "Services") {
+		if ($(this).text() == "About Us") {
 			if ($(document).find('.single-blog-viewport').length > 0) {
-				settingcookies('servicesload');
+				setCookie("testcookie","servicesload",365);
+				var testcookie = getCookie("testcookie");
+				window.location.href = "http://localhost/wordpress/";
 			}
 			else
 			{
@@ -26,7 +31,9 @@ $(document).ready(function(){
 		}
 		if ($(this).text() == "Our Process") {
 			if ($(document).find('.single-blog-viewport').length > 0) {
-				settingcookies('processload');
+				setCookie("testcookie","processload",365);
+				var testcookie = getCookie("testcookie");
+				window.location.href = "http://localhost/wordpress/";
 			}
 			else
 			{
@@ -37,7 +44,9 @@ $(document).ready(function(){
 		}
 		if ($(this).text() == "Restorations") {
 			if ($(document).find('.single-blog-viewport').length > 0) {
-				settingcookies('restorationsload');
+				setCookie("testcookie","restorationsload",365);
+				var testcookie = getCookie("testcookie");
+				window.location.href = "http://localhost/wordpress/";
 			}
 			else
 			{
@@ -48,7 +57,9 @@ $(document).ready(function(){
 		}
 		if ($(this).text() == "Blog") {
 			if ($(document).find('.single-blog-viewport').length > 0) {
-				settingcookies('blogload');
+				setCookie("testcookie","blogload",365);
+				var testcookie = getCookie("testcookie");
+				window.location.href = "http://localhost/wordpress/";
 			}
 			else
 			{
@@ -59,7 +70,9 @@ $(document).ready(function(){
 		}
 		if ($(this).text() == "Contact Us") {
 			if ($(document).find('.single-blog-viewport').length > 0) {
-				settingcookies('contactusload');
+				setCookie("testcookie","contactusload",365);
+				var testcookie = getCookie("testcookie");
+				window.location.href = "http://localhost/wordpress/";
 			}
 			else
 			{
@@ -69,12 +82,6 @@ $(document).ready(function(){
 			}
 		}
 	});
-
-	function settingcookies(cookievalue) {
-			setCookie("testcookie",cookievalue,365);
-			var testcookie = getCookie("testcookie");
-			window.location.href = "http://localhost/wordpress/";
-	}
 
 	// Code for adding scrolling
 
@@ -141,6 +148,7 @@ $(document).ready(function(){
 			},6000  
 		);
 	});
+	
 
 	// Blog Hovers
 
@@ -294,19 +302,16 @@ $(document).ready(function(){
 		$(".left-gutter").css('height',height+'px');
 		$('.right-gutter').css('height',height+'px');
 		$('.content-panel').css('height',height+'px');
-		if ($('.viewport-center').outerWidth() < 1000 ) {
-			$('.one-big-page').css('width',$('.viewport-center').outerWidth() + "px");
-		};
 	}
 
 	// MISC
 
 	function properlysetid() {
 		$(document).find("#scroll").removeAttr('id');
-		if ($(document).find('.content-panel-area').css('left') == "0px") {
+		if ($(document).find('.content-panel-area').css('left') == "-1007px") {
 			$(document).find('.aboutus-page').find('.one-big-page-panel').attr('id','scroll');
 		}
-		if ($(document).find('.content-panel-area').css('left') == "-1007px") {
+		if ($(document).find('.content-panel-area').css('left') == "0px") {
 			$(document).find('.service-page').find('.one-big-page-panel').attr('id','scroll');
 		}
 		if ($(document).find('.content-panel-area').css('left') == "-2014px") {
@@ -368,7 +373,7 @@ $(document).ready(function(){
 		});
 		$(this).css('display','none');
 		$('.close-button').css('display','block');
-	});
+	}); 
 
 	$('.close-button').click(function(){
 		$(document).find('.fixed-social-icons').animate({"margin-top":"5px"},300,function(){
@@ -385,7 +390,7 @@ $(document).ready(function(){
 	function individualshow() {
 		$(document).find('.restorations-individual-frame').first().css('display','block');
 	}
-
+	
 	individualshow();
 
 	$('.restorations-slider-right').click(function(){
@@ -420,6 +425,14 @@ $(document).ready(function(){
 		$('.restorations-page').find('.one-big-page-panel').animate({'margin-top':'-586px'},400);
 		$(movethisone).css('display','block');
 	});
+
+        $('.single-sidebar-single').hover(function(){
+              $(this).find('p').css('border-bottom','1px solid #d91f2d');
+              $(this).find('p').css('border-top','1px solid #d91f2d');
+        },function(){
+              $(this).find('p').css('border-bottom','1px solid rgba(0,0,0,0)');
+              $(this).find('p').css('border-top','1px solid rgba(0,0,0,0)');  
+        });
 
 
 // Pinterest stuff

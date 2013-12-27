@@ -43,9 +43,9 @@ $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
 // Mail to the email address given in the first slot //
-mail('colpanius@gmail.com','Redline Restorations Contact Form',$formcontent,$headers);
+// mail('colpanius@gmail.com','Redline Restorations Contact Form',$formcontent,$headers);
 
 // Redirect user to page after the form is complete //
-header('Location: http://localhost/wordpress/');
+header('Location: http://clients.businessonmarketst.com/redline/');
 
 ?>
