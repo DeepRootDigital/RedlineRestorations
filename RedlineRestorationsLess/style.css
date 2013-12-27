@@ -544,6 +544,7 @@ margin-top:-53px;
 	height:520px;
 	margin-top:60px;
 	padding-top:10px;
+        overflow:hidden;
 }
 
 .aboutus-panel-people ul {
@@ -583,6 +584,32 @@ text-transform:uppercase;
 
 .aboutus-panel-people li span {
 	color:#d91f2d;
+}
+
+.aboutus-section-nav-left,.aboutus-section-nav-right {
+width:16px;
+height:27px;
+position:absolute;
+top:50%;
+cursor:pointer;
+}
+
+.aboutus-section-nav-left {
+background-image:url('images/redline-left-arrow.png');
+left:0;
+}
+
+.aboutus-section-nav-right {
+background-image:url('images/redline-right-arrow.png');
+right:0;
+}
+
+.aboutus-section-nav-left:hover {
+background-image:url('images/redline-left-arrow-hover.png');
+}
+
+.aboutus-section-nav-right:hover {
+background-image:url('images/redline-right-arrow-hover.png');
 }
 
 .aboutus-individual-frame {
@@ -2132,8 +2159,9 @@ height:580px;
 
 .awards-single {
 width:333px;
-height:580px;
+height:552px;
 float:left;
+margin-top:28px;
 }
 
 .awards-single-header {

@@ -135,14 +135,15 @@
 						<ul>
 						<?php endwhile; ?>
 						<?php 
+$personcount = 0;
 						$args=array(
-							'post_type' => 'theteam',
-							'showposts' => '10'
+							'post_type' => 'theteam'
 							);
 
 						$blogPosts = new WP_Query($args);
 
 						while ($blogPosts->have_posts()) : $blogPosts->the_post();
+$personcount = $personcount + 1;
 						?>
 						<li id="<?php echo get_post_meta(get_the_ID(), 'uniqueid', true) ?>"><div class="aboutus-panel-individual">
 							<?php the_post_thumbnail(); ?>
@@ -153,8 +154,7 @@
 			</div>
 			<?php 
 			$args=array(
-				'post_type' => 'theteam',
-				'showposts' => '10'
+				'post_type' => 'theteam'
 				);
 
 			$blogPosts = new WP_Query($args);
@@ -187,7 +187,12 @@
 				<div class="aboutus-individual-frame-overlay">
 				</div>
 			</div>
-		<?php endwhile; ?>
+		<?php endwhile; 
+?>
+                <?php if ($personcount > 10) { ?>
+<div class="aboutus-section-nav-left"></div>
+<div class="aboutus-section-nav-right"></div>
+<?php } ?>
 		<div class="up-arrow-hover">
 			<h6>Up</h6>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
@@ -207,6 +212,7 @@ $cat_args=array(
   'order' => 'DESC'
    );
 $categories=get_categories($cat_args);
+$categorycount = 0;
   foreach($categories as $category) {
     $args=array(
       'showposts' => 4,
@@ -214,6 +220,7 @@ $categories=get_categories($cat_args);
       'category__in' => array($category->term_id),
       'caller_get_posts'=>1
     );
+    $categorycount = $categorycount + 1;
     $posts=get_posts($args);
       if ($posts) { ?>
 <div class="awards-single">
@@ -241,82 +248,10 @@ $categories=get_categories($cat_args);
 <?php      } // if ($posts
     } // foreach($categories
 ?>
-			    <!-- <div class="awards-single">
-					<div class="awards-single-header">
-						<h2>2012</h2>
-						<p>Awards</p>
-					</div>
-					<div class="awards-single-content">
-						<div class="awards-single-single">
-							<div class="awards-single-icon-left">
-							</div>
-							<h3>Best of Marque</h3>
-							<div class="awards-single-icon-right">
-							</div>
-                                                        <p>Le Bella Macchine D'Italia</p>
-                                                        <p><span>Ferrari</span></p>
-						</div>
-						<div class="awards-single-single">
-							<div class="awards-single-icon-left">
-							</div>
-							<h3>1st Place Interior</h3>
-							<div class="awards-single-icon-right">
-							</div>
-                                                        <p>Sunday in the park</p>
-                                                        <p>Concours at Lime Rock</p>
-						</div>
-					</div>
-				</div>
-                                <div class="awards-single">
-					<div class="awards-single-header">
-						<h2>2011</h2>
-						<p>Awards</p>
-					</div>
-					<div class="awards-single-content">
-						<div class="awards-single-single">
-							<div class="awards-single-icon-left">
-							</div>
-							<h3>Best of Show</h3>
-							<div class="awards-single-icon-right">
-							</div>
-                                                        <p>Northeast exotic car show</p>
-						</div>
-						<div class="awards-single-single">
-							<div class="awards-single-icon-left">
-							</div>
-							<h3>Platinum Award</h3>
-							<div class="awards-single-icon-right">
-							</div>
-                                                        <p>Concourso Ferrari &amp; Friends</p>
-						</div>
-                                                <div class="awards-single-single">
-							<div class="awards-single-icon-left">
-							</div>
-							<h3>Best of Marque</h3>
-							<div class="awards-single-icon-right">
-							</div>
-                                                        <p>Le Bella Macchine D'Italia</p>
-                                                        <p><span>Ferrari</span></p>
-						</div>
-					</div>
-				</div>
-                                <div class="awards-single">
-					<div class="awards-single-header">
-						<h2>2010</h2>
-						<p>Awards</p>
-					</div>
-					<div class="awards-single-content">
-						<div class="awards-single-single">
-							<div class="awards-single-icon-left">
-							</div>
-							<h3>Award of excellence</h3>
-							<div class="awards-single-icon-right">
-							</div>
-                                                        <p>Class Chassis</p>
-                                                        <p>Concours d'elegance</p>
-						</div>
-					</div>
-				</div> -->
+<?php if ($categorycount > 3) { ?>
+<div class="award-section-nav-left"></div>
+<div class="award-section-nav-right"></div>
+<?php } ?>
 			</div>
 		</div>
 		<div class="up-arrow-hover">

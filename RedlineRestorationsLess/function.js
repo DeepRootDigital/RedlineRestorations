@@ -302,7 +302,31 @@ $(document).ready(function(){
 		$(".left-gutter").css('height',height+'px');
 		$('.right-gutter').css('height',height+'px');
 		$('.content-panel').css('height',height+'px');
+                // Calc width of about us section
+                var peoplecounter = $('.aboutus-panel-people ul li').length;
+                peoplecounter = Math.ceil(peoplecounter/2);
+                peoplecounter = peoplecounter * 200;
+                $('.aboutus-panel-people ul').css('width',peoplecounter+'px');
 	}
+      
+        // About Us Section Nav
+        $('.aboutus-section-nav-left').click(function(){
+           if ($('.aboutus-panel-people ul').css('margin-left') == '0px'){
+           } else {
+              $('.aboutus-panel-people ul').animate({'margin-left':'+=200px'},300);
+           }
+        });
+
+        $('.aboutus-section-nav-right').click(function(){
+           var peoplecounter = $('.aboutus-panel-people ul li').length;
+                peoplecounter = Math.ceil(peoplecounter/2);
+                peoplecounter = peoplecounter - 5;
+                peoplecounter = peoplecounter * 200;
+           if ($('.aboutus-panel-people ul').css('margin-left') == '-'+peoplecounter+'px'){
+           } else {
+              $('.aboutus-panel-people ul').animate({'margin-left':'-=200px'},300);
+           }
+        });
 
 	// MISC
 
