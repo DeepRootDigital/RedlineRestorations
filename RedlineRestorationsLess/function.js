@@ -7,7 +7,7 @@ $(document).ready(function(){
 			if ($(document).find('.single-blog-viewport').length > 0) {
 				setCookie("testcookie","aboutusload",365);
 				var testcookie = getCookie("testcookie");
-				window.location.href = "http://localhost/wordpress/";
+				window.location.href = "http://clients.businessonmarketst.com/redline/";
 			}
 			else
 			{
@@ -20,7 +20,7 @@ $(document).ready(function(){
 			if ($(document).find('.single-blog-viewport').length > 0) {
 				setCookie("testcookie","servicesload",365);
 				var testcookie = getCookie("testcookie");
-				window.location.href = "http://localhost/wordpress/";
+				window.location.href = "http://clients.businessonmarketst.com/redline/";
 			}
 			else
 			{
@@ -33,7 +33,7 @@ $(document).ready(function(){
 			if ($(document).find('.single-blog-viewport').length > 0) {
 				setCookie("testcookie","processload",365);
 				var testcookie = getCookie("testcookie");
-				window.location.href = "http://localhost/wordpress/";
+				window.location.href = "http://clients.businessonmarketst.com/redline/";
 			}
 			else
 			{
@@ -46,7 +46,7 @@ $(document).ready(function(){
 			if ($(document).find('.single-blog-viewport').length > 0) {
 				setCookie("testcookie","restorationsload",365);
 				var testcookie = getCookie("testcookie");
-				window.location.href = "http://localhost/wordpress/";
+				window.location.href = "http://clients.businessonmarketst.com/redline/";
 			}
 			else
 			{
@@ -59,7 +59,7 @@ $(document).ready(function(){
 			if ($(document).find('.single-blog-viewport').length > 0) {
 				setCookie("testcookie","blogload",365);
 				var testcookie = getCookie("testcookie");
-				window.location.href = "http://localhost/wordpress/";
+				window.location.href = "http://clients.businessonmarketst.com/redline/";
 			}
 			else
 			{
@@ -72,7 +72,7 @@ $(document).ready(function(){
 			if ($(document).find('.single-blog-viewport').length > 0) {
 				setCookie("testcookie","contactusload",365);
 				var testcookie = getCookie("testcookie");
-				window.location.href = "http://localhost/wordpress/";
+				window.location.href = "http://clients.businessonmarketst.com/redline/";
 			}
 			else
 			{
@@ -82,6 +82,18 @@ $(document).ready(function(){
 			}
 		}
 	});
+
+$('.return-to-blogs').click(function(){
+setCookie("testcookie","blogload",365);
+				var testcookie = getCookie("testcookie");
+				window.location.href = "http://clients.businessonmarketst.com/redline/";
+});
+
+$('.the-process').click(function(){
+                                $('.content-panel-area').animate({'left':'-2014px'},300,function(){
+					properlysetid();
+				});
+});
 
 	// Code for adding scrolling
 
@@ -102,7 +114,7 @@ $(document).ready(function(){
     	if (event.wheelDelta) {
 
         	// IE and Opera
-        	delta = -event.wheelDelta / 40;
+        	delta = -event.wheelDelta / 37;
 
         } 
         else if (event.detail) {
@@ -112,15 +124,21 @@ $(document).ready(function(){
         }
 
         var currPos=document.getElementById('scroll').offsetTop;
-
     	//calculating the next position of the object
     	currPos=parseInt(currPos)-(delta*10);
+        
+        var lengthofpanel = $('#scroll').children().length;
+        lengthofpanel = (580 * (lengthofpanel - 1));
+        lengthofpanel = -lengthofpanel - 5;
 
     	//moving the position of the object
     	if (currPos > -1){
     		currPos = 0;
     		document.getElementById('scroll').style.marginTop = currPos+"px";
-    	}
+    	} else if (lengthofpanel > currPos) {
+                currPos = lengthofpanel;
+                document.getElementbyId('scroll').style.marginTop = currPos+"px";
+        }
     	else {
     		document.getElementById('scroll').style.marginTop = currPos+"px";
     	}
@@ -154,10 +172,12 @@ $(document).ready(function(){
 
 	$('.blog-panel-summary').hover(
 		function(){
-			$(this).find('.blog-summary-preview').animate({'margin-top':'139px'},400);
+                        $('.blog-panel-summary').find('.blog-summary-preview').stop();
+                        $('.blog-panel-summary').find('.blog-summary-preview').css('margin-top','2px');
+			$(this).find('.blog-summary-preview').animate({'margin-top':'139px'},300);
 		},
 		function(){
-			$(this).find('.blog-summary-preview').animate({'margin-top':'2px'},400);
+			$(this).find('.blog-summary-preview').animate({'margin-top':'2px'},300);
 		}
 	);
 
@@ -229,31 +249,30 @@ $(document).ready(function(){
 		$(this).find('h6').css('display','none');
 	});
 
-	//Control left and right arrow buttons
+        // Who We Are
+        $('.whoweare').click(function(){
+              $('.content-panel-area').animate({'left':'-1007px'},300,function(){
+		   properlysetid();
+	      });
+        });
 
-	$('.left-button').click(function(){
-		if($('.content-panel-area').css('left') == "0px"){
-		}
-		else {
-			$('.content-panel-area').animate({
-				'left' : '+=1007px'
-			},300,function(){
-				properlysetid();
-			});
-		}
-	});
+        // Awards Nav
+        $('.award-section-nav-left').click(function(){
+              if ($('.awards-wrapper').css('margin-left') == '0px') {
+              } else {
+                    $('.awards-wrapper').animate({'margin-left':'+=333px'},300);
+              }
+        });
 
-	$('.right-button').click(function(){
-		if($('.content-panel-area').css('left') =="-5035px"){
-		}
-		else {
-			$('.content-panel-area').animate({
-				'left' : '-=1007px'
-			},300,function(){
-				properlysetid();
-			});
-		}
-	});
+        $('.award-section-nav-right').click(function(){
+              var awardcounter = $('.awards-single').length;
+                awardcounter = awardcounter - 3;
+                awardcounter = awardcounter * 333;
+              if ($('.awards-wrapper').css('margin-left') == '-'+awardcounter+'px') {
+              } else {
+                    $('.awards-wrapper').animate({'margin-left':'-=333px'},300);
+              }
+        });
 
 	// About Us team page
 
@@ -334,20 +353,15 @@ $(document).ready(function(){
 		$(document).find("#scroll").removeAttr('id');
 		if ($(document).find('.content-panel-area').css('left') == "-1007px") {
 			$(document).find('.aboutus-page').find('.one-big-page-panel').attr('id','scroll');
-		}
-		if ($(document).find('.content-panel-area').css('left') == "0px") {
+		} else if ($(document).find('.content-panel-area').css('left') == "0px") {
 			$(document).find('.service-page').find('.one-big-page-panel').attr('id','scroll');
-		}
-		if ($(document).find('.content-panel-area').css('left') == "-2014px") {
+		} else if ($(document).find('.content-panel-area').css('left') == "-2014px") {
 			$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
-		}
-		if ($(document).find('.content-panel-area').css('left') == "-3021px") {
+		} else if ($(document).find('.content-panel-area').css('left') == "-3021px") {
 			$(document).find('.restorations-page').find('.one-big-page-panel').attr('id','scroll');
-		}
-		if ($(document).find('.content-panel-area').css('left') == "-4028px") {
+		} else if ($(document).find('.content-panel-area').css('left') == "-4028px") {
 			$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
-		}
-		if ($(document).find('.content-panel-area').css('left') == "-5035px") {
+		} else if ($(document).find('.content-panel-area').css('left') == "-5035px") {
 			$(document).find('.contactus-page').find('.one-big-page-panel').attr('id','scroll');
 		}
 	}
@@ -390,13 +404,22 @@ $(document).ready(function(){
 	// Top social menu icons control
 
 	$('.fixed-menu-bar ul li:last-of-type').click(function(){
-		$(document).find('.fixed-social-menu').slideDown(300);
+            if ($(this).text() == "Get Social") {
+                $(document).find('.fixed-social-menu').slideDown(300);
 		$(document).find('.fixed-social-icons').animate({"margin-top":"5px"},300,function(){
 			$(document).find('.fixed-social-icons').css('z-index',10000000000);
 			$(document).find('.fixed-social-icons').animate({"margin-top":"-1px"});
 		});
-		$(this).css('display','none');
-		$('.close-button').css('display','block');
+                $('.fixed-menu-bar ul li:last-of-type a').html('<span>Close</span>');
+            } else {
+                $(document).find('.fixed-social-icons').animate({"margin-top":"5px"},300,function(){
+			$(document).find('.fixed-social-icons').css('z-index',100000);
+			$(document).find('.fixed-social-icons').animate({'margin-top':'-24px'});
+		});
+		$(document).find('.fixed-social-menu').slideUp(950);
+                $('.fixed-menu-bar ul li:last-of-type a').html('Get Social');
+            }
+
 	}); 
 
 	$('.close-button').click(function(){

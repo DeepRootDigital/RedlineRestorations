@@ -60,7 +60,7 @@ h6 {
 
 .viewport-center{
 	width:1000px;
-	height:580px;
+	height:590px;
 	margin:0;
 	position:relative;
 	margin-left:auto;
@@ -453,10 +453,6 @@ margin-top:-53px;
 .down-arrow-footer span{
 	color:#ffffff;
 	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.35);
-}
-
-.aboutus-page .down-arrow-footer {
-	margin-top:-53px;
 }
 
 .top-button,.bottom-button {
@@ -1255,6 +1251,9 @@ cursor:pointer;
 	font-size: 16px;
 	margin-top: 11px;
 	color: #243942;
+        float:left;
+        clear:left;
+        width:275px;
 }
 
 .contactus-contact-panel h4:first-of-type {
@@ -1264,7 +1263,6 @@ cursor:pointer;
 .contactus-contact-panel h4:last-of-type {
 	margin-left: 359px;
 	margin-top:-161px;
-	position:absolute;
 }
 
 .contactus-contact-panel input {
@@ -1276,6 +1274,8 @@ cursor:pointer;
 	margin-left:16px;
 	font-family:Georgia;
 	font-size:14px;
+        float: left;
+        clear: left;
 }
 
 .contactus-contact-panel input:focus {
@@ -1289,11 +1289,11 @@ cursor:pointer;
 	height:139px;
 	border:0px;
 	resize:none;
-	position:absolute;
+	float:left;
 	padding-left:20px;
 	padding-top:20px;
-	margin-left:44px;
-	margin-top:-84px;
+	margin-left: 350px;
+        margin-top: -142px;
 	font-family:Georgia;
 	font-size:14px;
 }
@@ -1303,13 +1303,13 @@ cursor:pointer;
 }
 
 .contactus-contact-panel input[type=submit] {
-	background-image:url('images/submit_btn_static.png');
-	width:101px;
-	height:31px;
-	position:absolute;
-	margin-left: 557px;
-	margin-top: 15px;
-	color: rgba(0,0,0,0);
+	background-image: url('images/submit_btn_static.png');
+        width: 101px;
+        height: 31px;
+        float: right;
+        margin-right: 24px;
+        margin-top: -40px;
+        color: rgba(0,0,0,0);
 }
 
 .contactus-contact-panel input[type=submit]:hover {
@@ -1921,8 +1921,12 @@ margin-bottom:18px;
 font-family:'Tw Cen W01 Bold';
 }
 
+.single-blog-sidebar a {
+text-decoration:none;
+}
+
 .single-sidebar-single {
-width:440px;
+width:424px;
 height:127px;
 background-image:url('images/single-sidebar-blog.png');
 margin-bottom:19px;
@@ -1946,6 +1950,23 @@ border-top:1px solid rgba(0,0,0,0);
 border-bottom:1px solid rgba(0,0,0,0);
 padding-top:9px;
 padding-bottom:5px;
+text-decoration:none;
+}
+
+.return-to-blogs {
+width: 185px;
+float: right;
+margin-top: 15px;
+padding: 10px;
+background-color: #243942;
+text-align: center;
+border-radius: 50px;
+cursor: pointer;
+}
+
+.return-to-blogs p {
+text-transform: uppercase;
+color: #fff;
 }
 
 /* Footer */
@@ -2041,6 +2062,7 @@ padding-bottom:5px;
 	margin-left: 0px;
 	display: inline-block;
 	position: absolute;
+        margin-top:10px;
 }
 
 .footer-twitter {
@@ -2050,11 +2072,11 @@ padding-bottom:5px;
 
 .footer-twitter > .social-icon {
 	margin-left:47px;
-	margin-top:36px;
+	margin-top:67px;
 }
 
 .footer-twitter > iframe {
-	margin-top: 12px;
+	margin-top: 41px;
 	position: absolute;
 }
 
@@ -2074,7 +2096,7 @@ padding-bottom:5px;
 	text-transform:uppercase;
 	color:#ffffff;
 	margin-left: 100px;
-	margin-top: -40px;
+	margin-top: -50px;
 }
 
 .footer-blog span {
@@ -2093,6 +2115,8 @@ color:#fff;
 width:458px;
 margin-left:102px;
 margin-top:12px;
+font-size: 14px;
+line-height: 18px;
 }
 
 .footer-pinterest {
@@ -2127,6 +2151,11 @@ display:block;
 .footer-instagram > .social-icon {
 	margin-left:71px;
 	margin-top:77px;
+        float:left;
+}
+
+.footer-instagram > iframe {
+margin-top:13px;
 }
 
 .footer-left-bottom h6 {
@@ -2238,6 +2267,33 @@ letter-spacing:1px;
 
 .awards-single-content p span {
 font-family:'Tw Cen W01 Medium';
+}
+
+.award-section-nav-left,.award-section-nav-right {
+width:51px;
+	height:38px;
+	background-image:url('images/button-left.png');
+z-index:1000000;
+position:absolute;
+	top: 16%;
+	cursor:pointer;
+}
+
+.award-section-nav-left {
+	left:0;
+}
+
+.award-section-nav-left:hover{
+	background-image:url('images/button-left-hover.png');
+}
+
+.award-section-nav-right {
+	right:0;
+	background-image:url('images/button-right.png');
+}
+
+.award-section-nav-right:hover{
+	background-image:url('images/button-right-hover.png');
 }
 
 /* Comments Section */

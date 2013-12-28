@@ -79,9 +79,9 @@
 						</div>
 					</div>
 					<?php echo get_post_meta(get_the_ID(), 'whowearetext', true) ?>
-					<h6>Learn <span>more</span></h6>
-					<div class="bot-panel-slider-lines-small">
-						<div class="bot-panel-slider-lines-inner-small">
+					<h6 class="whoweare">Learn <span>more</span></h6>
+					<div class="bot-panel-slider-lines-small whoweare">
+						<div class="bot-panel-slider-lines-inner-small whoweare">
 						</div>
 					</div>
 				</div>
@@ -212,7 +212,7 @@ $cat_args=array(
   'order' => 'DESC'
    );
 $categories=get_categories($cat_args);
-$categorycount = 0;
+$categorycount = -1;
   foreach($categories as $category) {
     $args=array(
       'showposts' => 4,
@@ -697,11 +697,11 @@ $categorycount = 0;
 						</div>
 						<div class="contactus-socialicons">
 							<ul>
-								<li><a href="#"><div class="contactus-facebook"></div></a></li>
-								<li><a href="#"><div class="contactus-twitter"></div></a></li>
-								<li><a href="#"><div class="contactus-pinterest"></div></a></li>
-								<li><a href="#"><div class="contactus-youtube"></div></a></li>
-								<li><a href="#"><div class="contactus-instagram"></div></a></li>
+								<li><a href="<?php echo $mainoptions['facebookurl']; ?>"><div class="contactus-facebook"></div></a></li>
+								<li><a href="<?php echo $mainoptions['twitterurl']; ?>"><div class="contactus-twitter"></div></a></li>
+								<li><a href="<?php echo $mainoptions['pinteresturl']; ?>"><div class="contactus-pinterest"></div></a></li>
+								<li><a href="<?php echo $mainoptions['youtubeurl']; ?>"><div class="contactus-youtube"></div></a></li>
+								<li><a href="<?php echo $mainoptions['instagramurl']; ?>"><div class="contactus-instagram"></div></a></li>
 							</ul>
 						</div>
 					</div>
@@ -744,10 +744,8 @@ $categorycount = 0;
 
 </div>
 <div class="left-gutter">
-	<div class="left-button"></div>
 </div>
-<div class="right-gutter">
-	<div class="right-button"></div>		
+<div class="right-gutter">		
 </div>
 </div>
 <?php get_footer(); ?>

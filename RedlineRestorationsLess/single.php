@@ -52,11 +52,16 @@ comment_form($comments_args); ?>
 <h3>Other <span>Blog Posts</span></h3>
 <?php query_posts('posts_per_page=3&order=DESC'); ?>
 <?php while (have_posts()) : the_post(); ?>
+<a href="<?php the_permalink(); ?>">
 <div class="single-sidebar-single">
      <p><?php echo get_the_title(); ?></p>
 </div>
+</a>
 <?php endwhile; ?>
 </div>
+      <div class="return-to-blogs">
+            <p>Return to Blogs</p>
+      </div>
 </div>
 <div class="footer single-blog-footer">
 	<div class="footer-wrap">

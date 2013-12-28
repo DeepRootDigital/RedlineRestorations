@@ -47,9 +47,9 @@ function main_theme_options_do_page() {
                     </td>
                 </tr>
                  <tr valign="top">
-                    <td>Google Plus URL</td>
+                    <td>Instagram URL</td>
                     <td>
-                        <input type="text" size="36" name="main_theme_options[gglplusurl]" value="<?php esc_attr_e($mainoptions['gglplusurl']); ?>" />
+                        <input type="text" size="36" name="main_theme_options[instagramurl]" value="<?php esc_attr_e($mainoptions['instagramurl']); ?>" />
                     </td>
                 </tr>
                 <th><h3>Section Options</h3></th>

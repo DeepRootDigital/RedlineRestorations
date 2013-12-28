@@ -6,6 +6,7 @@
 			</div>
 			<div class="footer-facebook">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-icon.png" class="social-icon" />
+                                <div class="fb-activity" data-app-id="648638865176460" data-site="http://www.redlinerestorations.net/" data-action="likes, recommends" data-height="105" data-colorscheme="dark" data-header="false"></div>
 			</div>
 			<div class="footer-twitter">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/twitter-icon.png" class="social-icon" />
@@ -41,6 +42,7 @@
 			</div>
 			<div class="footer-instagram">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/instagram-icon.png" class="social-icon" />
+                                <iframe src="http://snapwidget.com/in/?u=cmVkbGluZXJlc3RvfGlufDEyNXwyfDF8fG5vfDV8bm9uZXxvblN0YXJ0fHllcw==&v=261213" title="Instagram Widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:260px; height:130px"></iframe>
 			</div>
 			<div class="footer-right-bottom">
 				<h6>Designed by / Business on Market St.</h6>

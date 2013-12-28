@@ -11,7 +11,17 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/style.css" />
 </head>
 <body>
-	<div class="fixed-menu-bar">
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=648638865176460";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+	
+<div class="fixed-menu-bar">
 		<a href="http://clients.businessonmarketst.com/redline/"><img src="<?php echo get_template_directory_uri() ?>/images/redline-header-logo.png" /></a>
 		<?php 
                 $args = array(
@@ -34,5 +44,5 @@
 		<div class="social-separator"></div>
 		<a href="<?php echo $mainoptions['youtubeurl']; ?>"><div class="social-icons video"></div></a>
 		<div class="social-separator"></div>
-		<div class="social-icons instagram"></div>
+		<a href="<?php echo $mainoptions['instagramurl']; ?>"><div class="social-icons instagram"></div></a>
 	</div>
