@@ -111,6 +111,17 @@ function create_post_type() {
 		'supports' => array('title','editor','thumbnail')
 		)
 	);
+        register_post_type('theprocess', array(
+		'labels' => array(
+			'name' => __('Processes'),
+			'singular_name' => __('Process')
+			),
+		'public' => true,
+		'has_archive' => false,
+		'rewrite' => array('slug' => 'process'),
+		'supports' => array('title','editor','thumbnail')
+		)
+	);
         register_post_type('awards', array(
 		'labels' => array(
 			'name' => __('Awards'),

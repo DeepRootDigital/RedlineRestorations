@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <div class="single-blog-viewport">
-	<img src="<?php echo get_template_directory_uri(); ?>/images/blog-image.png" class="single-blog-featured" />
+	<?php autoc_get_img('featureimage'); ?>
 	<div class="single-blog-content">
 		<div class="single-blog-content-lines">	
 		</div>

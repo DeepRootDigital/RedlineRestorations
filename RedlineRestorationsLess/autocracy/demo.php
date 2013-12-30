@@ -25,6 +25,25 @@ $meta_boxes = array();
 
 $meta_boxes[] = array(
     // Meta box id, UNIQUE per meta box. Optional since 4.1.5
+    'id' => 'posts',
+    // Meta box title - Will appear at the drag and drop handle bar. Required.
+    'title' => 'Post Extras',
+    // Where the meta box appear: normal (default), advanced, side. Optional.
+    'context' => 'normal',
+    // Order of meta box: high (default), low. Optional.
+    'priority' => 'high',
+    // List of meta fields
+    'fields' => array(
+     array(
+            'name'             => 'Feature Image',
+            'id'               => "featureimage",
+            'type'             => 'plupload_image',
+            'max_file_uploads' => 1,
+            ),
+    ),
+    );
+$meta_boxes[] = array(
+    // Meta box id, UNIQUE per meta box. Optional since 4.1.5
     'id' => 'mainpage',
     // Meta box title - Will appear at the drag and drop handle bar. Required.
     'title' => 'Mainpage',

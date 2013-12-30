@@ -168,14 +168,12 @@ $personcount = $personcount + 1;
 						<img src="<?php echo get_template_directory_uri(); ?>/images/close-button.png" />
 						<p>Close</p>
 					</div>
-					<div class="aboutus-individual-frame-text-second">
-						<h4><span>Age :</span> <?php echo get_post_meta(get_the_ID(), 'age', true) ?></h4>
-					</div>
+					
 					<div class="aboutus-individual-frame-text-third">
 						<h4><span>Hometown :</span> <?php echo get_post_meta(get_the_ID(), 'hometown', true) ?></h4>
 					</div>
 					<div class="aboutus-individual-frame-text-fourth">
-						<h4><span>Position / Exp. :</span> <?php echo get_post_meta(get_the_ID(), 'position', true) ?> / <?php echo get_post_meta(get_the_ID(), 'experience', true) ?> yrs</h4>
+						<h4><span>Position:</span> <?php echo get_post_meta(get_the_ID(), 'position', true) ?></h4>
 					</div>
 					<div class="aboutus-individual-frame-text-fifth">
 						<?php the_content(); ?>
@@ -266,10 +264,10 @@ $categorycount = -1;
 </div>
 </div>
 		<!--
-			HOME PAGE
+			Process Page
 		-->
 		<div class="one-big-page process-page">
-			<div class="one-big-page-panel" id="scroll">
+			<div class="one-big-page-panel">
 				<div class="homepage panel one">
 					<div class="panel-one-slide-wrapper">
 						<?php 
@@ -302,47 +300,46 @@ $categorycount = -1;
 					<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
 				</div>
 			</div>
-			<?php 
-			$args=array(
-				'post_type' => 'mainpage'
-				);
-
-			$blogPosts = new WP_Query($args);
-
-			while ($blogPosts->have_posts()) : $blogPosts->the_post();
-			?>
 			<div class="homepage panel two">
-				<?php autoc_get_img('processimage'); ?>
-				<div class="panel-textbar-horizontal">
-					<h2><span>The<br /></span>Process</h2>
-					<h4><?php echo get_post_meta(get_the_ID(), 'processtext', true) ?></h4>
-				</div>
-				<div class="up-arrow-hover">
-					<h6>Home</h6>
-					<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
-				</div>
-				<div class="down-arrow-hover">
-					<h6>Who we are</h6>
-					<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
-				</div>
-			</div>
-			<div class="homepage panel three">
-				<?php autoc_get_img('whoweareimage'); ?>
-				<div class="panel-textbar-wide">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/cross-flags.png" />
-					<h4>Who we are</h4>
-					<div class="bot-panel-slider-lines">
-						<div class="bot-panel-slider-lines-inner">
-						</div>
-					</div>
-					<?php echo get_post_meta(get_the_ID(), 'whowearetext', true) ?>
-					<h6>Learn <span>more</span></h6>
-					<div class="bot-panel-slider-lines-small">
-						<div class="bot-panel-slider-lines-inner-small">
-						</div>
-					</div>
-				</div>
-				<div class="up-arrow-hover">
+				<div class="the-process-slider">
+                                      <div class="the-process-slider-wrapper">
+                                                <?php 
+						$args=array(
+							'post_type' => 'theprocess'
+							);
+                                                $procctn = 0;
+						$blogPosts = new WP_Query($args);
+
+						while ($blogPosts->have_posts()) : $blogPosts->the_post();
+                                                $procctn += 1;
+						?>
+                                            <div class="the-process-slider-single process-<?php echo $procctn; ?>">
+                                                <?php the_post_thumbnail(); ?>
+                                                <?php the_content(); ?>
+                                            </div>
+                                                <?php
+                                                    endwhile;
+                                                ?>
+                                      </div>
+                                      <div class="the-process-slider-nav">
+                                            <?php 
+						$args=array(
+							'post_type' => 'theprocess'
+							);
+                                                $procctn = 0;
+						$blogPosts = new WP_Query($args);
+
+						while ($blogPosts->have_posts()) : $blogPosts->the_post();
+                                                $procctn += 1;
+						?>
+                                            <div class="the-process-slider-nav-single process-<?php echo $procctn; ?>">
+                                            </div>
+                                                <?php
+                                                    endwhile;
+                                                ?>
+                                      </div>
+                                </div>
+                                <div class="up-arrow-hover">
 					<h6>The Process</h6>
 					<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
 				</div>
@@ -351,14 +348,13 @@ $categorycount = -1;
 					<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
 				</div>
 			</div>
-		<?php endwhile; ?>
 	</div>
 </div>
 		<!--
 			Restorations Page
 		-->
 		<div class="one-big-page restorations-page">
-			<div class="one-big-page-panel" id="scroll">
+			<div class="one-big-page-panel">
 				<div class="restorations panel one">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/restorationstopimage.png" />
 					<div class="restorations-panel-textbar">
@@ -526,7 +522,11 @@ $categorycount = -1;
 									</div>
 								</div>
 							</div>
+                                                        <?php if (get_the_post_thumbnail()) { ?>
 							<?php the_post_thumbnail(); ?>
+                                                        <?php } else { ?>
+                                                              <img src="<?php echo get_template_directory_uri(); ?>/images/blog-slide-bottom-middle.png" alt="Default blog image" />
+                                                        <?php } ?>
 						</div>
 						<?php } ?>
 						<?php if ($counter === 2){ ?>
@@ -546,7 +546,11 @@ $categorycount = -1;
 									</div>
 								</div>
 							</div>
+							<?php if (get_the_post_thumbnail()) { ?>
 							<?php the_post_thumbnail(); ?>
+                                                        <?php } else { ?>
+                                                              <img src="<?php echo get_template_directory_uri(); ?>/images/blog-slide-bottom-middle.png" alt="Default blog image" />
+                                                        <?php } ?>
 						</div>
 						<?php } ?>
 						<?php if ($counter === 3) { ?>
@@ -566,7 +570,11 @@ $categorycount = -1;
 									</div>
 								</div>
 							</div>
+							<?php if (get_the_post_thumbnail()) { ?>
 							<?php the_post_thumbnail(); ?>
+                                                        <?php } else { ?>
+                                                              <img src="<?php echo get_template_directory_uri(); ?>/images/blog-slide-bottom-middle.png" alt="Default blog image" />
+                                                        <?php } ?>
 						</div>
 					</div>
 					<!-- <div class="up-arrow-hover">
@@ -598,7 +606,11 @@ $categorycount = -1;
 									</div>
 								</div>
 							</div>
+							<?php if (get_the_post_thumbnail()) { ?>
 							<?php the_post_thumbnail(); ?>
+                                                        <?php } else { ?>
+                                                              <img src="<?php echo get_template_directory_uri(); ?>/images/blog-slide-bottom-middle.png" alt="Default blog image" />
+                                                        <?php } ?>
 						</div>
 						<?php } ?>
 						<?php if ($counter === 5) { ?>
@@ -618,7 +630,11 @@ $categorycount = -1;
 									</div>
 								</div>
 							</div>
+							<?php if (get_the_post_thumbnail()) { ?>
 							<?php the_post_thumbnail(); ?>
+                                                        <?php } else { ?>
+                                                              <img src="<?php echo get_template_directory_uri(); ?>/images/blog-slide-bottom-middle.png" alt="Default blog image" />
+                                                        <?php } ?>
 						</div>
 						<?php } ?>
 						<?php if ($counter === 6) { ?>
@@ -638,7 +654,11 @@ $categorycount = -1;
 									</div>
 								</div>
 							</div>
+							<?php if (get_the_post_thumbnail()) { ?>
 							<?php the_post_thumbnail(); ?>
+                                                        <?php } else { ?>
+                                                              <img src="<?php echo get_template_directory_uri(); ?>/images/blog-slide-bottom-middle.png" alt="Default blog image" />
+                                                        <?php } ?>
 						</div>
 					</div>
 					<div class="up-arrow-hover">
@@ -695,6 +715,7 @@ $categorycount = -1;
 								<h6><?php echo get_post_meta(get_the_ID(), 'restofaddy', true) ?></h6>
 							</div>
 						</div>
+<?php $mainoptions = get_option('main_theme_options'); ?>
 						<div class="contactus-socialicons">
 							<ul>
 								<li><a href="<?php echo $mainoptions['facebookurl']; ?>"><div class="contactus-facebook"></div></a></li>
