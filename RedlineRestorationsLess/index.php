@@ -122,6 +122,10 @@
 						<?php the_content(); ?>
 					</div>
 					<img src="<?php echo get_template_directory_uri(); ?>/images/aboutus-car.png" class="aboutus-slide-image" />
+                                        <img src="<?php echo get_template_directory_uri(); ?>/images/playbutton.png" class="playbutton" alt="play button" />
+<video width="682" height="580" controls>
+<source src="<?php echo get_template_directory_uri(); ?>/redlinevideo.mp4" type="video/mp4">
+</video>
 					<div class="down-arrow-hover">
 						<h6>More</h6>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />

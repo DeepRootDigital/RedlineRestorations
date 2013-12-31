@@ -33,6 +33,13 @@ $(document).ready(function(){
 		return pattern.test(emailAddress);
 	};
 
+        // Play Button
+
+        $('.playbutton').click(function(){
+              $('.playbutton').css('display','none');
+              $('.aboutus-slide-image').css('display','none');
+        });
+
 	// Top Menu Functionality
 
 	$('.fixed-menu-bar ul li a').click(function(){

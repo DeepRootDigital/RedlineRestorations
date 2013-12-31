@@ -496,11 +496,13 @@ margin-top:-53px;
 	margin-right:0;
 }
 
-.aboutus-slide-image{
+.aboutus-slide-image,.playbutton{
 	height:100%;
 	position:absolute;
 	width:68.2%;
 	margin-left:31.8%;
+        z-index:1;
+        cursor:pointer;
 }
 
 .aboutus-panel-wide{
@@ -657,6 +659,10 @@ background-image:url('images/redline-right-arrow-hover.png');
 
 .panel-textbar-left img {
 	margin-top:65px;
+}
+
+video {
+margin-left: 318px;
 }
 
 .panel-textbar-left h5 {
