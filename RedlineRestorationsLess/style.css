@@ -882,7 +882,7 @@ letter-spacing:1px;
 .panel-textbar-horizontal h2 {
 	margin-left: 100px;
 	width: 180px;
-	display: inline-block;
+	float:left;
 	border-right: 1px dashed #243942;
 	line-height: 0px;
 	letter-spacing: 4px;
@@ -898,13 +898,14 @@ letter-spacing:1px;
 }
 
 .panel-textbar-horizontal h4 {
-	display:inline-block;
+	float:left;
 	color:#243942;
 	width: 525px;
 	margin-left: 16px;
 	font-family: Georgia;
 	font-size:16px;
 	line-height:24px;
+        margin-top:80px;
 }
 
 /* Homepage Panel 3 */
@@ -1020,7 +1021,7 @@ z-index: 1000;
 text-transform: uppercase;
 position: absolute;
 right: 25px;
-margin-top: -115px;
+margin-top: 95px;
 cursor:pointer;
 }
 
@@ -1032,7 +1033,7 @@ border-bottom: 1px solid black;
 z-index: 1000;
 position: absolute;
 right: 70px;
-margin-top: -102px;
+margin-top: 108px;
 cursor:pointer;
 }
 

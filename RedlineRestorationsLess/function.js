@@ -1,4 +1,37 @@
 $(document).ready(function(){
+        // Contact Form
+
+        $('.submit-form-button').click(function(){
+              $('.form-name').css('border','none');
+              $('.form-email').css('border','none');
+              $('.form-mess').css('border','none');
+              event.preventDefault();
+              if (!$('.form-name').val()) {
+                    $('.form-name').css({'border' : '1px solid #FF0000'});
+	            alert('Please Enter Your Name.');
+              } else if (!isValidEmailAddress($('.form-email').val())) {
+                    $('.form-email').css({'border' : '1px solid #FF0000'});
+	            alert('Please Enter A Valid Email.');
+              } else if (!$('.form-mess').val()) {
+                    $('.form-mess').css({'border' : '1px solid #FF0000'});
+	            alert('Please Enter A Message.');
+              } else {
+                    var name = $('.form-name').val();
+		    var email = $('.form-email').val();
+		    var message = $('.form-mess').val();
+                    $.ajax({
+			type:"POST",
+			url: "mailformprocess.php",
+			data: 'name='+name+'&email='+email+'&message='+message,
+			success: function(){}
+	            });
+              }
+        });
+
+        function isValidEmailAddress(emailAddress) {
+		var pattern = new RegExp(/^(("[\w-+\s]+")|([\w-+]+(?:\.[\w-+]+)*)|("[\w-+\s]+")([\w-+]+(?:\.[\w-+]+)*))(@((?:[\w-+]+\.)*\w[\w-+]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][\d]\.|1[\d]{2}\.|[\d]{1,2}\.))((25[0-5]|2[0-4][\d]|1[\d]{2}|[\d]{1,2})\.){2}(25[0-5]|2[0-4][\d]|1[\d]{2}|[\d]{1,2})\]?$)/i);
+		return pattern.test(emailAddress);
+	};
 
 	// Top Menu Functionality
 
@@ -310,6 +343,9 @@ $('.the-process').click(function(){
 	function resizeGutter() {
 		height = $(window).height();
 		height = height - 100;
+                if (height < 580) {
+                height = 580;
+                }
 		width = $(".viewport-center").outerWidth();
 		width = $(".fixed-menu-bar").outerWidth() - width;
 		width = (width/2)-7;

@@ -734,15 +734,15 @@ $categorycount = -1;
 				</div>
 				<div class="contactpage panel two">
 					<div class="contactus-contact-panel">
-						<form method="POST" action="<?php echo get_template_directory_uri(); ?>/mailformprocess.php">
+						<form method="POST" action="">
 							<!-- Use HTML5 validation through required as first layer -->
 							<h4>Name</h4>
-							<input name="name" placeholder="name*" type="text" required><br />
+							<input name="name" class="form-name" placeholder="name*" type="text"><br />
 							<h4>Email</h4>
-							<input name="email" placeholder="email*" type="email" required>
+							<input name="email" class="form-email" placeholder="email*" type="email">
 							<h4>Message</h4>
-							<textarea placeholder="message*" name="message" required></textarea>
-							<input type="submit">
+							<textarea placeholder="message*" class="form-mess" name="message"></textarea>
+							<input type="submit" class="submit-form-button">
 						</form>
 					</div>
 					<div id="google-map">
