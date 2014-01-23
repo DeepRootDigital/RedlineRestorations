@@ -34,6 +34,7 @@
 				</div>
 				<div class="panel-textbar">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/cross-flags.png" />
+                                        <img src="<?php echo get_template_directory_uri(); ?>/images/cross-flags.png" class="flags-two" />
 				</div>
 				<div class="down-arrow-hover slider-arrow">
 					<h6>The Process</h6>
@@ -61,7 +62,7 @@
 					</div>
 				</div>
 				<div class="up-arrow-hover">
-					<h6>Home</h6>
+					<h6>Up</h6>
 					<img src="<?php echo get_template_directory_uri(); ?>/images/up-arrow.png" class="top-button" />
 				</div>
 				<div class="down-arrow-hover">
@@ -121,13 +122,12 @@
 						</div>
 						<?php the_content(); ?>
 					</div>
-					<img src="<?php echo get_template_directory_uri(); ?>/images/aboutus-car.png" class="aboutus-slide-image" />
+					<img src="<?php echo get_template_directory_uri(); ?>/images/aboutus-car.jpg" class="aboutus-slide-image" />
                                         <img src="<?php echo get_template_directory_uri(); ?>/images/playbutton.png" class="playbutton" alt="play button" />
-<video width="682" height="580" controls>
-<source src="<?php echo get_template_directory_uri(); ?>/redlinevideo.mp4" type="video/mp4">
-</video>
+<div class="video-placeholder">
+</div>
 					<div class="down-arrow-hover">
-						<h6>More</h6>
+						<h6>The Team</h6>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
 					</div>
 				</div>
@@ -184,7 +184,11 @@ $personcount = $personcount + 1;
 					</div>
 				</div>
 				<div class="aboutus-individual-frame-pictureframe">
-					<?php autoc_get_img('largeimage'); ?>
+<?php if (autoc_get_img('largeimage')) {
+autoc_get_img('largeimage');
+} else { ?>			
+<img src="<?php echo get_template_directory_uri(); ?>/images/redline-team-default.jpg" alt="Team Member Default" />
+<?php } ?>
 				</div>
 				<div class="aboutus-individual-frame-overlay">
 				</div>
@@ -270,6 +274,7 @@ $categorycount = -1;
 		<!--
 			Process Page
 		-->
+                <!--
 		<div class="one-big-page process-page">
 			<div class="one-big-page-panel">
 				<div class="homepage panel one">
@@ -354,13 +359,14 @@ $categorycount = -1;
 			</div>
 	</div>
 </div>
+-->
 		<!--
 			Restorations Page
 		-->
 		<div class="one-big-page restorations-page">
 			<div class="one-big-page-panel">
 				<div class="restorations panel one">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/restorationstopimage.png" />
+					<img src="<?php echo get_template_directory_uri(); ?>/images/restorationstopimage.jpg" />
 					<div class="restorations-panel-textbar">
 						<img src="<?php echo get_template_directory_uri(); ?>/images/cross-flags.png" />
 						<div class="restorations-outer-lines">
@@ -368,7 +374,7 @@ $categorycount = -1;
 								<h2>Restorations</h2>
 							</div>
 						</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>Before any and all decisions are made, it is in your vehicle’s best interest to have Redline Restorations to comprehensively evaluate its initial condition. At that time, it is our duty to clearly outline the benefits and detriments of your project with all due respect to current market values and the condition of the car.</p>
 					</div>
 					<div class="down-arrow-hover">
 						<h6>Restorations</h6>
@@ -487,21 +493,9 @@ $categorycount = -1;
 		-->
 		<div class="one-big-page blog-page">
 			<div class="one-big-page-panel">
-				<!-- <div class="blogpage panel one">
-					<div class="blog-textbar-top">
-						<img src="<?php echo get_template_directory_uri(); ?>/images/cross-flags.png" />
-						<h4>Blog</h4>
-						<div class="blog-panel-lines">
-							<div class="blog-panel-lines-inner">
-							</div>
-						</div>
-					</div>
-					<img src="<?php echo get_template_directory_uri(); ?>/images/blog-top-car.png" class="blog-top-panel-image" />
-					<div class="down-arrow-hover">
-						<h6>Blogs</h6>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
-					</div>
-				</div> -->
+<?php $totalposts = wp_count_posts();
+$totalposts = $totalposts->publish;
+$totalposts = intval($totalposts); ?>
 				<?php $counter = 0;
 				$wp_query->query('showposts=6&order=DESC' . '&paged=' . $paged);
 				while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
@@ -556,6 +550,16 @@ $categorycount = -1;
                                                               <img src="<?php echo get_template_directory_uri(); ?>/images/blog-slide-bottom-middle.png" alt="Default blog image" />
                                                         <?php } ?>
 						</div>
+                                                <?php if ($totalposts - 3 == -1) { ?>
+                                                <div class="blog-panel-summary">
+                                                </div>
+                                                </div>
+					<div class="down-arrow-footer">
+						<h6><span>Get Social</span></h6>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
+					</div>
+				</div>
+                                                <?php } ?>
 						<?php } ?>
 						<?php if ($counter === 3) { ?>
 						<div class="blog-panel-summary">
@@ -720,7 +724,7 @@ $categorycount = -1;
 							</div>
 						</div>
 <?php $mainoptions = get_option('main_theme_options'); ?>
-						<div class="contactus-socialicons">
+					<!--	<div class="contactus-socialicons">
 							<ul>
 								<li><a href="<?php echo $mainoptions['facebookurl']; ?>"><div class="contactus-facebook"></div></a></li>
 								<li><a href="<?php echo $mainoptions['twitterurl']; ?>"><div class="contactus-twitter"></div></a></li>
@@ -729,9 +733,11 @@ $categorycount = -1;
 								<li><a href="<?php echo $mainoptions['instagramurl']; ?>"><div class="contactus-instagram"></div></a></li>
 							</ul>
 						</div>
+-->
+<img src="<?php echo get_template_directory_uri(); ?>/images/mail-icon.png" alt="Mail Icon" class="mail-icon" />
 					</div>
-					<img src="<?php echo get_template_directory_uri(); ?>/images/contactus-car.png" class="contactus-slide-image" />
-					<div class="down-arrow-hover">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/contactus-car.jpg" class="contactus-slide-image" />
+					<div class="down-arrow-hover contact-map-nav">
 						<h6>Contact</h6>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
 					</div>

@@ -22,7 +22,7 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 	
 <div class="fixed-menu-bar">
-		<a href="http://clients.businessonmarketst.com/redline/"><img src="<?php echo get_template_directory_uri() ?>/images/redline-header-logo.png" /></a>
+		<a href="http://www.redlinerestorations.net/"><img src="<?php echo get_template_directory_uri() ?>/images/redline-header-logo.png" /></a>
 		<?php 
                 $args = array(
                     'theme_location' => 'Left Navigation Menu',

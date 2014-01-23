@@ -46,6 +46,6 @@ $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 // mail('colpanius@gmail.com','Redline Restorations Contact Form',$formcontent,$headers);
 
 // Redirect user to page after the form is complete //
-header('Location: http://clients.businessonmarketst.com/redline/');
+header('Location: http://www.redlinerestorations.net/');
 
 ?>

@@ -1,4 +1,33 @@
-$(document).ready(function(){
+$(document).ready(function(){        
+        
+        // 
+
+function loadScript() {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
+      'callback=mapinitialize';
+  document.body.appendChild(script);
+}
+
+$('.contact-map-nav').hover(function(){
+    loadScript();
+});
+
+$('.footer-social-tab').hover(function(){
+   if ($('.footer-youtube iframe').length > 0) {
+   } else {
+    $('.footer-youtube').append('<iframe id="ytplayer" type="text/html" width="250" height="140.625" src="https://www.youtube.com/embed/?listType=user_uploads&list=redlineresto" frameborder="0" allowfullscreen></iframe>');
+   }
+});
+
+$('.down-arrow-footer').hover(function(){
+   if ($('.footer-youtube iframe').length > 0) {
+   } else {
+    $('.footer-youtube').append('<iframe id="ytplayer" type="text/html" width="250" height="140.625" src="https://www.youtube.com/embed/?listType=user_uploads&list=redlineresto" frameborder="0" allowfullscreen></iframe>');
+   }
+});
+
         // Contact Form
 
         $('.submit-form-button').click(function(){
@@ -38,6 +67,7 @@ $(document).ready(function(){
         $('.playbutton').click(function(){
               $('.playbutton').css('display','none');
               $('.aboutus-slide-image').css('display','none');
+              $('.video-placeholder').html('<video width="682" height="480" controls><source src="http://redlinerestorations.net/wp-content/themes/RedlineRestorationsLess/redlinevideo.mp4" type="video/mp4"></video>');
         });
 
 	// Top Menu Functionality
@@ -47,7 +77,7 @@ $(document).ready(function(){
 			if ($(document).find('.single-blog-viewport').length > 0) {
 				setCookie("testcookie","aboutusload",365);
 				var testcookie = getCookie("testcookie");
-				window.location.href = "http://clients.businessonmarketst.com/redline/";
+				window.location.href = "http://www.redlinerestorations.net/";
 			}
 			else
 			{
@@ -60,7 +90,7 @@ $(document).ready(function(){
 			if ($(document).find('.single-blog-viewport').length > 0) {
 				setCookie("testcookie","servicesload",365);
 				var testcookie = getCookie("testcookie");
-				window.location.href = "http://clients.businessonmarketst.com/redline/";
+				window.location.href = "http://www.redlinerestorations.net/";
 			}
 			else
 			{
@@ -73,7 +103,7 @@ $(document).ready(function(){
 			if ($(document).find('.single-blog-viewport').length > 0) {
 				setCookie("testcookie","processload",365);
 				var testcookie = getCookie("testcookie");
-				window.location.href = "http://clients.businessonmarketst.com/redline/";
+				window.location.href = "http://www.redlinerestorations.net/";
 			}
 			else
 			{
@@ -86,11 +116,11 @@ $(document).ready(function(){
 			if ($(document).find('.single-blog-viewport').length > 0) {
 				setCookie("testcookie","restorationsload",365);
 				var testcookie = getCookie("testcookie");
-				window.location.href = "http://clients.businessonmarketst.com/redline/";
+				window.location.href = "http://www.redlinerestorations.net/";
 			}
 			else
 			{
-				$('.content-panel-area').animate({'left':'-3021px'},300,function(){
+				$('.content-panel-area').animate({'left':'-2014px'},300,function(){
 					properlysetid();
 				});
 			}
@@ -99,11 +129,11 @@ $(document).ready(function(){
 			if ($(document).find('.single-blog-viewport').length > 0) {
 				setCookie("testcookie","blogload",365);
 				var testcookie = getCookie("testcookie");
-				window.location.href = "http://clients.businessonmarketst.com/redline/";
+				window.location.href = "http://www.redlinerestorations.net/";
 			}
 			else
 			{
-				$('.content-panel-area').animate({'left':'-4028px'},300,function(){
+				$('.content-panel-area').animate({'left':'-3021px'},300,function(){
 					properlysetid();
 				});
 			}
@@ -112,11 +142,11 @@ $(document).ready(function(){
 			if ($(document).find('.single-blog-viewport').length > 0) {
 				setCookie("testcookie","contactusload",365);
 				var testcookie = getCookie("testcookie");
-				window.location.href = "http://clients.businessonmarketst.com/redline/";
+				window.location.href = "http://www.redlinerestorations.net/";
 			}
 			else
 			{
-				$('.content-panel-area').animate({'left':'-5035px'},300,function(){
+				$('.content-panel-area').animate({'left':'-4028px'},300,function(){
 					properlysetid();
 				});
 			}
@@ -126,13 +156,14 @@ $(document).ready(function(){
 $('.return-to-blogs').click(function(){
 setCookie("testcookie","blogload",365);
 				var testcookie = getCookie("testcookie");
-				window.location.href = "http://clients.businessonmarketst.com/redline/";
+				window.location.href = "http://www.redlinerestorations.net/";
 });
 
 $('.the-process').click(function(){
-                                $('.content-panel-area').animate({'left':'-2014px'},300,function(){
-					properlysetid();
-				});
+                                alert("Currently under construction");
+                                // $('.content-panel-area').animate({'left':'-2014px'},300,function(){
+					// properlysetid();
+				// });
 });
 
 	// Code for adding scrolling
@@ -177,7 +208,7 @@ $('.the-process').click(function(){
     		document.getElementById('scroll').style.marginTop = currPos+"px";
     	} else if (lengthofpanel > currPos) {
                 currPos = lengthofpanel;
-                document.getElementbyId('scroll').style.marginTop = currPos+"px";
+                document.getElementById('scroll').style.marginTop = currPos+"px";
         }
     	else {
     		document.getElementById('scroll').style.marginTop = currPos+"px";
@@ -193,12 +224,22 @@ $('.the-process').click(function(){
 				$('.panel-one-slider h5').fadeOut(300);
 				$('.panel-slider-lines').fadeOut(300);
 				$('.panel-slider-lines-inner').fadeOut(300);
-				$('.panel-one-slide-wrapper').animate({'margin-left':'-=1000px'},500,function(){
+                                var mq = window.matchMedia( "(max-width: 800px)" );
+                                if (mq.matches) {
+	                           // window width is less than 800px
+                                   var movethismuch = 640;
+                                }
+                                else {
+	                           // window width is more than 800px
+                                   var movethismuch = 1000;
+                                }
+                       
+				$('.panel-one-slide-wrapper').animate({'margin-left':'-='+movethismuch+'px'},500,function(){
 					$('.panel-one-slider h4').fadeIn(300);
 					$('.panel-slider-lines').fadeIn(300);
 					$('.panel-slider-lines-inner').fadeIn(300);
 					$('.panel-one-slider h5').fadeIn(300,function(){
-						if ($('.panel-one-slide-wrapper').css('margin-left') == "-3000px"){
+						if ($('.panel-one-slide-wrapper').css('margin-left') == "-"+(movethismuch * 3)+"px"){
 							$('.panel-one-slide-wrapper').css('margin-left',"0px");
 						}
 					});
@@ -258,13 +299,27 @@ $('.the-process').click(function(){
 		$('.footer').animate({
 			'bottom' : '0px'
 		},300);
+                $('.footer-social-tab h3').text("Hide Social");
+                $('.footer-af-icons').fadeOut(300);
+                $('.footer-af').animate({'height':'50px'},300);
+                $('.footer-wrap').animate({'margin-top':'-1px'},300);
 	});
 
-	$('.footer-close-tab').click(function(){
-		$('.footer').animate({
-			'bottom' : '-534px'
-		},300);
-	});
+        $('.footer-social-tab').click(function(){
+                if ($(this).find('h3').text() == "Get Social") {
+                         $('.footer-social-tab h3').text("Hide Social");
+                         $('.footer-af-icons').fadeOut(300);
+                         $('.footer').animate({'bottom':'0px'},300);
+                         $('.footer-af').animate({'height':'50px'},300);
+                         $('.footer-wrap').animate({'margin-top':'-1px'},300);
+                } else {
+                         $('.footer-social-tab h3').text("Get Social");
+                         $('.footer-af-icons').fadeIn(300);
+                         $('.footer').animate({'bottom':'-442px'},300); 
+                         $('.footer-af').animate({'height':'100px'},300);
+                         $('.footer-wrap').animate({'margin-top':'100px'},300);
+                }
+        });
 
 	// Control the backgrounds and hover contents of up/down navigation
 
@@ -320,21 +375,29 @@ $('.the-process').click(function(){
 		var movethisone = "." + $(this).attr('id');
 		$('.aboutus-panel-people').animate({'margin-left':'785px'},400);
 		$(movethisone).animate({'margin-left':'0px'},400);
+                $('.aboutus-section-nav-left').css('display','none');
+                $('.aboutus-section-nav-right').css('display','none');
 	});
 
 	$('.aboutus-individual-frame-text-first img').click(function(){
 		$('.aboutus-panel-people').animate({'margin-left':'0px'},400);
 		$('.aboutus-individual-frame').animate({'margin-left':'-1000px'},400);
+                $('.aboutus-section-nav-left').css('display','block');
+                $('.aboutus-section-nav-right').css('display','block');
 	});
 
 	$('.aboutus-individual-frame-text-first p').click(function(){
 		$('.aboutus-panel-people').animate({'margin-left':'0px'},400);
 		$('.aboutus-individual-frame').animate({'margin-left':'-1000px'},400);
+                $('.aboutus-section-nav-left').css('display','block');
+                $('.aboutus-section-nav-right').css('display','block');
 	});
 
 	$('.aboutus-individual-frame-overlay').click(function(){
 		$('.aboutus-panel-people').animate({'margin-left':'0px'},400);
 		$('.aboutus-individual-frame').animate({'margin-left':'-1000px'},400);
+                $('.aboutus-section-nav-left').css('display','block');
+                $('.aboutus-section-nav-right').css('display','block');
 	});
 
 
@@ -348,13 +411,14 @@ $('.the-process').click(function(){
 	}
 
 	function resizeGutter() {
+                $('.panel-one-slide-wrapper').css('margin-left','0px');
 		height = $(window).height();
-		height = height - 100;
+		height = height - 119;
                 if (height < 580) {
                 height = 580;
                 }
 		width = $(".viewport-center").outerWidth();
-		width = $(".fixed-menu-bar").outerWidth() - width;
+		width = $('.fixed-menu-bar').outerWidth() - width;
 		width = (width/2)-7;
 		position = width + 1014;
 		$(".left-gutter").css({"width":width+"px"});
@@ -398,13 +462,15 @@ $('.the-process').click(function(){
 			$(document).find('.aboutus-page').find('.one-big-page-panel').attr('id','scroll');
 		} else if ($(document).find('.content-panel-area').css('left') == "0px") {
 			$(document).find('.service-page').find('.one-big-page-panel').attr('id','scroll');
-		} else if ($(document).find('.content-panel-area').css('left') == "-2014px") {
-			$(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
-		} else if ($(document).find('.content-panel-area').css('left') == "-3021px") {
+		} 
+                // else if ($(document).find('.content-panel-area').css('left') == "-2014px") {
+			// $(document).find('.process-page').find('.one-big-page-panel').attr('id','scroll');
+		// } 
+                else if ($(document).find('.content-panel-area').css('left') == "-2014px") {
 			$(document).find('.restorations-page').find('.one-big-page-panel').attr('id','scroll');
-		} else if ($(document).find('.content-panel-area').css('left') == "-4028px") {
+		} else if ($(document).find('.content-panel-area').css('left') == "-3021px") {
 			$(document).find('.blog-page').find('.one-big-page-panel').attr('id','scroll');
-		} else if ($(document).find('.content-panel-area').css('left') == "-5035px") {
+		} else if ($(document).find('.content-panel-area').css('left') == "-4028px") {
 			$(document).find('.contactus-page').find('.one-big-page-panel').attr('id','scroll');
 		}
 	}
@@ -527,63 +593,1561 @@ $('.the-process').click(function(){
 
 // Pinterest stuff
 
-(function(n,o,m){var a=n[m.k]={w:n,d:o,a:m,s:{},f:function(){return{callback:[],get:function(b,d){var c=null;return c=typeof b[d]==="string"?b[d]:b.getAttribute(d)},getData:function(b,d){d=a.a.dataAttributePrefix+d;return a.f.get(b,d)},set:function(b,d,c){if(typeof b[d]==="string")b[d]=c;else b.setAttribute(d,c)},make:function(b){var d=false,c,e;for(c in b)if(b[c].hasOwnProperty){d=a.d.createElement(c);for(e in b[c])b[c][e].hasOwnProperty&&typeof b[c][e]==="string"&&a.f.set(d,e,b[c][e]);break}return d},
-	kill:function(b){if(typeof b==="string")b=a.d.getElementById(b);b&&b.parentNode&&b.parentNode.removeChild(b)},replace:function(b,d){b.parentNode.insertBefore(d,b);a.f.kill(b)},getEl:function(b){var d=null;return d=b.target?b.target.nodeType===3?b.target.parentNode:b.target:b.srcElement},listen:function(b,d,c){if(typeof a.w.addEventListener!=="undefined")b.addEventListener(d,c,false);else typeof a.w.attachEvent!=="undefined"&&b.attachEvent("on"+d,c)},call:function(b,d){var c,e,f="?";c=a.f.callback.length;
-	e=a.a.k+".f.callback["+c+"]";a.f.callback[c]=function(g){d(g,c);a.f.kill(e)};if(b.match(/\?/))f="&";a.d.b.appendChild(a.f.make({SCRIPT:{id:e,type:"text/javascript",charset:"utf-8",src:b+f+"callback="+e}}))},debug:function(b){a.v.config.debug&&a.w.console&&a.w.console.log&&a.w.console.log(b)},presentation:function(){var b,d,c;b=a.f.make({STYLE:{type:"text/css"}});d=a.a.cdn[a.w.location.protocol]||a.a.cdn["http:"];c=a.a.rules.join("\n");c=c.replace(/\._/g,"."+m.k+"_");c=c.replace(/;/g,"!important;");
-	c=c.replace(/_cdn/g,d);c=c.replace(/_rez/g,a.v.resolution);if(b.styleSheet)b.styleSheet.cssText=c;else b.appendChild(a.d.createTextNode(c));a.d.h?a.d.h.appendChild(b):a.d.b.appendChild(b)},getPos:function(b){var d=0,c=0;if(b.offsetParent){do{d+=b.offsetLeft;c+=b.offsetTop}while(b=b.offsetParent);return{left:d,top:c}}},hideFloatingButton:function(){if(a.s.floatingButton)a.s.floatingButton.style.display="none"},getThis:function(b,d){b=a.a.endpoint.builder+b+"&"+d;a.f.log("&type=getThis&href="+encodeURIComponent(b));
-	a.w.open(b,"pin"+(new Date).getTime())},showFloatingButton:function(b){if(b.height>a.a.minImgSize&&b.width>a.a.minImgSize&&!b.src.match(/^data/)){if(!a.s.floatingButton){a.s.floatingButton=a.f.make({A:{className:a.a.k+"_pin_it_button "+a.a.k+"_pin_it_button_floating",title:"Pin it!",target:"_blank"}});a.f.set(a.s.floatingButton,a.a.dataAttributePrefix+"log","button_pinit_floating");a.d.b.appendChild(a.s.floatingButton)}var d=a.f.getPos(b),c=a.a.endpoint.create;c=c+"url="+encodeURIComponent(a.d.URL)+
-	"&media="+encodeURIComponent(b.src)+"&description="+encodeURIComponent(b.getAttribute("data-pin-description")||b.title||b.alt||a.d.title);a.s.floatingButton.href=c;a.s.floatingButton.onclick=function(){a.w.open(this.href,"pin"+(new Date).getTime(),a.a.pop);a.f.hideFloatingButton();return a.v.hazFloatingButton=false};a.s.floatingButton.style.top=d.top+a.a.floatingButtonOffsetTop+"px";a.s.floatingButton.style.left=d.left+a.a.floatingButtonOffsetLeft+"px";a.s.floatingButton.style.display="block"}},over:function(b){if(b=
-		a.f.getEl(b||a.w.event))if(b.tagName==="IMG"&&b.src&&!a.f.getData(b,"no-hover")&&!a.f.get(b,"nopin")&&a.v.config.hover){if(a.v.hazFloatingButton===false)a.v.hazFloatingButton=true;else a.f.hideFloatingButton();a.f.showFloatingButton(b)}else if(a.v.hazFloatingButton===true)if(b!==a.s.floatingButton){a.v.hazFloatingButton=false;a.f.hideFloatingButton()}},click:function(b){b=b||a.w.event;var d;if(b=a.f.getEl(b))if(d=a.f.getData(b,"log")){a.f.log("&type="+d+"&href="+encodeURIComponent(b.href||a.f.getData(b,
-			"href")));if(!b.className.match(/hazClick/))b.className=b.className+" "+a.a.k+"_hazClick"}},filter:function(b){var d;d="";try{d=decodeURIComponent(b)}catch(c){}b=d.replace(/</g,"&lt;");return b=b.replace(/>/g,"&gt;")},behavior:function(){a.f.listen(a.d.b,"click",a.f.click);a.v.config.hover&&a.f.listen(a.d.b,"mouseover",a.f.over)},getPinCount:function(b){b="?url="+b+"&ref="+encodeURIComponent(a.v.here)+"&source="+a.a.countSource;a.f.call(a.a.endpoint.count+b,a.f.ping.count)},prettyPinCount:function(b){if(b>
-			999)b=b<1E6?parseInt(b/1E3,10)+"K+":b<1E9?parseInt(b/1E6,10)+"M+":"++";return b},tile:function(b,d){b.style.display="block";var c={height:a.a.tile.scale.height,width:a.a.tile.scale.width},e=a.f.getData(b,"scale-height");if(e&&e>=a.a.tile.scale.minHeight)c.height=parseInt(e,10);if((e=a.f.getData(b,"scale-width"))&&e>=a.a.tile.scale.minWidth)c.width=parseInt(e,10);e=a.f.getData(b,"board-width")||b.offsetWidth;if(e>b.offsetWidth)e=b.offsetWidth;e=Math.floor(e/(c.width+a.a.tile.style.margin));if(e>a.a.tile.maxColumns)e=
-			a.a.tile.maxColumns;if(e<a.a.tile.minColumns)return false;var f=a.f.make({SPAN:{className:a.a.k+"_embed_board_bd"}});f.style.height=c.height+"px";a.v.renderedWidth=e*(c.width+a.a.tile.style.margin)-a.a.tile.style.margin;f.style.width=a.v.renderedWidth+"px";for(var g=0,h=[],k=0,p=d.length;k<p;k+=1){var j=a.f.make({A:{className:a.a.k+"_embed_board_th",target:"_blank",href:b.href,title:d[k].description}});a.f.set(j,a.a.dataAttributePrefix+"log","embed_board");var i={height:d[k].images["237x"].height*
-			(c.width/d[k].images["237x"].width),width:c.width},l=a.f.make({IMG:{src:d[k].images["237x"].url,nopin:"true",height:i.height,width:i.width,className:a.a.k+"_embed_board_img",alt:d[k].description}});l.style.height=i.height+"px";l.style.width=i.width+"px";l.style.marginTop=0-i.height/a.a.tile.style.margin+"px";if(i.height>c.height)i.height=c.height;j.appendChild(l);j.style.height=i.height+"px";j.style.width=i.width+"px";h[g]||(h[g]=0);j.style.top=h[g]+"px";j.style.left=g*(c.width+a.a.tile.style.margin)+
-			"px";h[g]=h[g]+i.height+a.a.tile.style.margin;j.appendChild(l);f.appendChild(j);g=(g+1)%e}return f},makeFooter:function(b,d){b=a.f.make({A:{className:a.a.k+"_embed_board_ft",href:b.href,target:"_blank"}});if(a.v.renderedWidth>a.a.tile.minWidthToShowAuxText)b.innerHTML=a.v.strings.seeOn;a.f.set(b,a.a.dataAttributePrefix+"log",d);d=a.f.make({SPAN:{className:a.a.k+"_embed_board_ft_logo"}});b.appendChild(d);return b},cssHook:function(b,d){if(b=a.f.getData(b,"css-hook"))d.className=d.className+" "+b},
-			fireBookmark:function(){a.d.b.appendChild(a.f.make({SCRIPT:{type:"text/javascript",charset:"utf-8",src:a.a.endpoint.bookmark+"?r="+Math.random()*99999999}}))},ping:{log:function(){},count:function(b,d){if(d=a.d.getElementById(a.a.k+"_pin_count_"+d)){a.f.debug("API replied with count: "+b.count);var c=d.parentNode,e=a.f.getData(c,"config");if(b.count===0)if(e==="above"){a.f.debug("Rendering zero count above.");d.className=a.a.k+"_pin_it_button_count";d.appendChild(a.d.createTextNode("0"))}else a.f.debug("Zero pin count not rendered to the side.");
-			if(b.count>0){a.f.debug("Got "+b.count+" pins for the requested URL.");if(e==="above"||e==="beside"){a.f.debug("Rendering pin count "+e);d.className=a.a.k+"_pin_it_button_count";d.appendChild(a.d.createTextNode(a.f.prettyPinCount(b.count)))}else a.f.debug("No valid pin count position specified; not rendering.")}a.f.cssHook(c,d)}else a.f.debug("Pin It button container not found.")},pin:function(b,d){if((d=a.d.getElementById(a.a.k+"_"+d))&&b.data&&b.data[0]){a.f.debug("API replied with pin data");b=
-			b.data[0];var c={};if(b.images)c=b.images["237x"];if(b&&b.id&&b.description&&c.url&&c.width&&c.height){a.f.debug("Found enough data to embed a pin");var e=a.f.make({SPAN:{className:a.a.k+"_embed_pin","data-pin-id":b.id}});if(a.f.getData(d,"style")!=="plain")e.className=e.className+" "+a.a.k+"_fancy";var f=a.f.make({A:{className:a.a.k+"_embed_pin_link",title:b.description,href:"http://pinterest.com/pin/"+b.id+"/",target:"_blank"}}),g=a.f.make({IMG:{className:a.a.k+"_embed_pin_link_img",alt:b.description,
-				nopin:"true",src:c.url,width:c.width,height:c.height}});a.f.set(g,a.a.dataAttributePrefix+"log","image_from_embedded_pin");a.f.set(g,a.a.dataAttributePrefix+"href","http://pinterest.com/pin/"+b.id+"/");g.style.width=c.width+"px";g.style.height=c.height+"px";f.appendChild(g);c=a.f.make({I:{className:a.a.k+"_repin","data-pin-id":b.id}});a.f.set(c,a.a.dataAttributePrefix+"log","repin");a.f.set(c,a.a.dataAttributePrefix+"href",a.a.endpoint.repin.replace(/%s/,b.id));f.appendChild(c);c.onclick=function(){if(!this.className.match(/hazClick/))this.className=
-				this.className+" "+a.a.k+"_hazClick";var h=a.a.endpoint.repin.replace(/%s/,a.f.get(this,"data-pin-id"));a.w.open(h,"pin"+(new Date).getTime(),a.a.popLarge);return false};c=a.f.make({I:{className:a.a.k+"_getThis",innerHTML:a.v.strings.getThis+"<i></i>","data-pin-id":b.id}});f.appendChild(c);c.onclick=function(){var h=a.f.get(this,"data-pin-id");a.f.getThis("do_embed_pin",h);return false};a.f.set(f,a.a.dataAttributePrefix+"log","embed_pin");e.appendChild(f);f=a.f.make({SPAN:{className:a.a.k+"_embed_pin_desc",
-					innerHTML:a.f.filter(b.description)}});if(b.attribution&&b.attribution.url&&b.attribution.author_name&&b.attribution.provider_icon_url){a.f.debug("Building attribution line");c=a.f.make({SPAN:{className:a.a.k+"_embed_pin_attrib"}});c.appendChild(a.f.make({IMG:{className:a.a.k+"_embed_pin_attrib_icon",src:b.attribution.provider_icon_url}}));c.appendChild(a.f.make({SPAN:{className:a.a.k+"_embed_pin_attrib",innerHTML:a.v.strings.attribTo+' <a href="'+b.attribution.url+'" target="_blank">'+a.f.filter(b.attribution.author_name)+
-						"</a>"}}));f.appendChild(c)}e.appendChild(f);if(b.pinner&&b.pinner.profile_url&&b.pinner.image_small_url&&b.pinner.full_name){a.f.debug("Building pinner line");f=a.f.make({A:{className:a.a.k+"_embed_pin_text",href:b.pinner.profile_url,target:"_blank"}});f.appendChild(a.f.make({IMG:{className:a.a.k+"_embed_pin_text_avatar",src:b.pinner.image_small_url}}));f.appendChild(a.f.make({SPAN:{className:a.a.k+"_embed_pin_text_container",innerHTML:a.v.strings.pinnedBy+' <em class="'+a.a.k+'_embed_pin_text_container_em">'+
-						a.f.filter(b.pinner.full_name)+"</em>"}}));c=a.f.make({B:{className:a.a.k+"_embed_pin_link_shield"}});a.f.set(c,a.a.dataAttributePrefix+"log","pinner_from_embedded_pin");a.f.set(c,a.a.dataAttributePrefix+"href",b.pinner.profile_url);f.appendChild(c);e.appendChild(f)}if(b.board&&b.board.url&&b.board.image_thumbnail_url&&b.board.name){a.f.debug("Building board line");if(!b.board.url.match(/^(\/\/pinterest\.com|http:\/\/pinterest\.com|https:\/\/pinterest\.com)/)){b.board.url="//pinterest.com"+b.board.url;
-						a.f.debug("appending Pinterest prefix to board URL")}f=a.f.make({A:{className:a.a.k+"_embed_pin_text",href:b.board.url,target:"_blank"}});f.appendChild(a.f.make({IMG:{className:a.a.k+"_embed_pin_text_avatar",src:b.board.image_thumbnail_url}}));f.appendChild(a.f.make({SPAN:{className:a.a.k+"_embed_pin_text_container",innerHTML:a.v.strings.onto+' <em class="'+a.a.k+'_embed_pin_text_container_em">'+a.f.filter(b.board.name)+"</em>"}}));c=a.f.make({B:{className:a.a.k+"_embed_pin_link_shield"}});a.f.set(c,
-							a.a.dataAttributePrefix+"log","board_from_embedded_pin");a.f.set(c,a.a.dataAttributePrefix+"href",b.board.url);f.appendChild(c);e.appendChild(f)}a.f.cssHook(d,e);a.f.replace(d,e)}else a.f.debug("Not enough data to embed a pin; aborting")}},user:function(b,d){if((d=a.d.getElementById(a.a.k+"_"+d))&&b.data&&b.data.pins&&b.data.pins.length){a.f.debug("API replied with a user");var c=a.f.make({SPAN:{className:a.a.k+"_embed_board"}});if(a.f.getData(d,"style")!=="plain")c.className=c.className+" "+a.a.k+
-						"_fancy";var e=a.f.make({SPAN:{className:a.a.k+"_embed_board_hd"}}),f=a.f.make({A:{className:a.a.k+"_embed_board_title",innerHTML:a.f.filter(b.data.user.full_name),target:"_blank",href:d.href}});a.f.set(f,a.a.dataAttributePrefix+"log","embed_user");e.appendChild(f);c.appendChild(e);if(b=a.f.tile(d,b.data.pins)){c.appendChild(b);d.href+="pins/";c.appendChild(a.f.makeFooter(d,"embed_user"));a.f.cssHook(d,c);a.f.replace(d,c)}}},board:function(b,d){if((d=a.d.getElementById(a.a.k+"_"+d))&&b.data&&b.data.pins&&
-							b.data.pins.length){a.f.debug("API replied with a group of pins");var c=a.f.make({SPAN:{className:a.a.k+"_embed_board"}});if(a.f.getData(d,"style")!=="plain")c.className=c.className+" "+a.a.k+"_fancy";var e=a.f.tile(d,b.data.pins),f=a.f.make({SPAN:{className:a.a.k+"_embed_board_hd"}}),g=a.f.make({A:{className:a.a.k+"_embed_board_name",innerHTML:a.f.filter(b.data.board.name),target:"_blank",href:d.href}});a.f.set(g,a.a.dataAttributePrefix+"log","embed_board");f.appendChild(g);if(a.v.renderedWidth>
-							a.a.tile.minWidthToShowAuxText){b=a.f.make({A:{log:"embed_board",className:a.a.k+"_embed_board_author",innerHTML:"<span>"+a.v.strings.attribTo+"</span> "+a.f.filter(b.data.user.full_name),target:"_blank",href:d.href}});a.f.set(b,a.a.dataAttributePrefix+"log","embed_board");f.appendChild(b)}else g.className=a.a.k+"_embed_board_title";c.appendChild(f);if(e){c.appendChild(e);c.appendChild(a.f.makeFooter(d,"embed_board"));a.f.cssHook(d,c);a.f.replace(d,c)}}}},parse:function(b,d){var c,e,f,g;g={};b=b.split("#")[0].split("?");
-							if(b[1]){b=b[1].split("&");e=0;for(f=b.length;e<f;e+=1){c=b[e].split("=");if(c.length===2)if(d[c[0]])g[c[0]]=c[1]}}return g},fixUrl:function(b){var d="";try{d=decodeURIComponent(b)}catch(c){}if(d===b)b=encodeURIComponent(b);if(!b.match(/^http/i)){b.match(/^%2F%2F/i)||(b="%2F%2F"+b);b="http%3A"+b;a.f.debug("fixed URL: "+b)}return b},deepLink:{ios_safari:function(b){var d,c,e,f;d=b.href;b=d.split("?")[1];b=b.replace(/url=/,"source_url=");b=b.replace(/media=/,"image_url=");b="pinit://pinit/?"+b;c=(new Date).getTime();
-							e=0;f=function(){a.w.setTimeout(function(){if(e<10)f();else{var g=c+e*80;if(((new Date).getTime()-g)/10<80)a.w.location=d}e+=1},80)};a.w.location=b;f()}},render:{buttonBookmark:function(b){a.f.debug("build bookmarklet button");var d=a.f.make({A:{href:b.href,className:a.a.k+"_pin_it_button "+a.a.k+"_pin_it_button_inline"}});a.f.set(d,a.a.dataAttributePrefix+"log","button_pinit_bookmarklet");var c=a.f.getData(b,"config");if(a.a.config.pinItCountPosition[c]===true){a.f.set(d,a.a.dataAttributePrefix+
-								"config",c);d.className=d.className+" "+a.a.k+"_pin_it_"+c}else d.className=d.className+" "+a.a.k+"_pin_it_none";a.f.getPinCount(encodeURIComponent(a.v.here));d.onclick=function(){a.f.fireBookmark();return false};c=a.f.make({SPAN:{className:a.a.k+"_hidden",id:a.a.k+"_pin_count_"+a.f.callback.length,innerHTML:"<i></i>"}});d.appendChild(c);a.f.replace(b,d)},buttonPin:function(b){a.f.debug("build Pin It button");var d,c;c=a.f.parse(b.href,{url:true,media:true,description:true});if(c.media)c.media=a.f.fixUrl(c.media);
-							else{c.media="";a.f.debug("no media found; click will pop bookmark")}if(c.url)c.url=a.f.fixUrl(c.url);else{c.url=encodeURIComponent(a.d.URL);a.f.debug("no url found; click will pin this page")}if(!c.description)c.description=encodeURIComponent(a.d.title||"");d=a.a.endpoint.create+"url="+c.url+"&media="+c.media+"&guid="+a.v.guid+"-"+a.v.buttonId+"&description="+c.description;a.v.buttonId+=1;d=a.f.make({A:{href:d,className:a.a.k+"_pin_it_button "+a.a.k+"_pin_it_button_inline",target:"_blank"}});a.f.set(d,
-								a.a.dataAttributePrefix+"log","button_pinit");var e=a.f.getData(b,"config");if(a.a.config.pinItCountPosition[e]===true){a.f.set(d,a.a.dataAttributePrefix+"config",e);d.className=d.className+" "+a.a.k+"_pin_it_"+e}else d.className=d.className+" "+a.a.k+"_pin_it_none";d.onclick=function(){var f=a.f.parse(this.href,{url:true,media:true,description:true});f.description||a.f.log("&type=config_warning&warning_msg=no_description&href="+encodeURIComponent(a.d.URL));if(f.url&&f.url.match(/^http/i)&&f.media&&
-								f.media.match(/^http/i))typeof a.f.deepLink[a.v.deepBrowser]==="function"?a.f.deepLink[a.v.deepBrowser](this):a.w.open(this.href,"pin"+(new Date).getTime(),a.a.pop);else{a.f.log("&type=config_error&error_msg=invalid_url&href="+encodeURIComponent(a.d.URL));a.f.fireBookmark()}return false};if(c.url){e=a.f.make({SPAN:{className:a.a.k+"_hidden",id:a.a.k+"_pin_count_"+a.f.callback.length,innerHTML:"<i></i>"}});d.appendChild(e);a.f.getPinCount(c.url);a.f.replace(b,d)}},buttonFollow:function(b){a.f.debug("build follow button");
-								var d="_follow_me_button",c=a.f.getData(b,"render");if(c)d=d+"_"+c;d=a.f.make({A:{target:"_blank",href:b.href,innerHTML:b.innerHTML,className:a.a.k+d}});d.appendChild(a.f.make({B:{}}));d.appendChild(a.f.make({I:{}}));a.f.set(d,a.a.dataAttributePrefix+"log","button_follow");a.f.replace(b,d)},embedPin:function(b){a.f.debug("build embedded pin");(b=b.href.split("/")[4])&&parseInt(b,10)>0&&a.f.getPinsIn("pin","",{pin_ids:b})},embedUser:function(b){a.f.debug("build embedded profile");(b=b.href.split("/")[3])&&
-								a.f.getPinsIn("user",b+"/pins/")},embedBoard:function(b){a.f.debug("build embedded board");var d=b.href.split("/")[3];b=b.href.split("/")[4];d&&b&&a.f.getPinsIn("board",d+"/"+b+"/pins/")}},getPinsIn:function(b,d,c){var e="",f="?",g;for(g in c)if(c[g].hasOwnProperty){e=e+f+g+"="+c[g];f="&"}a.f.call(a.a.endpoint[b]+d+e,a.f.ping[b])},build:function(b){if(typeof b!=="object"||b===null||!b.parentNode)b=a.d;var d=b.getElementsByTagName("A"),c,e,f,g={vertical:"above",horizontal:"beside"},h=[];c=0;for(b=
-									d.length;c<b;c+=1)h.push(d[c]);c=0;for(b=h.length;c<b;c+=1)if(h[c].href&&h[c].href.match(a.a.myDomain)){d=a.f.getData(h[c],"do");if(!d&&h[c].href.match(/pin\/create\/button/)){d="buttonPin";f="none";if((e=a.f.get(h[c],"count-layout"))&&g[e])f=g[e];a.f.set(h[c],"data-pin-config",f)}if(typeof a.f.render[d]==="function"){h[c].id=a.a.k+"_"+a.f.callback.length;a.f.render[d](h[c])}}},config:function(){var b=a.d.getElementsByTagName("SCRIPT"),d=b.length,c,e;e=false;for(c=0;c<d;c+=1)if(a.a.me&&b[c]&&b[c].src&&
-									b[c].src.match(a.a.me)){if(e===false){for(e=0;e<a.a.configParam.length;e+=1)a.v.config[a.a.configParam[e]]=a.f.get(b[c],a.a.dataAttributePrefix+a.a.configParam[e]);e=true}a.f.kill(b[c])}if(typeof a.v.config.build==="string")a.w[a.v.config.build]=function(f){a.f.build(f)};a.w.setTimeout(function(){a.f.log("&type=pidget")},1E3)},log:function(b){var d="?via="+encodeURIComponent(a.v.here)+"&guid="+a.v.guid;if(b)d+=b;a.f.call(a.a.endpoint.log+d,a.f.ping.log)},init:function(){a.d.b=a.d.getElementsByTagName("BODY")[0];
-									a.d.h=a.d.getElementsByTagName("HEAD")[0];a.v={resolution:1,here:a.d.URL.split("#")[0],hazFloatingButton:false,config:{},strings:a.a.strings.en,guid:"",buttonId:0,deepBrowser:null};if(a.w.navigator.userAgent.match(/iP/)!==null)if(a.w.navigator.userAgent.match(/Pinterest/)===null&&a.w.navigator.userAgent.match(/CriOS/)===null)a.v.deepBrowser="ios_safari";for(var b=0;b<12;b+=1)a.v.guid+="0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz".substr(Math.floor(Math.random()*60),1);if(b=a.d.getElementsByTagName("HTML")[0].getAttribute("lang")){b=
-										b.toLowerCase();if(typeof a.a.strings[b]==="object")a.v.strings=a.a.strings[b];else{b=b.split("-")[0];if(typeof a.a.strings[b]==="object")a.v.strings=a.a.strings[b]}}if(a.w.devicePixelRatio&&a.w.devicePixelRatio>=2)a.v.resolution=2;a.f.config();a.f.build();a.f.presentation();a.f.behavior()}}}()};a.f.init()})(window,document,{k:"PIN_"+(new Date).getTime(),myDomain:/^https?:\/\/pinterest\.com\//,me:/pinit.*?\.js$/,floatingButtonOffsetTop:10,floatingButtonOffsetLeft:10,endpoint:{bookmark:"//assets.pinterest.com/js/pinmarklet.js",
-										builder:"http://business.pinterest.com/widget-builder/#",count:"//widgets.pinterest.com/v1/urls/count.json",pin:"//widgets.pinterest.com/v3/pidgets/pins/info/",repin:"//pinterest.com/pin/%s/repin/x/",board:"//widgets.pinterest.com/v3/pidgets/boards/",user:"//widgets.pinterest.com/v3/pidgets/users/",log:"//log.pinterest.com/",create:"//pinterest.com/pin/create/button/?"},config:{pinItCountPosition:{none:true,above:true,beside:true}},minImgSize:200,countSource:6,dataAttributePrefix:"data-pin-",configParam:["build",
-										"debug","style","hover"],pop:"status=no,resizable=yes,scrollbars=yes,personalbar=no,directories=no,location=no,toolbar=no,menubar=no,width=632,height=270,left=0,top=0",popLarge:"status=no,resizable=yes,scrollbars=yes,personalbar=no,directories=no,location=no,toolbar=no,menubar=no,width=900,height=500,left=0,top=0",cdn:{"https:":"https://s-passets.pinimg.com","http:":"http://passets.pinterest.com"},tile:{scale:{minWidth:60,minHeight:60,width:92,height:175},minWidthToShowAuxText:150,minContentWidth:120,
-										minColumns:1,maxColumns:6,style:{margin:2,padding:10}},strings:{en:{seeOn:"See On",getThis:"get this",attribTo:"by",pinnedBy:"Pinned by",onto:"Onto"},de:{seeOn:"Ansehen auf",getThis:"bekomme",attribTo:"von",pinnedBy:"Gepinnt von",onto:"Auf"},es:{seeOn:"Ver En",getThis:"obtener",attribTo:"por",pinnedBy:"Pineado por",onto:"En"},fr:{seeOn:"Voir sur",getThis:"obtenir",attribTo:"par",pinnedBy:"&#201;pingl&#233; par",onto:"Sur"},nl:{seeOn:"Bekijken op",getThis:"krijg",attribTo:"door",pinnedBy:"Gepind door",
-										onto:"Op"},pt:{seeOn:"Ver em",getThis:"obter",attribTo:"por",pinnedBy:"Pin afixado por",onto:"Em"},"pt-br":{seeOn:"Ver em",getThis:"obter",attribTo:"por",pinnedBy:"Pinado por",onto:"Em"}},rules:["a._pin_it_button {  background-image: url(_cdn/images/pidgets/bps_rez.png); background-repeat: none; background-size: 40px 60px; height: 20px; margin: 0; padding: 0; vertical-align: baseline; text-decoration: none; width: 40px; background-position: 0 -20px }","a._pin_it_button:hover { background-position: 0 0px }",
-										"a._pin_it_button:active, a._pin_it_button._hazClick { background-position: 0 -40px }","a._pin_it_button_inline { position: relative; display: inline-block; }","a._pin_it_button_floating { position: absolute; }","a._pin_it_button span._pin_it_button_count { position: absolute; color: #777; text-align: center; text-indent: 0; }","a._pin_it_above span._pin_it_button_count { background: transparent url(_cdn/images/pidgets/fpa_rez.png) 0 0 no-repeat; background-size: 40px 29px; position: absolute; bottom: 21px; left: 0px; height: 29px; width: 40px; font: 12px Arial, Helvetica, sans-serif; line-height: 24px; text-indent: 0;}",
-										"a._pin_it_beside span._pin_it_button_count, a._pin_it_beside span._pin_it_button_count i { background-color: transparent; background-repeat: no-repeat; background-image: url(_cdn/images/pidgets/fpb_rez.png); }","a._pin_it_beside span._pin_it_button_count { padding: 0 3px 0 10px; background-size: 45px 20px; background-position: 0 0; position: absolute; top: 0; left: 41px; height: 20px; font: 10px Arial, Helvetica, sans-serif; line-height: 20px; }","a._pin_it_beside span._pin_it_button_count i { background-position: 100% 0; position: absolute; top: 0; right: -2px; height: 20px; width: 2px; }",
-										"a._pin_it_button._pin_it_above { margin-top: 20px; }","a._follow_me_button, a._follow_me_button i { background-size: 200px 60px; background: transparent url(_cdn/images/pidgets/bfs_rez.png) 0 0 no-repeat }",'a._follow_me_button { color: #444; display: inline-block; font: bold normal normal 11px/20px "Helvetica Neue",helvetica,arial,san-serif; height: 20px; margin: 0; padding: 0; position: relative; text-decoration: none; text-indent: 19px; vertical-align: baseline;}',"a._follow_me_button:hover { background-position: 0 -20px}",
-										"a._follow_me_button:active  { background-position: 0 -40px}","a._follow_me_button b { position: absolute; top: 3px; left: 3px; height: 14px; width: 14px; background-size: 14px 14px; background-image: url(_cdn/images/pidgets/log_rez.png); }","a._follow_me_button i { position: absolute; top: 0; right: -4px; height: 20px; width: 4px; background-position: 100% 0px; }","a._follow_me_button:hover i { background-position: 100% -20px;  }","a._follow_me_button:active i { background-position: 100% -40px; }",
-										"a._follow_me_button_tall, a._follow_me_button_tall i { background-size: 400px 84px; background: transparent url(_cdn/images/pidgets/bft_rez.png) 0 0 no-repeat }",'a._follow_me_button_tall { color: #444; display: inline-block; font: bold normal normal 13px/28px "Helvetica Neue",helvetica,arial,san-serif; height: 28px; margin: 0; padding: 0; position: relative; text-decoration: none; text-indent: 33px; vertical-align: baseline;}',"a._follow_me_button_tall:hover { background-position: 0 -28px}","a._follow_me_button_tall:active  { background-position: 0 -56px}",
-										"a._follow_me_button_tall b { position: absolute; top: 5px; left: 10px; height: 18px; width: 18px; background-size: 18px 18px; background-image: url(_cdn/images/pidgets/smt_rez.png); }","a._follow_me_button_tall i { position: absolute; top: 0; right: -10px; height: 28px; width: 10px; background-position: 100% 0px; }","a._follow_me_button_tall:hover i { background-position: 100% -28px;  }","a._follow_me_button_tall:active i { background-position: 100% -56px; }","span._embed_pin { display: inline-block; text-align: center; width: 237px; overflow: hidden; vertical-align: top; }",
-										"span._embed_pin._fancy { background: rgba(0,0,0,0); box-shadow: 0 0 3px #aaa; border-radius: 3px; }","span._embed_pin a._embed_pin_link { display: block;  margin: 0 auto; padding: 0; position: relative;  line-height: 0}","span._embed_pin img { border: 0; margin: 0; padding: 0;}","span._embed_pin a._embed_pin_link i._repin { left: 10px; top: 10px; position: absolute; height: 33px; width: 64px; background: transparent url(_cdn/images/pidgets/repin_rez.png); background-size: 64px 99px; }","span._embed_pin a._embed_pin_link i._repin:hover { background-position: 0 -33px; }",
-										"span._embed_pin a._embed_pin_link i._repin._hazClick { background-position: 0 -66px; }","span._embed_pin a._embed_pin_link i._getThis { display: none }","span._embed_pin a._embed_pin_link:hover i._getThis, span._embed_pin a._embed_pin_link:hover i._getThis i { background: transparent url(_cdn/images/pidgets/bfs1.png) }",'span._embed_pin a._embed_pin_link:hover i._getThis { color: #555; display: inline-block; font: normal normal normal 11px/20px "Helvetica Neue",helvetica,arial,san-serif; height: 20px; margin: 0; padding: 0 1px 0 5px; position: absolute; bottom: 10px; right: 10px; text-decoration: none;  }',
-										"span._embed_pin a._embed_pin_link:hover i._getThis:hover { background-position: 0 -20px }","span._embed_pin a._embed_pin_link:hover i._getThis i { position: absolute; top: 0; right: -4px; height: 20px; width: 5px; background-position: 100% 0px }","span._embed_pin a._embed_pin_link:hover i._getThis:hover i { background-position: 100% -20px }",'span._embed_pin span._embed_pin_desc { color: #333; white-space: normal; border-bottom: 1px solid #eee; display: block; font-family: "Helvetica Neue", arial, sans-serif; font-size: 12px; line-height: 17px; padding: 10px; text-align: left; }',
-										'span._embed_pin span._embed_pin_attrib, span._embed_pin span._embed_pin_text_container { color: #a7a7a7; font-family: "Helvetica", sans-serif; font-size: 10px; line-height: 18px; font-weight: bold; display: block;}',"span._embed_pin span._embed_pin_attrib img._embed_pin_attrib_icon { height: 16px; width: 16px; vertical-align: middle; margin-right: 5px; float: left;}","span._embed_pin span._embed_pin_attrib a { color: #a7a7a7; text-decoration: none;}",'span._embed_pin a._embed_pin_text, span._embed_pin a._embed_pin_text span._embed_pin_text_container { position: relative; text-decoration: none; display: block; font-weight: bold; color: #b7b7b7; font-family: "Helvetica Neue", arial, sans-serif; font-size: 11px; line-height: 14px; height: 39px; text-align: left; }',
-										"span._embed_pin a._embed_pin_text { padding: 5px 0 0 7px; }","span._embed_pin a._embed_pin_text:hover { background: #eee;}","span._embed_pin a._embed_pin_text img._embed_pin_text_avatar { border-radius: 2px; overflow: hidden; height: 30px; width: 30px; vertical-align: middle; margin-right: 5px; float: left;}","span._embed_pin a._embed_pin_text span._embed_pin_text_container em._embed_pin_text_container_em { font-family: inherit; display: block; color: #717171; font-style: normal; width: 180px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }",
-										"span._embed_pin a._embed_pin_text b._embed_pin_link_shield { position: absolute; top: 0; left: 0; height: 100%; width: 100%; }","span._embed_board { display: inline-block; margin: 0; padding:10px 0; position: relative; text-align: center}","span._embed_board._fancy { background: rgba(0,0,0,0); border-radius: 3px; }","span._embed_board span._embed_board_hd { display: block; margin: 0 10px; padding: 0; line-height: 20px; height: 25px; position: relative;  }","span._embed_board span._embed_board_hd a { cursor: pointer; background: inherit; text-decoration: none; width: 48%; white-space: nowrap; position: absolute; top: 0; overflow: hidden;  text-overflow: ellipsis; }",
-										"span._embed_board span._embed_board_hd a:hover { text-decoration: none; background: inherit; }","span._embed_board span._embed_board_hd a:active { text-decoration: none; background: inherit; }","span._embed_board span._embed_board_hd a._embed_board_title { width: 100%; position: absolute; left: 0; text-align: left; font-family: 'Tw Cen W01 Medium'; text-transform:uppercase; font-size: 18px; color:#fff;}","span._embed_board span._embed_board_hd a._embed_board_name { position: absolute; left: 0; text-align: left; ffont-family: 'Tw Cen W01 Medium'; font-size: 18px; text-transform:uppercase; color:#fff;}",
-										"span._embed_board span._embed_board_hd a._embed_board_author { position: absolute; right: 0; text-align: right; font-family: Helvetica; font-size: 11px; color: #746d6a; font-weight: bold;}","span._embed_board span._embed_board_hd a._embed_board_author span { font-weight: normal; }","span._embed_board span._embed_board_bd { display:block; margin: 0 10px; overflow: hidden; border-radius: 2px; position: relative; }","span._embed_board span._embed_board_bd a._embed_board_th { cursor: pointer; display: inline-block; position: absolute; overflow: hidden; }",
-										'span._embed_board span._embed_board_bd a._embed_board_th::before { position: absolute; content:""; z-index: 2; top: 0; left: 0; right: 0; bottom: 0; box-shadow: inset 0 0 2px #888; }',"span._embed_board span._embed_board_bd a._embed_board_th img._embed_board_img { border: none; position: absolute; top: 50%; left: 0; }","a._embed_board_ft { text-shadow: 0 1px #fff; display: block; text-align: center; border: 1px solid #ccc; margin: 10px 10px 0; height: 31px; line-height: 30px;border-radius: 2px; text-decoration: none; font-family: Helvetica; font-weight: bold; font-size: 13px; color: #746d6a; display:none; background: #f4f4f4 url(_cdn/images/pidgets/board_button_link.png) 0 0 repeat-x}",
-										"a._embed_board_ft:hover { text-decoration: none; background: #fefefe url(_cdn/images/pidgets/board_button_hover.png) 0 0 repeat-x}","a._embed_board_ft:active { text-decoration: none; background: #e4e4e4 url(_cdn/images/pidgets/board_button_active.png) 0 0 repeat-x}","a._embed_board_ft span._embed_board_ft_logo { vertical-align: top; display: inline-block; margin-left: 2px; height: 30px; width: 66px; background: transparent url(_cdn/images/pidgets/board_button_logo.png) 50% 48% no-repeat; }","._hidden { display:none; }"]});
+(function (w, d, a) {
+  var $ = w[a.k] = {
+    'w': w,
+    'd': d,
+    'a': a,
+    's': {},
+    'f': (function () {
+      return {
+        // an empty array of callbacks to be populated later
+        callback: [],
+
+        // get a DOM property or text attribute
+        get: function (el, att) {
+          var v = null;
+          if (typeof el[att] === 'string') {
+            v = el[att];
+          } else {
+            v = el.getAttribute(att);
+          }
+          return v;
+        },
+
+        // get a data: attribute
+        getData: function (el, att) {
+          att = $.a.dataAttributePrefix + att;
+          return $.f.get(el, att);
+        },
+
+        // set a DOM property or text attribute
+        set: function (el, att, string) {
+          if (typeof el[att] === 'string') {
+            el[att] = string;
+          } else {
+            el.setAttribute(att, string);
+          }
+        },
+
+        // create a DOM element
+        make: function (obj) {
+          var el = false, tag, att;
+          for (tag in obj) {
+            if (obj[tag].hasOwnProperty) {
+              el = $.d.createElement(tag);
+              for (att in obj[tag]) {
+                if (obj[tag][att].hasOwnProperty) {
+                  if (typeof obj[tag][att] === 'string') {
+                    $.f.set(el, att, obj[tag][att]);
+                  }
+                }
+              }
+              break;
+            }
+          }
+          return el;
+        },
+
+        // remove a DOM element
+        kill: function (obj) {
+          if (typeof obj === 'string') {
+            obj = $.d.getElementById(obj);
+          }
+          if (obj && obj.parentNode) {
+            obj.parentNode.removeChild(obj);
+          }
+        },
+
+        // replace one DOM element with another
+        replace: function (before, after) {
+          before.parentNode.insertBefore(after, before);
+          $.f.kill(before);
+        },
+
+        // find an event's target element
+        getEl: function (e) {
+          var el = null;
+          if (e.target) {
+            el = (e.target.nodeType === 3) ? e.target.parentNode : e.target;
+          } else {
+            el = e.srcElement;
+          }
+          return el;
+        },
+
+        // listen for events in a cross-browser fashion
+        listen : function (el, ev, fn) {
+          if (typeof $.w.addEventListener !== 'undefined') {
+            el.addEventListener(ev, fn, false);
+          } else if (typeof $.w.attachEvent !== 'undefined') {
+            el.attachEvent('on' + ev, fn);
+          }
+        },
+
+        call: function (url, func) {
+          var n, id, sep = '?';
+
+          n = $.f.callback.length;
+          id = $.a.k + '.f.callback[' + n + ']';
+
+          // create the callback
+          $.f.callback[n] = function (r) {
+            func(r, n);
+            $.f.kill(id);
+          };
+
+          // some calls may come with a query string already set
+          if (url.match(/\?/)) {
+            sep = '&';
+          }
+
+          // make and call the new script node
+          $.d.b.appendChild( $.f.make({'SCRIPT': {
+              'id': id,
+              'type': 'text/javascript',
+              'charset': 'utf-8',
+              'src': url + sep + 'callback=' + id
+            }
+          }));
+        },
+
+        // console.log only if debug is on
+        debug: function (obj) {
+          if ($.v.config.debug && $.w.console && $.w.console.log) {
+            $.w.console.log(obj);
+          }
+        },
+
+        // build stylesheet
+        presentation : function () {
+          var css, cdn, rules;
+
+          css = $.f.make({'STYLE': {'type': 'text/css'}});
+
+          // suspenders AND belt; if some weird protocol sneaks through, default to http
+          cdn = $.a.cdn[$.v.protocol] || $.a.cdn['http:'];
+
+          rules = $.a.rules.join('\n');
+
+          // each rule has our randomly-created key at its root to minimize style collisions
+          rules = rules.replace(/\._/g, '.' + a.k + '_');
+
+          // every rule ending in ; also gets !important
+          rules = rules.replace(/;/g, '!important;');
+
+          // cdn
+          rules = rules.replace(/_cdn/g, cdn);
+          
+          // resolution
+          rules = rules.replace(/_rez/g, $.v.resolution);
+
+          // add rules to stylesheet
+          if (css.styleSheet) {
+            css.styleSheet.cssText = rules;
+          } else {
+            css.appendChild($.d.createTextNode(rules));
+          }
+
+          // add stylesheet to page
+          if ($.d.h) {
+            $.d.h.appendChild(css);
+          } else {
+            $.d.b.appendChild(css);
+          }
+        },
+
+        getPos: function (el) {
+          var x = 0, y = 0;
+          if (el.offsetParent) {
+            do {
+              x = x + el.offsetLeft;
+              y = y + el.offsetTop;
+            } while (el = el.offsetParent);
+            return {"left": x, "top": y};
+          }
+        },
+
+        hideFloatingButton: function () {
+          if ($.s.floatingButton) {
+            $.s.floatingButton.style.display = 'none';
+          }
+        },
+
+        getThis: function (widget, id) {
+          var href = $.a.endpoint.builder +  widget + '&' + id;
+          $.f.log('&type=getThis&href=' + encodeURIComponent(href));
+          $.w.open(href, 'pin' + new Date().getTime());
+        },
+
+        showFloatingButton: function (img) {
+        
+          var height = $.f.getData(img, 'height') || $.v.config.height;
+          var color = $.f.getData(img, 'color') || $.v.config.color;
+          var lang = $.f.getData(img, 'lang') || $.v.config.localImage;
+        
+          // size > 80x80 and source is not a data: uri?
+          if (img.height > $.a.minImgSize && img.width > $.a.minImgSize && !img.src.match(/^data/)) {
+            
+            // kill it if it's already floating out there
+            if ($.s.floatingButton) {
+              $.f.kill($.s.floatingButton);
+            }
+            
+            // make it fresh each time; this pays attention to individual image config options
+            $.s.floatingButton = $.f.make({'A': {'className': $.a.k + '_pin_it_button_' + height + ' ' + $.a.k + '_pin_it_button_' + lang + '_' + height + '_' + color + ' ' + $.a.k + '_pin_it_button_floating_' + height, 'title': 'Pin it!', 'target': '_blank'}});
+            $.f.set($.s.floatingButton, $.a.dataAttributePrefix + 'log', 'button_pinit_floating');
+            $.d.b.appendChild($.s.floatingButton);
+
+            // get position, start href
+            var p = $.f.getPos(img), href = $.a.endpoint.create;
+            // set the button href
+            href = href + 'url=' + encodeURIComponent($.d.URL) + '&media=' + encodeURIComponent(img.src) + '&description=' + encodeURIComponent(img.getAttribute('data-pin-description') || img.title || img.alt || $.d.title);
+            $.s.floatingButton.href = href;
+            // pop new window and hide on click
+            $.s.floatingButton.onclick = function () {
+              $.w.open(this.href, 'pin' + new Date().getTime(), $.a.pop);
+              $.f.hideFloatingButton();
+              $.v.hazFloatingButton = false;
+              // don't open href; we've successfully popped a window
+              return false;
+            };
+            // set height and position
+            $.s.floatingButton.style.top = (p.top + $.a.floatingButtonOffsetTop) + 'px';
+            $.s.floatingButton.style.left = (p.left + $.a.floatingButtonOffsetLeft) + 'px';
+            // show it
+            $.s.floatingButton.style.display = 'block';
+          }
+        },
+
+        // mouse over; only active if we have floaters
+        over: function (v) {
+          var t, el;
+          t = v || $.w.event;
+          el = $.f.getEl(t);
+          if (el) {
+            if (el.tagName === 'IMG' && el.src && !$.f.getData(el, 'no-hover') && !$.f.get(el, 'nopin') && $.v.config.hover) {
+              // we are inside an image
+              if ($.v.hazFloatingButton === false) {
+                // show the floating button
+                $.v.hazFloatingButton = true;
+                $.f.showFloatingButton(el);
+              } else {
+                // we have moved from one image to another while the floater was on
+                $.f.hideFloatingButton();
+                $.f.showFloatingButton(el);
+              }
+            } else {
+              // we are outside an image. Do we need to hide the floater?
+              if ($.v.hazFloatingButton === true) {
+                // don't hide the floater if we are over it
+                if (el !== $.s.floatingButton) {
+                  // hide it
+                  $.v.hazFloatingButton = false;
+                  $.f.hideFloatingButton();
+                }
+              }
+            }
+          }
+        },
+
+        // a click!
+        click: function (v) {
+          v = v || $.w.event;
+          var el, log, pinId;
+          el = $.f.getEl(v);
+          if (el) {
+
+            // log this click
+            log = $.f.getData(el, 'log');
+            if (log) {
+              $.f.log('&type=' + log + '&href=' + encodeURIComponent(el.href || $.f.getData(el, 'href')));
+              // gray out the button
+              if (!el.className.match(/hazClick/)) {
+                el.className = el.className + ' ' + $.a.k + '_hazClick';
+              }
+            }
+
+            // pop repin dialogue
+            pinId = $.f.getData(el, 'pin-id');
+            if (pinId) {
+              $.w.open($.a.endpoint.repin.replace(/%s/, pinId), 'pin' + new Date().getTime(), $.a.pop);
+            }
+          }
+        },
+
+        filter: function (str) {
+          var decoded, ret;
+          decoded = '';
+          ret = '';
+          try {
+            decoded = decodeURIComponent(str);
+          } catch (e) { }
+          ret = decoded.replace(/</g, '&lt;');
+          ret = ret.replace(/>/g, '&gt;');
+          return ret;
+        },
+
+        behavior: function () {
+          // add a single event listener to the body for minimal impact
+          $.f.listen($.d.b, 'click', $.f.click);
+          if ($.v.config.hover) {
+            $.f.listen($.d.b, 'mouseover', $.f.over);
+          }
+          
+          // log calls may be dropped on the floor by the server; clean them up
+          var cleanLog = function () {
+            var s = $.d.getElementsByTagName('SCRIPT');
+            for (var i = 0, n = s.length; i < n; i = i + 1) {
+              if (s[i] && s[i].src && s[i].src.match(/^https?:\/\/logc?\.pinterest\.com/)) {
+                $.f.kill(s[i]);
+              }
+            }
+            $.w.setTimeout(function () { 
+              cleanLog(); 
+            }, 2000);
+          };
+          cleanLog();
+          
+        },
+
+        getPinCount: function (url) {
+          var query = '?url=' + url + '&ref=' + encodeURIComponent($.v.here) + '&source=' + $.a.countSource;
+          $.f.call($.a.endpoint.count + query, $.f.ping.count);
+        },
+
+        prettyPinCount: function (n) {
+          if (n > 999) {
+            if (n < 1000000) {
+              n = parseInt(n / 1000, 10) + 'K+';
+            } else {
+              if (n < 1000000000) {
+                n = parseInt(n / 1000000, 10) + 'M+';
+              } else {
+                n = '++';
+              }
+            }
+          }
+          return n;
+        },
+        
+        // make an avatar for board header
+        avatar: function (url, href) {
+          var src = url.replace(/_30.jpg/, '_60.jpg');
+          var span = $.f.make({'A': {'className': $.a.k + '_avatar', 'href': href}});
+          var img = $.f.make({'IMG': {'src': src }});
+          span.appendChild(img);
+          return span;
+        },
+
+        // arrange pin images neatly on a board
+        grid: function (parent, data, log) {
+          if (!log) {
+            log = 'embed_board';
+          }
+          parent.style.display = 'block';
+          var scaleFactors = {
+            'height': $.a.tile.scale.height,
+            'width': $.a.tile.scale.width
+          };
+          var scaleHeight = $.f.getData(parent, 'scale-height');
+          if (scaleHeight && scaleHeight >= $.a.tile.scale.minHeight) {
+            scaleFactors.height = parseInt(scaleHeight, 10);
+          }
+          var scaleWidth = $.f.getData(parent, 'scale-width');
+          if (scaleWidth && scaleWidth >= $.a.tile.scale.minWidth) {
+            scaleFactors.width = parseInt(scaleWidth, 10);
+          }
+          var width = $.f.getData(parent, 'board-width') || parent.offsetWidth;
+          if (width > parent.offsetWidth) {
+            width = parent.offsetWidth;
+          }
+          var columns = Math.floor(width / (scaleFactors.width + $.a.tile.style.margin));
+          if (columns > $.a.tile.maxColumns) {
+            columns = $.a.tile.maxColumns;
+          }
+          if (columns < $.a.tile.minColumns) {
+            return false;
+          }
+          var bd = $.f.make({'SPAN': {'className': $.a.k + '_embed_grid_bd'}});
+          bd.style.height = scaleFactors.height + 'px';
+          $.v.renderedWidth = (columns * (scaleFactors.width + $.a.tile.style.margin)) - $.a.tile.style.margin;
+          bd.style.width =  $.v.renderedWidth + 'px';
+          var ct = $.f.make({'SPAN': {'className': $.a.k + '_embed_grid_ct'}});
+          var c = 0;
+          var h = [];
+          for (var i = 0, n = data.length; i < 3; i = i + 1) {
+            
+            // converts HTML entities to unicode for thumb titles
+            var temp = $.f.make({'SPAN':{'innerHTML': data[i].description}});
+            var thumb = $.f.make({'A': {'className': $.a.k + '_embed_grid_th', 'title': temp.innerHTML}});
+
+            $.f.set(thumb, $.a.dataAttributePrefix + 'pin-id', data[i].id);
+            $.f.set(thumb, $.a.dataAttributePrefix + 'log', log);
+            var scale = {
+              'height': data[i].images['237x'].height * (scaleFactors.width / data[i].images['237x'].width),
+              'width': scaleFactors.width
+            };
+            var img = $.f.make({'IMG': {'src': data[i].images['237x'].url, 'nopin': 'true', 'height': scale.height, 'width': scale.width, 'className': $.a.k + '_embed_grid_img', 'alt': data[i].description}});
+            img.style.height = scale.height + 'px';
+            img.style.width = scale.width + 'px';
+            img.style.marginTop = 0 - (scale.height / $.a.tile.style.margin) + 'px';
+            if (scale.height > scaleFactors.height) {
+              scale.height = scaleFactors.height;
+            }
+            thumb.appendChild(img);
+            thumb.style.height = scale.height + 'px';
+            thumb.style.width = scale.width + 'px';
+            if (!h[c]) {
+              h[c] = 0;
+            }
+            thumb.style.top = h[c] + 'px';
+            thumb.style.left = (c * (scaleFactors.width + $.a.tile.style.margin)) + 'px';
+            h[c] = h[c] + scale.height + $.a.tile.style.margin;
+            thumb.appendChild(img);
+            ct.appendChild(thumb);
+            c = (c + 1) % columns;
+          }
+
+          var minHeight = 10000;
+          for (var i = 0; i < h.length; i = i + 1) {
+            if (h[i] < minHeight) {
+              minHeight = h[i];
+            }
+          }
+          ct.style.height = minHeight + 'px';
+          bd.appendChild(ct);
+
+          if ($.v.userAgent.match(/Mac OS X/)) {
+            bd.className = bd.className + ' ' + $.a.k + '_embed_grid_scrolling_okay';
+          }
+          return bd;
+        },
+        
+        // make a board header - takes data, parent element, string to log, and true/false for showing board 
+        makeHeader: function (r, parent, log, showSecond) {
+          var hd = $.f.make({'SPAN': { 'className': $.a.k + '_embed_grid_hd'}});
+          var avatar = $.f.avatar(r.data.user.image_small_url, parent.href);
+          $.f.set(avatar, $.a.dataAttributePrefix + 'log', log);
+          // hd.appendChild(avatar);
+
+          if (showSecond) {
+            // showing first and second lines
+            var first = $.f.make({'A': {'className': $.a.k + '_embed_grid_first', 'innerHTML': $.f.filter(r.data.user.full_name), 'target': '_blank', 'href': parent.href }});
+            first.style.width = ($.v.renderedWidth) - 45 + 'px';
+            $.f.set(first, $.a.dataAttributePrefix + 'log', log);
+            hd.appendChild(first);   
+            var second = $.f.make({'A': {'className': $.a.k + '_embed_grid_second', 'innerHTML':  $.f.filter(r.data.board.name), 'target': '_blank', 'href': parent.href}});
+            second.style.width = ($.v.renderedWidth) - 45 + 'px';
+            $.f.set(second, $.a.dataAttributePrefix + 'log', log);
+            hd.appendChild(second);
+          } else {
+            // only showing one line; center it vertically
+            var mid = $.f.make({'A': {'className': $.a.k + '_embed_grid_mid', 'innerHTML': $.f.filter(r.data.user.full_name), 'target': '_blank', 'href': parent.href }});
+            mid.style.width = ($.v.renderedWidth) - 45 + 'px';
+            $.f.set(mid, $.a.dataAttributePrefix + 'log', log);
+            // hd.appendChild(mid);               
+          }
+
+          return hd;   
+        },
+
+        // make a board footer
+        makeFooter: function (a, type, lang) {
+          var ft, logo, see;
+          
+          ft = $.f.make({'A': { 'className': $.a.k + '_embed_grid_ft', 'href': a.href, 'target': '_blank'}});
+          
+          logo = $.f.make({'SPAN': { 'className': $.a.k + '_embed_grid_ft_logo'}});
+
+          var strings = $.v.strings;
+          if (lang && $.a.strings[lang]) {
+            strings = $.a.strings[lang];
+          }
+  
+          if ($.v.renderedWidth > $.a.tile.minWidthToShowAuxText) {
+            see = $.f.make({'SPAN':{'innerHTML': strings.seeOn }});
+            if (strings.seeOnTextAfterLogo) {
+              // ft.appendChild(logo);
+              // ft.appendChild(see);
+            } else {
+              // ft.appendChild(see);
+              // ft.appendChild(logo);
+            }
+          } else {
+            // ft.appendChild(logo);
+          }
+
+          $.f.set(ft, $.a.dataAttributePrefix + 'log', type);
+          return ft;
+
+        },
+
+        // add a CSS class to the container if specified
+        cssHook: function (parent, container) {
+          var cssHook = $.f.getData(parent, 'css-hook');
+          if (cssHook) {
+            container.className = container.className + ' ' + cssHook;
+          }
+        },
+
+        // fire the bookmarklet
+        fireBookmark: function () {
+          $.d.b.appendChild($.f.make({
+            'SCRIPT': {
+              'type': 'text/javascript',
+              'charset': 'utf-8',
+              'src': $.a.endpoint.bookmark + '?r=' + Math.random() * 99999999
+            }
+          }));
+        },
+
+        // callbacks
+        ping: {
+          log: function (r, k) {
+            // drop logging callbacks on the floor
+          },
+          count: function (r, k) {
+            var container = $.d.getElementById($.a.k + '_pin_count_' + k);
+            if (container) {
+              $.f.debug('API replied with count: ' + r.count);
+              var parent = container.parentNode;
+              var config = $.f.getData(parent, 'config');
+
+              if (r.count === 0) {
+                if (config === 'above') {
+                  $.f.debug('Rendering zero count above.');
+                  container.className = $.a.k + '_pin_it_button_count';
+                  container.appendChild($.d.createTextNode('0'));
+                } else {
+                  if ($.f.getData(parent, 'zero')) {
+                    $.f.debug('Zero pin count rendered to the side.');
+                    container.className = $.a.k + '_pin_it_button_count';
+                    container.appendChild($.d.createTextNode('0'));
+                  } else {
+                    $.f.debug('Zero pin count NOT rendered to the side.');
+                  }
+                }
+              }
+
+              if (r.count > 0) {
+                $.f.debug('Got ' + r.count + ' pins for the requested URL.');
+                if (config === 'above' || config === 'beside') {
+                  $.f.debug('Rendering pin count ' + config);
+                  container.className = $.a.k + '_pin_it_button_count';
+                  container.appendChild($.d.createTextNode($.f.prettyPinCount(r.count)));
+                } else {
+                  $.f.debug('No valid pin count position specified; not rendering.');
+                }
+              }
+              $.f.cssHook(parent, container);
+            } else {
+              $.f.debug('Pin It button container not found.');
+            }
+          },
+
+          // build an embedded pin with shiny red candylike repin button
+          pin: function (r, k) {
+            var parent = $.d.getElementById($.a.k + '_' + k);
+            if (parent && r.data && r.data[0]) {
+              $.f.debug('API replied with pin data');
+
+              var pin = r.data[0], thumb = {};
+              if (pin.images) {
+                thumb = pin.images['237x'];
+              }
+
+              if (pin && pin.id && pin.description && thumb.url && thumb.width && thumb.height) {
+                $.f.debug('Found enough data to embed a pin');
+                
+                var strings = $.v.strings;
+                
+                // overridden language?
+                var lang = $.f.getData(parent, 'lang') || $.v.config.lang;
+                
+                if ($.a.strings[lang]) {
+                  strings = $.a.strings[lang];
+                }
+                
+                // container
+                var container = $.f.make({'SPAN': { 'className': $.a.k + '_embed_pin', 'data-pin-id': pin.id }});
+                var style = $.f.getData(parent, 'style');
+                if (style !== 'plain') {
+                  container.className = container.className + ' ' + $.a.k + '_fancy';
+                }
+
+                // main image
+                var link = $.f.make({'A': { 'className': $.a.k + '_embed_pin_link', 'title': pin.description, 'href': 'http://www.pinterest.com/pin/' + pin.id + '/', 'target': '_blank'}});
+
+                var img = $.f.make({'IMG': {'className': $.a.k + '_embed_pin_link_img', 'alt': pin.description, 'nopin': 'true', 'src': thumb.url, 'width': thumb.width, 'height': thumb.height}});
+                $.f.set(img, $.a.dataAttributePrefix + 'log', 'image_from_embedded_pin');
+                $.f.set(img, $.a.dataAttributePrefix + 'href', 'http://www.pinterest.com/pin/' + pin.id + '/');
+                img.style.width = thumb.width + 'px';
+                img.style.height = thumb.height + 'px';
+                link.appendChild(img);
+
+                // pin it button
+                var rpc = $.a.k + '_repin';
+                
+                // gross hack
+                if (lang === 'ja') {
+                  rpc = rpc + '_ja';
+                }
+                
+                var repin = $.f.make({'I': {'className': rpc, 'data-pin-id': pin.id }});
+                $.f.set(repin, $.a.dataAttributePrefix + 'log', 'repin');
+                $.f.set(repin, $.a.dataAttributePrefix + 'href', $.a.endpoint.repin.replace(/%s/, pin.id));
+
+                link.appendChild(repin);
+                repin.onclick = function () {
+                  if (!this.className.match(/hazClick/)) {
+                    this.className = this.className + ' ' + $.a.k + '_hazClick';
+                  }
+                  var href = $.a.endpoint.repin.replace(/%s/, $.f.get(this, 'data-pin-id'));
+                  $.w.open(href, 'pin' + new Date().getTime(), $.a.popLarge);
+                  return false;
+                };
+
+                // this button should open the widget builder with this pin in preview
+                var getThis = $.f.make({'I': {'className': $.a.k + '_getThis', 'innerHTML': strings.getThis + '<i></i>', 'data-pin-id': pin.id}});
+                link.appendChild(getThis);
+                getThis.onclick = function () {
+                  var pinId = $.f.get(this, 'data-pin-id');
+                  $.f.getThis('do_embed_pin', pinId);
+                  return false;
+                };
+                $.f.set(link, $.a.dataAttributePrefix + 'log', 'embed_pin');
+                container.appendChild(link);
+
+                // description
+                var description = $.f.make({'SPAN': {'className': $.a.k + '_embed_pin_desc', 'innerHTML': $.f.filter(pin.description)}});
+
+                // partner attribution
+                if (pin.attribution && pin.attribution.url && pin.attribution.author_name && pin.attribution.provider_icon_url) {
+                  $.f.debug('Building attribution line');
+
+                  var attribution = $.f.make({
+                    'SPAN': {
+                      'className': $.a.k + '_embed_pin_attrib'
+                    }
+                  });
+                  attribution.appendChild($.f.make({
+                    'IMG': {
+                      'className': $.a.k + '_embed_pin_attrib_icon',
+                      'src': pin.attribution.provider_icon_url
+                    }
+                  }));
+                  attribution.appendChild($.f.make({'SPAN':{'className': $.a.k + '_embed_pin_attrib',  'innerHTML': strings.attribTo + ' <a href="' + pin.attribution.url + '" target="_blank">' + $.f.filter(pin.attribution.author_name) + '</a>'}}));
+                  description.appendChild(attribution);
+                }
+                container.appendChild(description);
+
+                // pinner
+                if (pin.pinner && pin.pinner.profile_url && pin.pinner.image_small_url && pin.pinner.full_name) {
+                  $.f.debug('Building pinner line');
+
+                  var pinner = $.f.make({'A': {'className': $.a.k + '_embed_pin_text', 'href': pin.pinner.profile_url, 'target': '_blank'}});
+
+                  pinner.appendChild($.f.make({
+                    'IMG': {
+                      'className': $.a.k + '_embed_pin_text_avatar',
+                      'src': pin.pinner.image_small_url
+                    }
+                  }));
+                  pinner.appendChild($.f.make({
+                    'SPAN': {'className': $.a.k + '_embed_pin_text_container', 'innerHTML': strings.pinnedBy + ' <em class="' + $.a.k + '_embed_pin_text_container_em">' + $.f.filter(pin.pinner.full_name) + '</em>'}
+                  }));
+
+                  var pinnerShield = $.f.make({'B':{'className': $.a.k + '_embed_pin_link_shield'}});
+                  $.f.set(pinnerShield, $.a.dataAttributePrefix + 'log', 'pinner_from_embedded_pin');
+                  $.f.set(pinnerShield, $.a.dataAttributePrefix + 'href', pin.pinner.profile_url);
+                  pinner.appendChild(pinnerShield);
+
+                  container.appendChild(pinner);
+                }
+
+                // board
+                if (pin.board && pin.board.url && pin.board.image_thumbnail_url && pin.board.name) {
+                  $.f.debug('Building board line');
+
+                  // future-proof against API weirdness: sometimes absolute paths are not really absolute
+                  if (!pin.board.url.match(/^(\/\/pinterest\.com|http:\/\/pinterest\.com|https:\/\/pinterest\.com)/)) {
+                    pin.board.url = $.v.protocol + '//www.pinterest.com' + pin.board.url;
+                    $.f.debug('appending Pinterest prefix to board URL');
+                  }
+
+                  var board = $.f.make({'A': {'className': $.a.k + '_embed_pin_text', 'href': pin.board.url, 'target': '_blank'}});
+                  board.appendChild($.f.make({
+                    'IMG': {
+                      'className': $.a.k + '_embed_pin_text_avatar',
+                      'src': pin.board.image_thumbnail_url
+                    }
+                  }));
+                  board.appendChild($.f.make({
+                    'SPAN': {'className': $.a.k + '_embed_pin_text_container', 'innerHTML': strings.onto + ' <em class="' + $.a.k + '_embed_pin_text_container_em">' + $.f.filter(pin.board.name) + '</em>'}
+                  }));
+
+                  var boardShield = $.f.make({'B':{'className': $.a.k + '_embed_pin_link_shield'}});
+                  $.f.set(boardShield, $.a.dataAttributePrefix + 'log', 'board_from_embedded_pin');
+                  $.f.set(boardShield, $.a.dataAttributePrefix + 'href', pin.board.url);
+                  board.appendChild(boardShield);
+
+                  container.appendChild(board);
+                }
+
+                $.f.cssHook(parent, container);
+                $.f.replace(parent, container);
+              } else {
+                $.f.debug('Not enough data to embed a pin; aborting');
+              }
+            }
+          },
+
+          // user's last few pins
+          user: function (r, k) {
+            var parent = $.d.getElementById($.a.k + '_' + k);
+            if (parent && r.data && r.data.pins && r.data.pins.length) {
+
+              var lang = $.f.getData(parent, 'lang') || $.v.config.lang;
+              
+              $.f.debug('API replied with a user');
+              var container = $.f.make({'SPAN': { 'className': $.a.k + '_embed_grid'}});
+              var style = $.f.getData(parent, 'style');
+              if (style !== 'plain') {
+                container.className = container.className + ' ' + $.a.k + '_fancy';
+              }
+              var bd = $.f.grid(parent, r.data.pins, 'embed_user');
+              if (bd) {
+                var hd = $.f.makeHeader(r, parent, 'embed_user');
+                container.appendChild(hd);
+                container.appendChild(bd);
+                container.appendChild($.f.makeFooter(parent, 'embed_user', lang));
+                $.f.cssHook(parent, container);
+                $.f.replace(parent, container);
+              }
+
+            }
+          },
+
+          // last few pins from a board
+          board: function (r, k) {
+            var parent = $.d.getElementById($.a.k + '_' + k);
+            if (parent && r.data && r.data.pins && r.data.pins.length) {
+              $.f.debug('API replied with a group of pins');
+
+              var lang = $.f.getData(parent, 'lang') || $.v.config.lang;
+
+              var container = $.f.make({'SPAN': { 'className': $.a.k + '_embed_grid'}});
+              var style = $.f.getData(parent, 'style');
+              if (style !== 'plain') {
+                container.className = container.className + ' ' + $.a.k + '_fancy';
+              }
+              var bd = $.f.grid(parent, r.data.pins, 'embed_board');
+              if (bd) {
+                var hd = $.f.makeHeader(r, parent, 'embed_board', true);
+                container.appendChild(hd);
+                container.appendChild(bd);
+                container.appendChild($.f.makeFooter(parent, 'embed_board', lang));
+                $.f.cssHook(parent, container);
+                $.f.replace(parent, container);
+              }
+            }
+          }
+        },
+
+        // parse an URL, return values for specified keys
+        parse: function (str, keys) {
+          var query, pair, part, i, n, ret;
+          ret = {};
+          // remove url hash, split to find query
+          query = str.split('#')[0].split('?');
+          // found query?
+          if (query[1]) {
+            // split to pairs
+            pair = query[1].split('&');
+            // loop through pairs
+            for (i = 0, n = pair.length; i < n; i = i + 1){
+              // split on equals
+              part = pair[i].split('=');
+              // found exactly two parts?
+              if (part.length === 2) {
+                // first part is key; do we have a match in keys?
+                if (keys[part[0]]) {
+                  // yes: set return value for key to second part, which is value
+                  ret[part[0]] = part[1];
+                }
+              }
+            }
+          }
+          return ret;
+        },
+
+        // encode and prepend http: and/or // to URLs
+        fixUrl: function (str) {
+          // see if this string has been url-encoded
+          var decoded = '';
+          // try-catch because decodeURIComponent throws errors
+          try {
+            decoded = decodeURIComponent(str);
+          } catch (e) { }
+          // encode string if decoded matches original
+          if (decoded === str) {
+            str = encodeURIComponent(str);
+          }
+          // does it start with http?
+          if (!str.match(/^http/i)) {
+            // does it start with //
+            if (!str.match(/^%2F%2F/i)) {
+              str = '%2F%2F' + str;
+            }
+            str = 'http%3A' + str;
+            $.f.debug('fixed URL: ' + str);
+          }
+          return str;
+        },
+
+        // deep link to Pinterest apps
+        deepLink: {
+          ios_safari: function (a) {
+            var shallow, deep, start, count, amount, delay, watchForError;
+
+            // link target points to pin/create/button/?url=foo&media=bar
+            shallow = a.href;
+
+            // make the deep-link URL
+            deep = shallow.split('?')[1];
+            deep = deep.replace(/url=/, 'source_url=');
+            deep = deep.replace(/media=/, 'image_url=');
+            deep = 'pinit://pinit/?' + deep;
+
+            // start the clock ticking
+            start = new Date().getTime();
+            count = 0;
+            amount = 10;
+            delay = 80;
+
+            // watch for the clock to fall out of sync, meaning Safari can't find the app
+            watchForError = function () {
+              $.w.setTimeout(function () {
+                if (count < amount) {
+                  // keep watching
+                  watchForError();
+                } else {
+                  // is our clock out of sync?
+                  var since = start + (count * delay);
+                  var now = new Date().getTime();
+                  var diff = (now - since) / amount;
+                  // yes: Safari has tried to pop the app but failed
+                  if (diff < delay) {
+                    // send us over to pin/create/button (dismisses error pop-up)
+                    $.w.location = shallow;
+                  }
+                }
+                count = count + 1;
+              }, delay);
+            };
+
+            // attempt to pop the Pinterest application
+            $.w.location = deep;
+
+            // if we're still here, start watching the clock
+            watchForError();
+          }
+        },
+
+        render: {
+          buttonBookmark: function (el) {
+            $.f.debug('build bookmarklet button');
+            
+            var height = $.f.getData(el, 'height') || $.v.config.height;
+            var color = $.f.getData(el, 'color') || $.v.config.color;
+            var lang = $.f.getData(el, 'lang') || $.v.config.localImage;
+            
+            var a = $.f.make({'A': {'href': el.href, 'className': $.a.k + '_pin_it_button_' + height + ' ' + $.a.k + '_pin_it_button_' + lang + '_' + height + '_'  + color + ' ' + $.a.k + '_pin_it_button_inline_' + height + ' ' + $.a.k + '_pin_it_none'}});
+
+            if ($.f.getData(el, 'zero') || $.v.config.zero) {
+              $.f.set(a, $.a.dataAttributePrefix + 'zero', true);
+            }
+
+            var config = $.f.getData(el, 'config');
+            if ($.a.config.pinItCountPosition[config] === true) {
+              $.f.set(a, $.a.dataAttributePrefix + 'config', config);
+              a.className = a.className + ' ' + $.a.k + '_pin_it_' + config + '_' + height;
+            } else {
+              a.className = a.className + ' ' + $.a.k + '_pin_it_none';
+            }
+            
+            $.f.set(a, $.a.dataAttributePrefix + 'log', 'button_pinit_bookmarklet');
+            
+            // fire the bookmarklet
+            a.onclick = function () {
+              $.f.fireBookmark();
+              return false;
+            };
+
+            var span = $.f.make({'SPAN': {'className': $.a.k + '_hidden', 'id': $.a.k + '_pin_count_' + $.f.callback.length, 'innerHTML': '<i></i>'}});
+            a.appendChild(span);
+            $.f.getPinCount($.d.URL);
+
+            $.f.replace(el, a);
+
+          },
+          buttonPin: function (el) {
+            $.f.debug('build Pin It button');
+            
+            var height = $.f.getData(el, 'height') || $.v.config.height;
+            var color = $.f.getData(el, 'color') || $.v.config.color;
+            var lang = $.f.getData(el, 'lang') || $.v.config.localImage;
+
+            // get just the url, media, and description parameters and percent-encode them, if needed
+            var href, q;
+            q = $.f.parse(el.href, {'url': true, 'media': true, 'description': true});
+            if (q.media) {
+              q.media = $.f.fixUrl(q.media);
+            } else {
+              // misconfigured: no media URL was given
+              q.media = '';
+              $.f.debug('no media found; click will pop bookmark');
+            }
+
+            if (q.url) {
+              q.url = $.f.fixUrl(q.url);
+            } else {
+              // misconfigured: no page URL was given
+              q.url = encodeURIComponent($.d.URL);
+              $.f.debug('no url found; click will pin this page');
+            }
+
+            // automatically fill in document.title (if avaiable) for blank descriptions
+            if (!q.description) {
+              q.description = encodeURIComponent($.d.title || '');
+            }
+
+            href = $.a.endpoint.create + 'url=' + q.url + '&media=' + q.media + '&guid=' + $.v.guid + '-' + $.v.buttonId + '&description=' + q.description;
+            $.v.buttonId = $.v.buttonId + 1;
+
+            var a = $.f.make({'A': {'href': href, 'className': $.a.k + '_pin_it_button_' + height + ' '  + $.a.k + '_pin_it_button_' + lang + '_' + height + '_'  + color + ' ' + $.a.k + '_pin_it_button_inline_' + height, 'target': '_blank'}});
+            $.f.set(a, $.a.dataAttributePrefix + 'log', 'button_pinit');
+
+            if ($.f.getData(el, 'zero') || $.v.config.zero) {
+              $.f.set(a, $.a.dataAttributePrefix + 'zero', true);
+            }
+
+            var config = $.f.getData(el, 'config');
+            if ($.a.config.pinItCountPosition[config] === true) {
+              $.f.set(a, $.a.dataAttributePrefix + 'config', config);
+              a.className = a.className + ' ' + $.a.k + '_pin_it_' + config + '_' + height;
+            } else {
+              a.className = a.className + ' ' + $.a.k + '_pin_it_none';
+            }
+
+            // validate and log on click
+            a.onclick = function () {
+              // search for url and media in this button's href
+              var q = $.f.parse(this.href, {'url': true, 'media': true, 'description': true});
+              // log if no default description was specified
+              if (!q.description) {
+                $.f.log('&type=config_warning&warning_msg=no_description&href=' + encodeURIComponent($.d.URL));
+              }
+              // found valid URLs?
+              if (q.url && q.url.match(/^http/i) && q.media && q.media.match(/^http/i)) {
+                // yes
+                if (!$.v.config.shallow && typeof $.f.deepLink[$.v.deepBrowser] === 'function') {
+                  // attempt to deep link
+                  $.f.deepLink[$.v.deepBrowser](this);
+                } else {
+                  // pop the pin form
+                  $.w.open(this.href, 'pin' + new Date().getTime(), $.a.pop);
+                }
+              } else {
+                // log an error with descriptive message
+                $.f.log('&type=config_error&error_msg=invalid_url&href=' + encodeURIComponent($.d.URL));
+                // fire up the bookmarklet and hope for the best
+                $.f.fireBookmark();
+              }
+              return false;
+            };
+
+            // prevent old bad buttons from throwing errors
+            if (q.url) {
+              var span = $.f.make({'SPAN': {'className': $.a.k + '_hidden', 'id': $.a.k + '_pin_count_' + $.f.callback.length, 'innerHTML': '<i></i>'}});
+              a.appendChild(span);
+              $.f.getPinCount(q.url);
+              $.f.replace(el, a);
+            }
+          },
+          buttonFollow: function (el) {
+            $.f.debug('build follow button');
+            var className = '_follow_me_button';
+            var render = $.f.getData(el, 'render');
+            if (render) {
+              className = className + '_' + render;
+            }
+            var a = $.f.make({'A': {'target': '_blank', 'href': el.href, 'innerHTML': el.innerHTML, 'className': $.a.k + className }});
+            a.appendChild($.f.make({'B': {}}));
+            a.appendChild($.f.make({'I': {}}));
+            $.f.set(a, $.a.dataAttributePrefix + 'log', 'button_follow');
+            $.f.replace(el, a);
+          },
+          embedPin: function (el) {
+            $.f.debug('build embedded pin');
+            var pin = el.href.split('/')[4];
+            if (pin && parseInt(pin, 10) > 0) {
+              $.f.getPinsIn('pin', '', {'pin_ids': pin});
+            }
+          },
+          embedUser: function (el) {
+            $.f.debug('build embedded profile');
+            var user = el.href.split('/')[3];
+            if (user) {
+              $.f.getPinsIn('user', user + '/pins/');
+            }
+          },
+          embedBoard: function (el) {
+            $.f.debug('build embedded board');
+            var user = el.href.split('/')[3];
+            var board = el.href.split('/')[4];
+            if (user && board) {
+              $.f.getPinsIn('board', user + '/' + board + '/pins/');
+            }
+          }
+        },
+        getPinsIn: function (endpoint, path, params) {
+          var query = '', sep = '?', p;
+          var pincounter = 0;
+          for (p in params) {
+            if (pincounter > 3) {
+            } else {
+              if (params[p].hasOwnProperty) {
+                query = query + sep + p + '=' + params[p];
+                sep = '&';
+              }
+              pincounter = pincounter + 1;
+            }
+          }
+          $.f.call($.a.endpoint[endpoint] + path + query, $.f.ping[endpoint]);
+        },
+        build: function (el) {
+          // look for buildable pidgets in element el
+          // may be fired by function specified in data-pin-render
+          if (typeof el !== 'object' ||  el === null || !el.parentNode) {
+            el = $.d;
+          }
+          // grab all the links on the page
+          var temp = el.getElementsByTagName('A'), n, i, doThis, legacyLayout, legacyConfig, legacyTranslate = {'vertical': 'above', 'horizontal': 'beside'}, link = [];
+          for (i = 0, n = temp.length; i < n; i = i + 1) {
+            link.push(temp[i]);
+          }
+          // go through all links and look for ours
+          for (i = 0, n = link.length; i < n; i = i + 1) {
+            if (link[i].href && link[i].href.match($.a.myDomain)) {
+              doThis = $.f.getData(link[i], 'do');
+
+              // fix legacy buttons
+              if (!doThis && link[i].href.match(/pin\/create\/button/)) {
+                doThis = 'buttonPin';
+                // assume no count layout given
+                legacyConfig = 'none';
+                // can we find it?
+                legacyLayout = $.f.get(link[i], 'count-layout');
+                // do we have 'vertical' or 'horizontal'?
+                if (legacyLayout && legacyTranslate[legacyLayout]) {
+                  // translate to 'above' or 'beside'
+                  legacyConfig = legacyTranslate[legacyLayout];
+                }
+                // fix the link
+                $.f.set(link[i], 'data-pin-config', legacyConfig);
+              }
+
+              if (typeof $.f.render[doThis] === 'function') {
+                link[i].id = $.a.k + '_' + $.f.callback.length;
+                $.f.render[doThis](link[i]);
+              }
+            }
+          }
+        },
+        config: function () {
+          // find and apply configuration requests passed as data attributes on SCRIPT tag
+          var script = $.d.getElementsByTagName('SCRIPT'), n = script.length, i, j, p, foundMe = false;
+
+          for (i = 0; i < n; i = i + 1) {
+            if ($.a.me && script[i] && script[i].src && script[i].src.match($.a.me)) {
+              // only do this for the first instance of the script on the page
+              if (foundMe === false) {
+                for (j = 0; j < $.a.configParam.length; j = j + 1) {
+                  p = $.f.get(script[i], $.a.dataAttributePrefix + $.a.configParam[j]);
+                  if (p) {
+                    $.v.config[$.a.configParam[j]] = p;
+                  }
+                }
+                foundMe = true;
+              }
+              $.f.kill(script[i]);
+            }
+          }
+
+          if (typeof $.v.config.build === 'string') {
+            $.w[$.v.config.build] = function (el) {
+              $.f.build(el);
+            };
+          }
+
+          $.w.setTimeout(function () {
+            if (typeof $.v.config.logc === 'string') {
+              $.f.log('&type=pidget&logc=' + $.v.config.logc, $.a.endpoint.logc);
+            } else {
+              $.f.log('&type=pidget');
+            }
+          }, 1000);
+          
+        },
+        // send logging information
+        log: function (str, endpoint) {
+
+            if (!endpoint) {
+              endpoint = $.a.endpoint.log;
+            }
+
+            // create the logging call
+            var query = '?via=' + encodeURIComponent($.v.here) + '&guid=' + $.v.guid;
+
+            // add the optional string to log
+            if (str) {
+              query = query + str;
+            }
+
+            $.f.call(endpoint + query, $.f.ping.log);
+        },
+
+        init : function () {
+          $.d.b = $.d.getElementsByTagName('BODY')[0];
+          $.d.h = $.d.getElementsByTagName('HEAD')[0];
+
+          // just a few variables that need to be shared throughout this script
+          $.v = {
+            'resolution': 1,
+            'here': $.d.URL.split('#')[0],
+            'hazFloatingButton': false,
+            'config': {
+              // button config defaults to 20px gray english
+              'color': 'gray',
+              'localImage': 'en',
+              'height': '20'
+            },
+            'strings': $.a.strings.en,
+            'guid': '',
+            'buttonId': 0,
+            'deepBrowser': null,
+            'protocol': $.w.location.protocol,
+            'userAgent': $.w.navigator.userAgent
+          };
+          
+          
+
+          // are we testing by dragging a file into a browser?
+          if ($.v.protocol === 'file:') {
+            $.v.protocol = 'http:';
+          }
+
+          // prepend protocol to endpoints so testing from file:// works
+          for (var e in $.a.endpoint) {
+            // one endpoint already takes http:, so don't override
+            if (!$.a.endpoint[e].match(/^h/)) {
+              $.a.endpoint[e] = $.v.protocol + $.a.endpoint[e];
+            }
+          }
+
+          // are we using an IOS device?
+          if ($.v.userAgent.match(/iP/) !== null) {
+            // we're on an IOS device. Don't deep link from inside the Pinterest app or Chrome.
+            if ($.v.userAgent.match(/Pinterest/) === null && $.v.userAgent.match(/CriOS/) === null) {
+              $.v.deepBrowser = 'ios_safari';
+            }
+          }
+
+          // make a 12-digit base-60 number for conversion tracking
+          for (var i = 0; i < 12; i = i + 1) {
+            $.v.guid = $.v.guid + '0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz'.substr(Math.floor(Math.random() * 60), 1);
+          }
+
+          // find the script node we are running now
+          // remove it and set config options if we find any
+          $.f.config();
+          
+          var lang = $.a.defaultLang;
+          
+          // do we have a valid global language request in script node
+          if ($.v.config.lang && typeof $.a.strings[$.v.config.lang] === 'object') {
+            lang = $.v.config.lang;
+          } else {
+          
+            // do we need to switch languages from en to something else?
+            var lang = $.d.getElementsByTagName('HTML')[0].getAttribute('lang');
+               
+            if (!lang) {
+              var meta = $.d.getElementsByTagName('META');
+              // check for Content-Language meta
+              for (i = 0, n = meta.length; i < n; i = i + 1) {
+                var equiv = $.f.get(meta[i], 'http-equiv');
+                if (equiv) {
+                  // match content-language or Content-Language
+                  equiv = equiv.toLowerCase();
+                  if (equiv === 'content-language') {
+                    var content = $.f.get(meta[i], 'content');
+                    // is there something in content-language?
+                    if (content) {
+                      // use this, stop looking at metas
+                      lang = content.split('-')[0];
+                      break;
+                    }
+                  }
+                }
+              }
+            }
+            
+            if (lang) {
+              lang = lang.toLowerCase();
+              // direct match for pt-br
+              if (typeof $.a.strings[lang] === 'object') {
+                $.v.strings = $.a.strings[lang];
+              } else {
+                // match first part: en-uk = en
+                lang = lang.split('-')[0];
+                if (typeof $.a.strings[lang] === 'object') {
+                  $.v.strings = $.a.strings[lang];
+                }
+              }
+            }
+          }
+          // do we need to localize the image
+          if ($.a.localImage[lang] === true) {
+            $.v.config.localImage = lang;
+          }
+          
+          $.v.lang = lang;
+
+          if ($.w.devicePixelRatio && $.w.devicePixelRatio >= 2) {
+            $.v.resolution = 2;
+          }
+
+          // note: build can also be triggered by a user-specified request passed in data-pin-build
+          $.f.build();
+
+          $.f.presentation();
+          $.f.behavior();
+
+        }
+      };
+    }())
+  };
+  $.f.init();
+}(window, document, {
+  'k': 'PIN_' + new Date().getTime(),
+  'myDomain': /^https?:\/\/(www\.|)pinterest\.com\//,
+  'me': /pinit.*?\.js$/,
+  'floatingButtonOffsetTop': 10,
+  'floatingButtonOffsetLeft': 10,
+  'endpoint': {
+    'bookmark': '//assets.pinterest.com/js/pinmarklet.js',
+    // temp fix until business site is working on https
+    'builder': 'http://business.pinterest.com/widget-builder/#',
+    'count': '//widgets.pinterest.com/v1/urls/count.json',
+    'pin': '//widgets.pinterest.com/v3/pidgets/pins/info/',
+    'repin': '//pinterest.com/pin/%s/repin/x/',
+    'board': '//widgets.pinterest.com/v3/pidgets/boards/',
+    'user': '//widgets.pinterest.com/v3/pidgets/users/',
+    'log': '//log.pinterest.com/',
+    'logc': '//logc.pinterest.com/',
+    'create': '//www.pinterest.com/pin/create/button/?',
+    'pin_closeup': '//www.pinterest.com/pin/'
+  },
+  'config': {
+    'pinItCountPosition': {
+      'none': true,
+      'above': true,
+      'beside': true
+    }
+  },
+  'minImgSize': 119,
+  // source 6 means "pinned with the externally-hosted Pin It button"
+  'countSource': 6,
+  'dataAttributePrefix': 'data-pin-',
+  // valid config parameters
+  'configParam': [ 'build', 'debug', 'style', 'hover', 'logc', 'shallow', 'zero', 'color', 'height', 'lang'],
+  // configuration for the pop-up window
+  'pop': 'status=no,resizable=yes,scrollbars=yes,personalbar=no,directories=no,location=no,toolbar=no,menubar=no,width=632,height=270,left=0,top=0',
+  'popLarge': 'status=no,resizable=yes,scrollbars=yes,personalbar=no,directories=no,location=no,toolbar=no,menubar=no,width=900,height=500,left=0,top=0',
+  // secure and non-secure content distribution networks
+  'cdn': {
+    'https:': 'https://s-passets.pinimg.com',
+    'http:': 'http://passets.pinterest.com',
+    // if we are dragging and dropping to test a page, use http instead of file
+    'file:': 'http://passets.pinterest.com'
+  },
+  // tiled image settings
+  'tile': {
+    'scale': {
+      'minWidth': 60,
+      'minHeight': 60,
+      'width': 92,
+      'height': 175
+    },
+    'minWidthToShowAuxText': 150,
+    'minContentWidth': 120,
+    'minColumns': 1,
+    'maxColumns': 6,
+    'style': {
+      'margin': 2,
+      'padding': 10
+    }
+  },
+  'localImage': {
+    'en': true,
+    'ja': true
+  },
+  'defaultLang': 'en',
+  'strings': {
+    'en': {
+      'seeOn': 'See On',
+      'getThis': 'get this',
+      'attribTo': 'by',
+      'pinnedBy': 'Pinned by',
+      'onto': 'Onto'
+    },
+    'de': {
+      'seeOn': 'Ansehen auf',
+      'getThis': 'bekomme',
+      'attribTo': 'von',
+      'pinnedBy': 'Gepinnt von',
+      'onto': 'Auf'
+    },
+    'es': {
+      'seeOn': 'Ver En',
+      'getThis': 'obtener',
+      'attribTo': 'por',
+      'pinnedBy': 'Pineado por',
+      'onto': 'En'
+    },
+    'fr': {
+      'seeOn': 'Voir sur',
+      'getThis': 'obtenir',
+      'attribTo': 'par',
+      'pinnedBy': '&#201;pingl&#233; par',
+      'onto': 'Sur'
+    },
+    'ja': {
+      'seeOn': '&#12391;&#35211;&#12427;',
+      'seeOnTextAfterLogo': true,
+      'getThis': '&#24471;&#12427;',
+      'attribTo': '',
+      'pinnedBy': '&#12500;&#12531;&#12375;&#12383;&#20154;',
+      'onto': '&#12508;&#12540;&#12489;'
+    },
+    'nl': {
+      'seeOn': 'Bekijken op',
+      'getThis': 'krijg',
+      'attribTo': 'door',
+      'pinnedBy': 'Gepind door',
+      'onto': 'Op'
+    },
+    'pt': {
+      'seeOn': 'Ver em',
+      'getThis': 'obter',
+      'attribTo': 'por',
+      'pinnedBy': 'Pin afixado por',
+      'onto': 'Em'
+    },
+    'pt-br': {
+      'seeOn': 'Ver em',
+      'getThis': 'obter',
+      'attribTo': 'por',
+      'pinnedBy': 'Pinado por',
+      'onto': 'Em'
+    }
+  },
+  // CSS rules
+  'rules': [
+
+    // PIN IT BUTTON -- 20px
+
+    'a._pin_it_button_20 {  background-repeat: none; background-size: 40px 60px; height: 20px; margin: 0; padding: 0; vertical-align: baseline; text-decoration: none; width: 40px; background-position: 0 -20px }',
+    'a._pin_it_button_20:hover { background-position: 0 0px }',
+    'a._pin_it_button_20:active, a._pin_it_button_20._hazClick { background-position: 0 -40px }',
+    'a._pin_it_button_inline_20 { position: relative; display: inline-block; }',
+    'a._pin_it_button_floating_20 { position: absolute; }',
+
+    // background images
+    'a._pin_it_button_en_20_red { background-image: url(_cdn/images/pidgets/pinit_bg_en_rect_red_20__rez.png); }',
+    'a._pin_it_button_en_20_white { background-image: url(_cdn/images/pidgets/pinit_bg_en_rect_white_20__rez.png); }',
+    'a._pin_it_button_en_20_gray { background-image: url(_cdn/images/pidgets/pinit_bg_en_rect_gray_20__rez.png); }',
+
+    'a._pin_it_button_ja_20_red { background-image: url(_cdn/images/pidgets/pinit_bg_ja_rect_red_20__rez.png); }',
+    'a._pin_it_button_ja_20_white { background-image: url(_cdn/images/pidgets/pinit_bg_ja_rect_white_20__rez.png); }',
+    'a._pin_it_button_ja_20_gray { background-image: url(_cdn/images/pidgets/pinit_bg_ja_rect_gray_20__rez.png); }',
+    
+    // the count
+    'a._pin_it_above_20 span._pin_it_button_count { background: transparent url(_cdn/images/pidgets/count_north_white_rect_20__rez.png) 0 0 no-repeat; background-size: 40px 29px; position: absolute; bottom: 21px; left: 0px; height: 29px; width: 40px; font: 12px Arial, Helvetica, sans-serif; line-height: 24px; text-indent: 0;}',
+    'a._pin_it_button_20 span._pin_it_button_count { position: absolute; color: #777; text-align: center; text-indent: 0; }',
+    'a._pin_it_beside_20 span._pin_it_button_count, a._pin_it_beside_20 span._pin_it_button_count i { background-color: transparent; background-repeat: no-repeat; background-image: url(_cdn/images/pidgets/count_east_white_rect_20__rez.png); }',
+    'a._pin_it_beside_20 span._pin_it_button_count { padding: 0 3px 0 10px; background-size: 45px 20px; background-position: 0 0; position: absolute; top: 0; left: 41px; height: 20px; font: 10px Arial, Helvetica, sans-serif; line-height: 20px; }',
+    'a._pin_it_beside_20 span._pin_it_button_count i { background-position: 100% 0; position: absolute; top: 0; right: -2px; height: 20px; width: 2px; }',
+    'a._pin_it_button_20._pin_it_above { margin-top: 20px; }',
+
+    // PIN IT BUTTON -- 28px
+
+    'a._pin_it_button_28 { background-repeat: none; background-size: 56px 84px; height: 28px; margin: 0; padding: 0; vertical-align: baseline; text-decoration: none; width: 56px; background-position: 0 -28px }',
+    'a._pin_it_button_28:hover { background-position: 0 0px }',
+    'a._pin_it_button_28:active, a._pin_it_button_28._hazClick { background-position: 0 -56px }',
+    'a._pin_it_button_inline_28 { position: relative; display: inline-block; }',
+    'a._pin_it_button_floating_28 { position: absolute; }',
+
+    // background images
+    'a._pin_it_button_en_28_red { background-image: url(_cdn/images/pidgets/pinit_bg_en_rect_red_28__rez.png); }',
+    'a._pin_it_button_en_28_white { background-image: url(_cdn/images/pidgets/pinit_bg_en_rect_white_28__rez.png); }',
+    'a._pin_it_button_en_28_gray { background-image: url(_cdn/images/pidgets/pinit_bg_en_rect_gray_28__rez.png); }',
+
+    'a._pin_it_button_ja_28_red { background-image: url(_cdn/images/pidgets/pinit_bg_ja_rect_red_28__rez.png); }',
+    'a._pin_it_button_ja_28_white { background-image: url(_cdn/images/pidgets/pinit_bg_ja_rect_white_28__rez.png); }',
+    'a._pin_it_button_ja_28_gray { background-image: url(_cdn/images/pidgets/pinit_bg_ja_rect_gray_28__rez.png); }',
+    
+    // the count
+    'a._pin_it_button_28 span._pin_it_button_count { position: absolute; color: #777; text-align: center; text-indent: 0; }',
+    'a._pin_it_above_28 span._pin_it_button_count { background: transparent url(_cdn/images/pidgets/count_north_white_rect_28__rez.png) 0 0 no-repeat; background-size: 56px 37px; position: absolute; bottom: 29px; left: 0px; height: 37px; width: 56px; font: 15px Arial, Helvetica, sans-serif; line-height: 28px; text-indent: 0;}',
+    'a._pin_it_beside_28 span._pin_it_button_count, a._pin_it_beside_28 span._pin_it_button_count i { background-color: transparent; background-repeat: no-repeat; background-image: url(_cdn/images/pidgets/count_east_white_rect_28__rez.png); }',
+    'a._pin_it_beside_28 span._pin_it_button_count { padding: 0 3px 0 10px; background-size: 63px 28px; background-position: 0 0; position: absolute; top: 0; left: 57px; height: 28px; font: 12px Arial, Helvetica, sans-serif; line-height: 28px; }',
+    'a._pin_it_beside_28 span._pin_it_button_count i { background-position: 100% 0; position: absolute; top: 0; right: -2px; height: 28px; width: 2px; }',
+    'a._pin_it_button_28._pin_it_above { margin-top: 28px; }',
+
+    // FOLLOW ME ON PINTEREST BUTTON
+
+    // background images (last selector) have no semicolon, so they don't get an !important
+    'a._follow_me_button, a._follow_me_button i { background-size: 200px 60px; background: transparent url(_cdn/images/pidgets/bfs_rez.png) 0 0 no-repeat }',
+    'a._follow_me_button { color: #444; display: inline-block; font: bold normal normal 11px/20px "Helvetica Neue",helvetica,arial,san-serif; height: 20px; margin: 0; padding: 0; position: relative; text-decoration: none; text-indent: 19px; vertical-align: baseline;}',
+    'a._follow_me_button:hover { background-position: 0 -20px}',
+    'a._follow_me_button:active  { background-position: 0 -40px}',
+
+    // b = logo
+    'a._follow_me_button b { position: absolute; top: 3px; left: 3px; height: 14px; width: 14px; background-size: 14px 14px; background-image: url(_cdn/images/pidgets/log_rez.png); }',
+
+    // i = right cap
+    'a._follow_me_button i { position: absolute; top: 0; right: -4px; height: 20px; width: 4px; background-position: 100% 0px; }',
+    'a._follow_me_button:hover i { background-position: 100% -20px;  }',
+    'a._follow_me_button:active i { background-position: 100% -40px; }',
+
+    // TALL VERSION OF FOLLOW ME ON PINTEREST BUTTON
+
+    // background images (last selector) have no semicolon, so they don't get an !important
+    'a._follow_me_button_tall, a._follow_me_button_tall i { background-size: 400px 84px; background: transparent url(_cdn/images/pidgets/bft_rez.png) 0 0 no-repeat }',
+    'a._follow_me_button_tall { color: #444; display: inline-block; font: bold normal normal 13px/28px "Helvetica Neue",helvetica,arial,san-serif; height: 28px; margin: 0; padding: 0; position: relative; text-decoration: none; text-indent: 33px; vertical-align: baseline;}',
+    'a._follow_me_button_tall:hover { background-position: 0 -28px}',
+    'a._follow_me_button_tall:active  { background-position: 0 -56px}',
+
+    // b = logo
+    'a._follow_me_button_tall b { position: absolute; top: 5px; left: 10px; height: 18px; width: 18px; background-size: 18px 18px; background-image: url(_cdn/images/pidgets/smt_rez.png); }',
+
+    // i = right cap
+    'a._follow_me_button_tall i { position: absolute; top: 0; right: -10px; height: 28px; width: 10px; background-position: 100% 0px; }',
+    'a._follow_me_button_tall:hover i { background-position: 100% -28px;  }',
+    'a._follow_me_button_tall:active i { background-position: 100% -56px; }',
+    
+    // EMBEDDED PIN
+
+    // main container
+    'span._embed_pin { display: inline-block; text-align: center; width: 237px; overflow: hidden; vertical-align: top; }',
+
+    // shadow and rounded corner
+    'span._embed_pin._fancy { background: #fff; box-shadow: 0 0 3px #aaa; border-radius: 3px; }',
+
+    // thumbnail link has relative position
+    'span._embed_pin a._embed_pin_link { display: block;  margin: 0 auto; padding: 0; position: relative;  line-height: 0}',
+
+    // images should never show a border
+    'span._embed_pin img { border: 0; margin: 0; padding: 0;}',
+
+    // repin button
+    'span._embed_pin a._embed_pin_link i._repin { left: 10px; top: 10px; position: absolute; height: 33px; width: 64px; background-size: 64px 99px; background: transparent url(_cdn/images/pidgets/repin_rez.png) }',
+    'span._embed_pin a._embed_pin_link i._repin_ja { left: 10px; top: 10px; position: absolute; height: 33px; width: 64px; background-size: 64px 99px; background: transparent url(_cdn/images/pidgets/ja_repin_rez.png) }',
+
+    'span._embed_pin a._embed_pin_link i._repin:hover { background-position: 0 -33px; }',
+    'span._embed_pin a._embed_pin_link i._repin._hazClick { background-position: 0 -66px; }',
+
+    // "get this" hoverbutton
+    'span._embed_pin a._embed_pin_link i._getThis { display: none }',
+    'span._embed_pin a._embed_pin_link:hover i._getThis, span._embed_pin a._embed_pin_link:hover i._getThis i { background: transparent url(_cdn/images/pidgets/bfs1.png) }',
+
+    // text container and hover state
+    'span._embed_pin a._embed_pin_link:hover i._getThis { color: #555; display: inline-block; font: normal normal normal 11px/20px "Helvetica Neue",helvetica,arial,san-serif; height: 20px; margin: 0; padding: 0 1px 0 5px; position: absolute; bottom: 10px; right: 10px; text-decoration: none;  }',
+    'span._embed_pin a._embed_pin_link:hover i._getThis:hover { background-position: 0 -20px }',
+
+    // end cap and hover state
+    'span._embed_pin a._embed_pin_link:hover i._getThis i { position: absolute; top: 0; right: -4px; height: 20px; width: 5px; background-position: 100% 0px }',
+    'span._embed_pin a._embed_pin_link:hover i._getThis:hover i { background-position: 100% -20px }',
+
+    // description and attribution blocks
+    'span._embed_pin span._embed_pin_desc { color: #333; white-space: normal; border-bottom: 1px solid #eee; display: block; font-family: "Helvetica Neue", arial, sans-serif; font-size: 12px; line-height: 17px; padding: 10px; text-align: left; }',
+
+    'span._embed_pin span._embed_pin_attrib, span._embed_pin span._embed_pin_text_container { color: #a7a7a7; font-family: "Helvetica", sans-serif; font-size: 10px; line-height: 18px; font-weight: bold; display: block;}',
+    'span._embed_pin span._embed_pin_attrib img._embed_pin_attrib_icon { height: 16px; width: 16px; vertical-align: middle; margin-right: 5px; float: left;}',
+    'span._embed_pin span._embed_pin_attrib a { color: #a7a7a7; text-decoration: none;}',
+
+    'span._embed_pin a._embed_pin_text, span._embed_pin a._embed_pin_text span._embed_pin_text_container { position: relative; text-decoration: none; display: block; font-weight: bold; color: #b7b7b7; font-family: "Helvetica Neue", arial, sans-serif; font-size: 11px; line-height: 14px; height: 39px; text-align: left; }',
+    'span._embed_pin a._embed_pin_text { padding: 5px 0 0 7px; }',
+    'span._embed_pin a._embed_pin_text:hover { background: #eee;}',
+    'span._embed_pin a._embed_pin_text img._embed_pin_text_avatar { border-radius: 2px; overflow: hidden; height: 30px; width: 30px; vertical-align: middle; margin-right: 5px; float: left;}',
+    'span._embed_pin a._embed_pin_text span._embed_pin_text_container em._embed_pin_text_container_em { font-family: inherit; display: block; color: #717171; font-style: normal; width: 180px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }',
+    'span._embed_pin a._embed_pin_text b._embed_pin_link_shield { position: absolute; top: 0; left: 0; height: 100%; width: 100%; }',
+
+
+    // EMBEDDED BOARDS
+
+    // main container
+    'span._embed_grid { display: inline-block; margin: 0; padding:10px 0; position: relative; text-align: center}',
+    // border and corners
+    'span._embed_grid._fancy {}',
+    // header container
+    'span._embed_grid span._embed_grid_hd { display: block; margin: 0 10px; padding: 0; height: 45px; position: relative; background: rgba(0,0,0,0);}',
+
+    // avatar 
+    'span._embed_grid span._embed_grid_hd a._avatar { display: none; position: absolute; top: 0; left: 0; height: 36px; width: 36px; }',
+    'span._embed_grid span._embed_grid_hd a._avatar::before { position: absolute; content:""; z-index: 2; top: 0; left: 0; right: 0; bottom: 0; box-shadow: inset 0 0 2px #888;  border-radius: 3px; }',
+    'span._embed_grid span._embed_grid_hd a._avatar img { position: relative; height: 36px; width: 36px; margin: 0; padding: 0; border-radius: 3px; border: none;}',
+
+    // header
+    'span._embed_grid span._embed_grid_hd a { text-decoration: none; background: transparent; cursor: pointer; white-space: nowrap; position: absolute; left: 44px; text-align: left; overflow: hidden; text-overflow: ellipsis; }',
+    'span._embed_grid span._embed_grid_hd a:hover { text-decoration: none; background: #fff; }',
+    'span._embed_grid span._embed_grid_hd a:active { text-decoration: none; background: #fff; }',
+    // top line
+    'span._embed_grid span._embed_grid_hd a._embed_grid_first { top: 2px; font-family: helvetica, sans-serif; font-weight: bold; color:#333; font-size: 14px; line-height: 16px; }',
+    // second line
+    'span._embed_grid span._embed_grid_hd a._embed_grid_second { bottom: 11px; font-family: helvetica, sans-serif; color:#8e8e8e; font-size: 12px; line-height: 14px; }',
+    // mid line
+    'span._embed_grid span._embed_grid_hd a._embed_grid_mid {  margin-left: -45px; top: 12px; font-family: helvetica, sans-serif; font-weight: bold; color:#cfcfcf; font-size: 14px; line-height: 16px; }',
+
+    // grid body - note final selector for overflow:hidden won't have an !important, so we can override
+    'span._embed_grid span._embed_grid_bd { display:block; margin: 0 10px; border-radius: 2px; position: relative; overflow: hidden }',
+
+    // set me if we're on an OS that doesn't supply scrollbars
+    'span._embed_grid span._embed_grid_scrolling_okay { overflow: auto; }',
+
+    // grid container -- allows us to halt scrolling before we get to the ragged bottom
+    'span._embed_grid span._embed_grid_bd span._embed_grid_ct { display:block; position: relative; overflow: hidden; }',
+    
+    // each thumbnail
+    'span._embed_grid span._embed_grid_bd a._embed_grid_th { cursor: pointer; display: inline-block; position: absolute; overflow: hidden; }',
+    // inset shadow mask
+    'span._embed_grid span._embed_grid_bd a._embed_grid_th::before { position: absolute; content:""; z-index: 2; top: 0; left: 0; right: 0; bottom: 0; box-shadow: inset 0 0 2px #888; }',
+    // thumbnail image
+    'span._embed_grid span._embed_grid_bd a._embed_grid_th img._embed_grid_img { border: none; position: absolute; top: 50%; left: 0; }',
+    // footer button
+    'a._embed_grid_ft { text-shadow: 0 1px #fff; display: none; text-align: center; border: 1px solid #ccc; margin: 10px 10px 0; height: 31px; line-height: 30px;border-radius: 2px; text-decoration: none; font-family: Helvetica; font-weight: bold; font-size: 13px; color: #746d6a; background: #f4f4f4 url(_cdn/images/pidgets/board_button_link.png) 0 0 repeat-x}',
+    'a._embed_grid_ft:hover { text-decoration: none; background: #fefefe url(_cdn/images/pidgets/board_button_hover.png) 0 0 repeat-x}',
+    'a._embed_grid_ft:active { text-decoration: none; background: #e4e4e4 url(_cdn/images/pidgets/board_button_active.png) 0 0 repeat-x}',
+    'a._embed_grid_ft span._embed_grid_ft_logo { vertical-align: top; display: inline-block; margin-left: 2px; height: 30px; width: 66px; background: transparent url(_cdn/images/pidgets/board_button_logo.png) 50% 48% no-repeat; }',
+
+    // leave this at the bottom, to avoid trailing commas
+    '._hidden { display:none; }'
+  ]
+}));
 
 // Twitter stuff
 

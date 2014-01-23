@@ -1,9 +1,22 @@
 <div class="footer">
+        <div class="footer-af">
+             <div class="footer-social-tab">
+                   <p>&middot;</p>
+		   <h3>Get <span>Social</span></h3>
+                   <p>&middot;</p>
+	     </div>
+<?php $mainoptions = get_option('main_theme_options'); ?>
+             <div class="footer-af-icons">
+                   <a href="<?php echo $mainoptions['facebookurl']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/af-fb.png" alt="Facebook Social Icon" /></a>
+                   <a href="<?php echo $mainoptions['twitterurl']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/af-twt.png" alt="Twitter Social Icon" /></a>
+                   <a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/af-rr.png" alt="RR Social Icon" class="footer-af-rr" /></a>
+                   <a href="<?php echo $mainoptions['pinteresturl']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/af-pin.png" alt="Pinterest Social Icon" /></a>
+                   <a href="<?php echo $mainoptions['youtubeurl']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/af-yt.png" alt="Youtube Social Icon" /></a>
+                   <a href="<?php echo $mainoptions['instagramurl']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/af-ig.png" alt="Instagram Social Icon" /></a>
+             </div>
+        </div>
 	<div class="footer-wrap">
 		<div class="footer-left">
-			<div class="footer-social-tab">
-				<h3>Get <span>Social</span></h3>
-			</div>
 			<div class="footer-facebook">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-icon.png" class="social-icon" />
                                 <div class="fb-activity" data-app-id="648638865176460" data-site="http://www.redlinerestorations.net/" data-action="likes, recommends" data-height="105" data-colorscheme="dark" data-header="false"></div>
@@ -27,9 +40,6 @@
 			</div>
 		</div>
 		<div class="footer-right">
-			<div class="footer-close-tab">
-				<h3>Close</h3>
-			</div>
 			<div class="footer-pinterest">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/pinterest-icon.png" class="social-icon" />
 				<div class="pinterest-box">
@@ -38,14 +48,14 @@
 			</div>
 			<div class="footer-youtube">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/youtube-icon.png" class="social-icon" />
-                                <iframe id="ytplayer" type="text/html" width="250" height="140.625" src="https://www.youtube.com/embed/?listType=user_uploads&list=redlineresto" frameborder="0" allowfullscreen></iframe>
+                                
 			</div>
 			<div class="footer-instagram">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/instagram-icon.png" class="social-icon" />
                                 <iframe src="http://snapwidget.com/in/?u=cmVkbGluZXJlc3RvfGlufDEyNXwyfDF8fG5vfDV8bm9uZXxvblN0YXJ0fHllcw==&v=261213" title="Instagram Widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:260px; height:130px"></iframe>
 			</div>
 			<div class="footer-right-bottom">
-				<h6>Designed by / Business on Market St.</h6>
+				<h6>Designed by / <a href="http://www.businessonmarketst.com/">Business on Market St.</a></h6>
 			</div>
 		</div>
 	</div>
@@ -59,6 +69,7 @@ $directory = get_template_directory_uri();
 <script src="<?php echo get_template_directory_uri() ?>/function.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
+
 // Function to create the map //
 function mapinitialize() {
 
@@ -124,7 +135,7 @@ streetViewControl: false,
     mapOptions);
 
 // This will create the tab that shows up when the pin is clicked on //
-var contentString = '<div id="mapcontent">'+'<img src="http://clients.businessonmarketst.com/redline/wp-content/themes/RedlineRestorationsLess/images/redline-map-image.png" />'+'<div class="mapcontent-text">'+'<p><span>Red<em>line Restorations</em></span></p>'+
+var contentString = '<div id="mapcontent">'+'<img src="http://redlinerestorations.net/wp-content/themes/RedlineRestorationsLess/images/redline-map-image.png" />'+'<div class="mapcontent-text">'+'<p><span>Red<em>line Restorations</em></span></p>'+
 '<p>2316 FAIRFIELD AVE</p>'+'<p>BLACK ROCK, CT 06605</p>'+'<p>P: 203 335 9555</p>'+'</div>'+'</div>';
 
 // Attachs the tab //
@@ -139,7 +150,7 @@ maxWidth: 320
   map.setMapTypeId('map_style');
 
 // Sets the pin location on the map and chooses the picture that will be used //
-var image = 'http://clients.businessonmarketst.com/redline/wp-content/themes/RedlineRestorationsLess/images/redline-map-flag.png';
+var image = 'http://redlinerestorations.net/wp-content/themes/RedlineRestorationsLess/images/redline-map-flag.png';
 // This should be the coordinates where you want the pin to be put //
   var myLatLng = new google.maps.LatLng(41.163340,-73.221006);
   var pinmarker = new google.maps.Marker({
@@ -159,7 +170,8 @@ infowindow.open(map,pinmarker);
 }
 
 // Puts listener so that the map will not try to load unless it need to //
-google.maps.event.addDomListener(window, "load", mapinitialize);
+// google.maps.event.addDomListener(window, "load", mapinitialize); //
+
 </script>
 </body>
 </html>
