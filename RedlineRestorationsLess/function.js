@@ -1,6 +1,4 @@
 $(document).ready(function(){        
-        
-        // 
 
 function loadScript() {
   var script = document.createElement('script');
@@ -75,8 +73,6 @@ $('.down-arrow-footer').hover(function(){
 	$('.fixed-menu-bar ul li a').click(function(){
 		if ($(this).text() == "Home") {
 			if ($(document).find('.single-blog-viewport').length > 0) {
-				setCookie("testcookie","aboutusload",365);
-				var testcookie = getCookie("testcookie");
 				window.location.href = "http://www.redlinerestorations.net/";
 			}
 			else
@@ -84,79 +80,73 @@ $('.down-arrow-footer').hover(function(){
 				$('.content-panel-area').animate({'left':'0px'},300,function(){
 					properlysetid();	
 				});
+                                history.pushState(null, null, "?page=home");
   			}
 		}
 		if ($(this).text() == "About Us") {
 			if ($(document).find('.single-blog-viewport').length > 0) {
-				setCookie("testcookie","servicesload",365);
-				var testcookie = getCookie("testcookie");
-				window.location.href = "http://www.redlinerestorations.net/";
+				window.location.href = "http://www.redlinerestorations.net/?page=aboutus";
 			}
 			else
 			{
 				$('.content-panel-area').animate({'left':'-1007px'},300,function(){
 					properlysetid();
 				});
+                                history.pushState(null, null, "?page=aboutus");
 			}
 		}
 		if ($(this).text() == "Our Process") {
 			if ($(document).find('.single-blog-viewport').length > 0) {
-				setCookie("testcookie","processload",365);
-				var testcookie = getCookie("testcookie");
-				window.location.href = "http://www.redlinerestorations.net/";
+				window.location.href = "http://www.redlinerestorations.net/?page=process";
 			}
 			else
 			{
 				$('.content-panel-area').animate({'left':'-2014px'},300,function(){
 					properlysetid();
 				});
+                                history.pushState(null, null, "?page=process");
 			}
 		}
 		if ($(this).text() == "Restorations") {
 			if ($(document).find('.single-blog-viewport').length > 0) {
-				setCookie("testcookie","restorationsload",365);
-				var testcookie = getCookie("testcookie");
-				window.location.href = "http://www.redlinerestorations.net/";
+				window.location.href = "http://www.redlinerestorations.net/?page=restorations";
 			}
 			else
 			{
 				$('.content-panel-area').animate({'left':'-2014px'},300,function(){
 					properlysetid();
 				});
+                                history.pushState(null, null, "?page=restorations");
 			}
 		}
 		if ($(this).text() == "Blog") {
 			if ($(document).find('.single-blog-viewport').length > 0) {
-				setCookie("testcookie","blogload",365);
-				var testcookie = getCookie("testcookie");
-				window.location.href = "http://www.redlinerestorations.net/";
+				window.location.href = "http://www.redlinerestorations.net/?page=blog";
 			}
 			else
 			{
 				$('.content-panel-area').animate({'left':'-3021px'},300,function(){
 					properlysetid();
 				});
+                                history.pushState(null, null, "?page=blog");
 			}
 		}
 		if ($(this).text() == "Contact Us") {
 			if ($(document).find('.single-blog-viewport').length > 0) {
-				setCookie("testcookie","contactusload",365);
-				var testcookie = getCookie("testcookie");
-				window.location.href = "http://www.redlinerestorations.net/";
+				window.location.href = "http://www.redlinerestorations.net/?page=contactus";
 			}
 			else
 			{
 				$('.content-panel-area').animate({'left':'-4028px'},300,function(){
 					properlysetid();
 				});
+                                history.pushState(null, null, "?page=contactus");
 			}
 		}
 	});
 
 $('.return-to-blogs').click(function(){
-setCookie("testcookie","blogload",365);
-				var testcookie = getCookie("testcookie");
-				window.location.href = "http://www.redlinerestorations.net/";
+				window.location.href = "http://www.redlinerestorations.net/?page=blog";
 });
 
 $('.the-process').click(function(){
@@ -313,9 +303,13 @@ $('.the-process').click(function(){
                          $('.footer-af').animate({'height':'50px'},300);
                          $('.footer-wrap').animate({'margin-top':'-1px'},300);
                 } else {
+                     if ($(window).height() > 795) {
+                        $('.footer').animate({'bottom':'-442px'},300);
+                     } else {
+                        $('.footer').animate({'bottom':'-547px'},300);
+                     }
                          $('.footer-social-tab h3').text("Get Social");
-                         $('.footer-af-icons').fadeIn(300);
-                         $('.footer').animate({'bottom':'-442px'},300); 
+                         $('.footer-af-icons').fadeIn(300); 
                          $('.footer-af').animate({'height':'100px'},300);
                          $('.footer-wrap').animate({'margin-top':'100px'},300);
                 }
@@ -477,9 +471,6 @@ $('.the-process').click(function(){
 
 
 	function addclasstodiv() {
-		var pageclass = getCookie("testcookie"); 
-		$(document).find('.content-panel-area').addClass(pageclass);
-		setCookie("testcookie","meh",-1);
 		properlysetid();
 	}
 

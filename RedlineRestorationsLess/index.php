@@ -1,32 +1,21 @@
 <?php get_header(); ?>
+<?php $pagesite=$_REQUEST['page']; ?>
 <div class="content-panel">
 	<div class="viewport-center">
-		<div class="content-panel-area">
-		
-		<!--
-			HOME PAGE
-		-->
+		<div class="content-panel-area <?php echo $pagesite."load"; ?>">
+		<!--  HOME PAGE  -->
 		<div class="one-big-page service-page">
 			<div class="one-big-page-panel" id="scroll">
 				<div class="homepage panel one">
 					<div class="panel-one-slide-wrapper">
-						<?php 
-						$args=array(
-							'post_type' => 'mainpageslider'
-							);
-
-						$blogPosts = new WP_Query($args);
-
-						while ($blogPosts->have_posts()) : $blogPosts->the_post();
-						?>
+						<?php $args=array('post_type' => 'mainpageslider');$blogPosts = new WP_Query($args); while ($blogPosts->have_posts()) : $blogPosts->the_post(); ?>
 						<div class="panel-one-slider first">
 							<h4><?php echo get_post_meta(get_the_ID(), 'caryear', true) ?></h4>
 							<h5><?php echo get_post_meta(get_the_ID(), 'carmaker', true) ?><br />
 								<?php echo get_post_meta(get_the_ID(), 'carmodel', true) ?>
 							</h5>
 							<div class="panel-slider-lines">
-								<div class="panel-slider-lines-inner">
-								</div>
+								<div class="panel-slider-lines-inner"></div>
 							</div>
 							<?php autoc_get_img('sliderfeaturedimage'); ?>						
 						</div>
@@ -41,13 +30,7 @@
 					<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
 				</div>
 			</div>
-			<?php 
-			$args=array(
-				'post_type' => 'mainpage'
-				);
-
-			$blogPosts = new WP_Query($args);
-
+			<?php $args=array('post_type' => 'mainpage'); $blogPosts = new WP_Query($args);
 			while ($blogPosts->have_posts()) : $blogPosts->the_post();
 			?>
 			<div class="homepage panel two">
@@ -57,8 +40,7 @@
 					<h4><?php echo get_post_meta(get_the_ID(), 'processtext', true) ?></h4>
                                         <h6 class="the-process">Learn <span>more</span></h6>
 					<div class="bot-panel-slider-lines-small the-process">
-						<div class="bot-panel-slider-lines-inner-small the-process">
-						</div>
+						<div class="bot-panel-slider-lines-inner-small the-process"></div>
 					</div>
 				</div>
 				<div class="up-arrow-hover">
@@ -98,18 +80,11 @@
 		<?php endwhile; ?>
 	</div>
 </div>
-<!--
-			ABOUT US PAGE
-		-->
+<!--  ABOUT US PAGE  -->
 		<?php 
-		$args=array(
-			'post_type' => 'aboutus'
-			);
-
+		$args=array('post_type' => 'aboutus');
 		$blogPosts = new WP_Query($args);
-
-		while ($blogPosts->have_posts()) : $blogPosts->the_post();
-		?>
+		while ($blogPosts->have_posts()) : $blogPosts->the_post(); ?>
 		<div class="one-big-page aboutus-page">
 			<div class="one-big-page-panel">
 				<div class="aboutuspage panel one">
@@ -117,15 +92,13 @@
 						<img src="<?php echo get_template_directory_uri(); ?>/images/cross-flags.png" />
 						<h5>About Us</h5>
 						<div class="aboutus-panel-slider-lines">
-							<div class="aboutus-panel-slider-lines-inner">
-							</div>
+							<div class="aboutus-panel-slider-lines-inner"></div>
 						</div>
 						<?php the_content(); ?>
 					</div>
 					<img src="<?php echo get_template_directory_uri(); ?>/images/aboutus-car.jpg" class="aboutus-slide-image" />
                                         <img src="<?php echo get_template_directory_uri(); ?>/images/playbutton.png" class="playbutton" alt="play button" />
-<div class="video-placeholder">
-</div>
+<div class="video-placeholder"></div>
 					<div class="down-arrow-hover">
 						<h6>The Team</h6>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/down-arrow.png" class="bottom-button" />
@@ -137,18 +110,12 @@
 					</div>
 					<div class="aboutus-panel-people">
 						<ul>
-						<?php endwhile; ?>
-						<?php 
+						<?php endwhile;
 $personcount = 0;
-						$args=array(
-							'post_type' => 'theteam'
-							);
-
+						$args=array('post_type' => 'theteam');
 						$blogPosts = new WP_Query($args);
-
 						while ($blogPosts->have_posts()) : $blogPosts->the_post();
-$personcount = $personcount + 1;
-						?>
+$personcount = $personcount + 1; ?>
 						<li id="<?php echo get_post_meta(get_the_ID(), 'uniqueid', true) ?>"><div class="aboutus-panel-individual">
 							<?php the_post_thumbnail(); ?>
 							<h4><span><?php echo get_post_meta(get_the_ID(), 'firstname', true) ?></span> <?php echo get_post_meta(get_the_ID(), 'lastname', true) ?></h4>
@@ -156,15 +123,8 @@ $personcount = $personcount + 1;
 					<?php endwhile; ?>
 				</ul>
 			</div>
-			<?php 
-			$args=array(
-				'post_type' => 'theteam'
-				);
-
-			$blogPosts = new WP_Query($args);
-
-			while ($blogPosts->have_posts()) : $blogPosts->the_post();
-			?>
+			<?php $args=array('post_type' => 'theteam'); $blogPosts = new WP_Query($args);
+			while ($blogPosts->have_posts()) : $blogPosts->the_post(); ?>
 			<div class="aboutus-individual-frame <?php echo get_post_meta(get_the_ID(), 'uniqueid', true) ?>">
 				<div class="aboutus-individual-frame-text">
 					<div class="aboutus-individual-frame-text-first">
@@ -172,7 +132,6 @@ $personcount = $personcount + 1;
 						<img src="<?php echo get_template_directory_uri(); ?>/images/close-button.png" />
 						<p>Close</p>
 					</div>
-					
 					<div class="aboutus-individual-frame-text-third">
 						<h4><span>Hometown :</span> <?php echo get_post_meta(get_the_ID(), 'hometown', true) ?></h4>
 					</div>
@@ -184,17 +143,13 @@ $personcount = $personcount + 1;
 					</div>
 				</div>
 				<div class="aboutus-individual-frame-pictureframe">
-<?php if (autoc_get_img('largeimage')) {
-autoc_get_img('largeimage');
-} else { ?>			
+<?php if (autoc_get_img('largeimage')) { autoc_get_img('largeimage'); } else { ?>			
 <img src="<?php echo get_template_directory_uri(); ?>/images/redline-team-default.jpg" alt="Team Member Default" />
 <?php } ?>
 				</div>
-				<div class="aboutus-individual-frame-overlay">
-				</div>
+				<div class="aboutus-individual-frame-overlay"></div>
 			</div>
-		<?php endwhile; 
-?>
+		<?php endwhile; ?>
                 <?php if ($personcount > 10) { ?>
 <div class="aboutus-section-nav-left"></div>
 <div class="aboutus-section-nav-right"></div>
@@ -211,23 +166,11 @@ autoc_get_img('largeimage');
 	<div class="aboutuspage panel three">
 		<div class="awards-section">
 			<div class="awards-wrapper">
-                                <?php
-//for each category, show 5 posts
-$cat_args=array(
-  'orderby' => 'name',
-  'order' => 'DESC'
-   );
-$categories=get_categories($cat_args);
-$categorycount = -1;
+                                <?php $cat_args=array('orderby' => 'name','order' => 'DESC');
+$categories=get_categories($cat_args); $categorycount = -1;
   foreach($categories as $category) {
-    $args=array(
-      'showposts' => 4,
-      'post_type' => 'awards',
-      'category__in' => array($category->term_id),
-      'caller_get_posts'=>1
-    );
-    $categorycount = $categorycount + 1;
-    $posts=get_posts($args);
+    $args=array('showposts' => 4,'post_type' => 'awards','category__in' => array($category->term_id),'caller_get_posts'=>1);
+    $categorycount = $categorycount + 1; $posts=get_posts($args);
       if ($posts) { ?>
 <div class="awards-single">
 					<div class="awards-single-header">
@@ -235,8 +178,7 @@ $categorycount = -1;
 						<p>Awards</p>
 					</div>
 					<div class="awards-single-content">    
-        <?php foreach($posts as $post) {
-          setup_postdata($post); ?>
+        <?php foreach($posts as $post) { setup_postdata($post); ?>
                                                 <div class="awards-single-single">
 							<div class="awards-single-icon-left">
 							</div>
@@ -246,9 +188,8 @@ $categorycount = -1;
                                                         <p><?php echo get_post_meta(get_the_ID(), 'line1', true) ?></p>
                                                         <p><?php echo get_post_meta(get_the_ID(), 'line2', true) ?></p>
 						</div>
-
-          <?php
-        } // foreach($posts ?>
+          <?php } // foreach($posts 
+?>
 </div>
 </div>
 <?php      } // if ($posts
@@ -271,9 +212,7 @@ $categorycount = -1;
 	</div>
 </div>
 </div>
-		<!--
-			Process Page
-		-->
+		<!--  Process Page  -->
                 <!--
 		<div class="one-big-page process-page">
 			<div class="one-big-page-panel">
@@ -360,9 +299,7 @@ $categorycount = -1;
 	</div>
 </div>
 -->
-		<!--
-			Restorations Page
-		-->
+		<!--  Restorations Page  -->
 		<div class="one-big-page restorations-page">
 			<div class="one-big-page-panel">
 				<div class="restorations panel one">

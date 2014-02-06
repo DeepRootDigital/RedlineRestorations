@@ -1,14 +1,14 @@
 /*
 Theme Name: Redline Restorations
-Theme URI: http://redlinerestorations.net
+Theme URI: http://www.redlinerestorations.net
 Description: A theme built for Redline Restorations!
 Author: Paul McMahon
-Author URI: http://businessonmarketst.com
+Author URI: http://www.businessonmarketst.com
 Version: 1.0
-Tags: Blank
+Tags: automotive, car restoration, restoration, cars, concours, redline, classic cars, concours-quality
 
-License: GPL
-License URI: http://businessonmarketst.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 General comments (optional).
 */
@@ -100,11 +100,11 @@ h6 {
 	left:0px;
 }
 
-.content-panel-area.aboutusload {
+.content-panel-area.homeload {
 	left:0px;
 }
 
-.content-panel-area.servicesload {
+.content-panel-area.aboutusload {
 	left:-1007px;
 }
 

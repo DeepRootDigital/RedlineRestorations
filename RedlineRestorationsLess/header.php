@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width" />
@@ -13,26 +12,14 @@
 <body>
 
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=648638865176460";
-  fjs.parentNode.insertBefore(js, fjs);
+<script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=648638865176460";fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-	
 <div class="fixed-menu-bar">
 		<a href="http://www.redlinerestorations.net/"><img src="<?php echo get_template_directory_uri() ?>/images/redline-header-logo.png" /></a>
-		<?php 
-                $args = array(
-                    'theme_location' => 'Left Navigation Menu',
-                    'menu' => 'RR topmenu',
-
-                    );
+		<?php $args = array('theme_location' => 'Left Navigation Menu','menu' => 'RR topmenu');
                     wp_nav_menu($args); ?>
 	</div>
-	<div class="fixed-social-menu">
-	</div>
+	<div class="fixed-social-menu"></div>
 	<div class="fixed-social-icons">
 <?php $mainoptions = get_option('main_theme_options'); ?>
 	    <a href="#" alt="blah" class="close-button"><span>Close</span>Social</a>
